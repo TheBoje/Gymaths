@@ -1,2 +1,5 @@
 # ODT temp files
 *.odt#
+
+# log files
+*.log
