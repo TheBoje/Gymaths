@@ -1,0 +1,22 @@
+Madame, Monsieur, bonjour,
+
+Je vous envoie ce message au nom d'un groupe d'étudiants en informatique à l'université de Poitiers en 3e année de licence. Nous avons pour cette année un projet à réaliser pour nous préparer à la vie professionnelle et nous avons choisi de développer une application smartphone de mathématiques.
+
+Cette application de smartphone nommée Gymaths permettra de générer des exercices et de les résoudre automatiquement. L'objectif étant pour des élèves de 3e ou de 2nd de s'exercer au calcul: distributivité, factorisation, identités remarquables, équations et inéquations parmi les notions abordées.
+
+Nous sommes très motivés pour mener à bien ce projet car nous sommes persuadés qu'en y ajoutant un soupçon de codes vidéoludiques cette application pourrait aider de nombreux élèves à s'améliorer sur ces domaines fondamentaux des mathématiques.
+
+Cependant, ceci n'est qu'une impression que nous avons... Nous voulons de vrais avis de futurs utilisateurs potentiels et de professionnels de l'enseignement. C'est pourquoi nous avons constitué deux questionnaires: un pour de futurs apprenants et un pour de futurs enseignants. Chacun de ces deux questionnaires nous permettra de distinguer davantage les services essentiels des services non essentiels (tout jeu de mot avec la situation sanitaire actuelle étant fortuit) que devra prodiguer notre application.
+
+Aussi je me permets vous transmettre les liens vers les questionnaires:
+
+1) Le questionnaire enseignant: https://forms.gle/HTN5ymsqdVFse36d7
+2) Le questionnaire élève: https://forms.gle/ntkKc6Kjsuon9U6G8
+
+Nous vous serions extrêmement reconnaissants si vous pouviez transmettre ces deux questionnaires aux publics visés. En effet, depuis le récent confinement nous ne sommes plus en mesure de nous déplacer pour des rencontres comme nous l'avions initialement prévu.
+
+Toute l'équipe de développement de Gymaths et moi-même vous remercions d'avoir lu ce message et pour votre aide!
+
+Nous vous souhaitons bon courage en ces temps difficiles, portez-vous bien!
+
+L'équipe Gymaths
