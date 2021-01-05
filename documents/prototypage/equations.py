@@ -1,6 +1,8 @@
 import random
 
 MAX = 100
+LAST_LETTERS = ["v", "O", "X"]
+
 # derivation est un dictionnaire comportant la chance d'apparition de chaque possibilitée de dérivation
 # ainsi pour accéder à la liste des chances il faudra faire : nomDuDictionnaire["chance"] (retourne une liste d'entier compris entre 0 et 100 (MAX) dans l'ordre croissant)
 # pour accéder à la liste des dérivations : nomDuDictionnaire["der"] (retourne une liste de chaine de caractères)
@@ -36,7 +38,7 @@ def compute_values(line) :
     strtmp = ""
     for i in range(len(line)) :
         # si la lettre fait partie de la liste des lettre à dériver et les remplaces par des valeurs entières
-        if line[i] in ["v", "O", "X"] :
+        if line[i] in LAST_LETTERS :
             strtmp = strtmp + str(random.randint(1, 9))
         else :
             strtmp = strtmp + line[i]
