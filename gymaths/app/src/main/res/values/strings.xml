@@ -18,5 +18,5 @@
     <string name="parentheses">()</string>
     <string name="sqrtSymbol">√</string>
     <string name="xSquaredSymbol">x²</string>
-    <string name="operators">+ -</string>
+    <string name="operators">+-</string>
 </resources>

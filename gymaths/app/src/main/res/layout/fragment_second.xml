@@ -8,25 +8,26 @@
 
 
     <!-- Titre de la section -->
+
+    <!-- Choix de la section -->
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="295dp"
-        android:layout_height="39dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:background="@drawable/back"
         android:text="@string/regle_calculs"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.063" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Choix de la section -->
     <TableLayout
-        android:layout_width="235dp"
-        android:layout_height="167dp"
+        android:id="@+id/tableLayout"
+        android:layout_width="337dp"
+        android:layout_height="320dp"
         app:layout_constraintBottom_toTopOf="@+id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -40,42 +41,46 @@
 
             <Button
                 android:id="@+id/btnOperations"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="125dp"
                 android:layout_margin="16dp"
                 android:layout_marginTop="100dp"
+                android:layout_weight="1"
                 android:text="@string/operators"
-                android:textSize="24sp" />
+                android:textSize="64sp" />
 
             <Button
                 android:id="@+id/btnPriorities"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="125dp"
                 android:layout_margin="16dp"
                 android:layout_marginTop="100dp"
+                android:layout_weight="1"
                 android:text="@string/parentheses"
-                android:textSize="24sp" />
+                android:textSize="64sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="88dp">
 
             <Button
                 android:id="@+id/btnXSquared"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="125dp"
                 android:layout_margin="16dp"
+                android:layout_weight="1"
                 android:text="@string/xSquaredSymbol"
-                android:textSize="24sp" />
+                android:textSize="64sp" />
 
             <Button
                 android:id="@+id/btnSqrt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="125dp"
                 android:layout_margin="16dp"
+                android:layout_weight="1"
                 android:text="@string/sqrtSymbol"
-                android:textSize="24sp" />
+                android:textSize="64sp" />
 
         </TableRow>
 

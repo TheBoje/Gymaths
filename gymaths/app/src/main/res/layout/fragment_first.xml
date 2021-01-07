@@ -12,7 +12,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
             android:layout_width="match_parent"
@@ -21,9 +23,10 @@
             <Button
                 android:id="@+id/regle_calculs"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
-                android:text="@string/regle_calculs" />
+                android:layout_height="80dp"
+                android:layout_margin="16dp"
+                android:text="@string/regle_calculs"
+                android:textSize="20sp" />
         </TableRow>
 
         <TableRow
@@ -33,8 +36,10 @@
             <Button
                 android:id="@+id/idRemarquables_button"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/id_remarquables" />
+                android:layout_height="80dp"
+                android:layout_margin="16dp"
+                android:text="@string/id_remarquables"
+                android:textSize="20sp" />
         </TableRow>
 
         <TableRow
@@ -44,9 +49,10 @@
             <Button
                 android:id="@+id/button2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="340dp"
-                android:text="@string/eq_ineq" />
+                android:layout_height="80dp"
+                android:layout_margin="16dp"
+                android:text="@string/eq_ineq"
+                android:textSize="20sp" />
         </TableRow>
 
     </TableLayout>
