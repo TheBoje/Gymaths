@@ -13,7 +13,7 @@ LAST_LETTERS = ["v", "O", "X"]
 #   - (X - X) qui a 25% de chance de passer (75 - 50)
 #   - (X x X) qui a 10% de chance de passer (85 - 75)
 #   - v       qui a 15% de chance de passer (100 - 85)
-derivO = {"chance" : [20, 50, 75, 85, MAX], "der" : ["(X + X)", "(X / X)", "(X - X)", "(X * X)", "v"]}
+derivO = {"chance" : [10, 20, 30, 40, 50, 70, 80, 90, MAX], "der" : ["(X + X)", "(X / X)", "(X - X)", "(X * X)", "X + X", "X - X", "X / X", "X * X", "v"]}
 derivX = {"chance" : [70, MAX], "der" : ["O", "v"]}
 derivEq = {"chance" : [12, 24, 36, 48, 60, 72, 84, MAX], "der" :  ["(x + X)", "(X + x)", "(x - X)", "(X - x)", "(x * X)", "(X * x)", "(x / X)", "(X / x)"]}
 
