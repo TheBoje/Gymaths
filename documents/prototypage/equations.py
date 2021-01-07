@@ -13,13 +13,14 @@ LAST_LETTERS = ["v", "O", "X"]
 #   - (X - X) qui a 25% de chance de passer (75 - 50)
 #   - (X x X) qui a 10% de chance de passer (85 - 75)
 #   - v       qui a 15% de chance de passer (100 - 85)
-derivO = {"chance" : [20, 50, 75, 85, MAX], "der" : ["(X + X)", "(X / X)", "(X - X)", "(X x X)", "v"]}
+derivO = {"chance" : [20, 50, 75, 85, MAX], "der" : ["(X + X)", "(X / X)", "(X - X)", "(X * X)", "v"]}
 derivX = {"chance" : [70, MAX], "der" : ["O", "v"]}
+derivEq = {"chance" : [12, 24, 36, 48, 60, 72, 84, MAX], "der" :  ["(x + X)", "(X + x)", "(x - X)", "(X - x)", "(x * X)", "(X * x)", "(x / X)", "(X / x)"]}
 
 # dictionnaire des dérivations, on stocke ici les dictionnaires (vu au dessus) dans le dictionnaire de dérivations.
 # ainsi, "O" -> "(X + X)", "(X / X)", "(X - X)", "(X x X)" ou "v" en fonction des chances
 # ainsi, "X" -> "O" ou "v" en fonction des chances
-derivation = {"O" : derivO, "X" : derivX}
+derivation = {"O" : derivO, "X" : derivX, "x" : derivEq}
 
 # calcul la dérivation de la lettre en fonction du dictionnaire de dérivation de la lettre correspondante
 def compute_derive(derivation) :
@@ -62,8 +63,8 @@ def deriv(derivation, n, line) :
     else :
         return deriv(derivation, n - 1, compute_line(derivation, line))
 
-print(deriv(derivation, 4, "O"))
-print(deriv(derivation, 5, "O"))
+print(deriv(derivation, 2, "x"))
+print(deriv(derivation, 3, "x"))
 print(deriv(derivation, 6, "O"))
 print(deriv(derivation, 7, "O"))
 print(deriv(derivation, 10, "O"))
