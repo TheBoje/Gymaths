@@ -15,4 +15,8 @@
     <string name="gymaths">Gymaths</string>
     <string name="id_remarquables">Identité Remarquable</string>
     <string name="eq_ineq">Equations/Inéquations</string>
+    <string name="parentheses">()</string>
+    <string name="sqrtSymbol">√</string>
+    <string name="xSquaredSymbol">x²</string>
+    <string name="operators">+ -</string>
 </resources>
