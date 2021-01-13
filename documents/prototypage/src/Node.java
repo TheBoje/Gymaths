@@ -7,4 +7,17 @@ public class Node {
         this.lson = null;
         this.rson = null;
     }
+
+    // Rooting
+
+    // isEmpty
+
+    // lson
+
+    // rson
+
+    // root
+
+    // empty
+
 }
