@@ -1,5 +1,6 @@
 package com.example.gymaths
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -26,6 +27,11 @@ class SecondFragment : Fragment() {
 
         view.findViewById<Button>(R.id.button_second).setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+        }
+
+        view.findViewById<Button>(R.id.btnSqrt).setOnClickListener {
+            val intent = Intent(activity, ExercicesActivity::class.java)
+            startActivity(intent)
         }
     }
 }

@@ -19,4 +19,6 @@
     <string name="sqrtSymbol">√</string>
     <string name="xSquaredSymbol">x²</string>
     <string name="operators">+-</string>
+    <string name="btnValidate">Valider</string>
+    <string name="helloWorld">Hello World!</string>
 </resources>
