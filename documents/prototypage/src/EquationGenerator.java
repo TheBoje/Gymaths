@@ -26,7 +26,7 @@ public abstract class EquationGenerator {
         }
         else
         {
-            int rand = RAND.nextInt(NB_EXP);
+            int rand = RAND.nextInt(100);
 
             if(rand < chances[0])
             {

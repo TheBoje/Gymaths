@@ -1,7 +1,7 @@
-public class Number extends Exp {
+public class Equals extends Exp {
 	int value;
 
-	public Number(int value) {
+	public Equals(int value) {
 		super(null, null);
 		this.value = value;
 	}
