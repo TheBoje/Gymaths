@@ -5,11 +5,13 @@ public abstract class Exp
 
 	public Exp(Exp expLeft, Exp expRight)
 	{
-		this.expLeft = expLeft;
-		this.expRight = expRight;
+		this.expLeft 	= expLeft;
+		this.expRight 	= expRight;
 	}
 
 	public abstract float evaluate();
+
+	public abstract void simplify();
 
 	public abstract String print();
 

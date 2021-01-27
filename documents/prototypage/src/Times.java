@@ -6,9 +6,20 @@ public class Times extends Exp
 	}
 
 	@Override
-	public float evaluate()
+	public float evaluate() throws VariableEvaluationException
 	{
-		return this.expLeft.evaluate() * this.expRight.evaluate();
+		try {
+			return this.expLeft.evaluate() * this.expRight.evaluate();
+		} catch (VariableEvaluationException e) {
+			e.print();
+			this.simplify();
+			throw e;
+		}
+	}
+
+	@Override
+	public void simplify() {
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
