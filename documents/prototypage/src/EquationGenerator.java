@@ -3,7 +3,7 @@ import java.util.Random;
 public abstract class EquationGenerator {
 
     public static final Random      RAND = new Random();        // Random static permettant d'effectuer tous les aléatoires
-    public static final int         BOUND = 10;                 // Limite des nombres à générer (entre 0 et 9 (BOUND - 1))
+    public static final int         BOUND = 9;                 // Limite des nombres à générer (entre 0 et 9 (BOUND - 1))
 
     private static final int        NB_EXP = 3;                 // Nombre d'expressions pouvant être instancié
     private static final int        MAX = 100;
@@ -23,7 +23,7 @@ public abstract class EquationGenerator {
     {
         if(hmax <= 0)
         {
-            return new Number(RAND.nextInt(BOUND));
+            return new Number(RAND.nextInt(BOUND) + 1);
         }
         else
         {
@@ -47,11 +47,28 @@ public abstract class EquationGenerator {
             }
             else
             {
-                return new Number(RAND.nextInt(BOUND));
+                return new Number(RAND.nextInt(BOUND) + 1);
             }
         }
-     }
+    }
 
-
+    public static void putVariable(Exp tree)
+    {
+        if(tree instanceof Number)
+        {
+            tree = new Variable("x");
+        }
+        else
+        {
+            if(RAND.nextBoolean())
+            {
+                putVariable(tree.expLeft);
+            }
+            else
+            {
+                putVariable(tree.expRight);
+            }
+        }
+    }
 
 }
