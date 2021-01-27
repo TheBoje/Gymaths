@@ -29,6 +29,7 @@ public abstract class Exp {
 		Exp exp = new Plus(new Plus(new Number(3), new Number(2)), new Times(new Number(3), new Number(-1)));
 		Exp eq_3x7eq1 = null;
 		Exp generated = EquationGenerator.generateEquation(3);
+		EquationGenerator.putVariable(generated);
 		
 		System.out.println(generated.toLatex());
 		System.out.println("Evaluate : " + generated.evaluate());
