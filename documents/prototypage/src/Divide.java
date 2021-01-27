@@ -9,7 +9,7 @@ public class Divide extends Exp
 	public float evaluate() throws VariableEvaluationException
 	{
 		try {
-			return this.expLeft.evaluate() + this.expRight.evaluate();
+			return this.expLeft.evaluate() / this.expRight.evaluate();
 		} catch (VariableEvaluationException e) {
 			e.print();
 			this.simplify();
@@ -31,7 +31,7 @@ public class Divide extends Exp
 	@Override
 	public String toLatex()
 	{
-		return String.format("\\frac{%s}{%s}", this.expLeft.print(), this.expRight.print());
+		return String.format("\\frac{%s}{%s}", this.expLeft.toLatex(), this.expRight.toLatex());
 	}
     
 }
