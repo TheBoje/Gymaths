@@ -36,6 +36,14 @@ public abstract class EquationGenerator {
             {
                 return new Times(generateEquation(hmax - 1), generateEquation(hmax - 1));
             }
+            else if(rand < chances[2])
+            {
+                return new Minus(generateEquation(hmax - 1), generateEquation(hmax - 1));
+            }
+            else if(rand < chances[3])
+            {
+                return new Divide(generateEquation(hmax - 1), generateEquation(hmax - 1));
+            }
             else
             {
                 return new Number(RAND.nextInt(BOUND));
