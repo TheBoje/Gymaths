@@ -19,7 +19,7 @@ public abstract class EquationGenerator {
     }
 
     // génère une équation (arbre de type Exp)
-    public static Exp generateEquation(int hmax) 
+    public static Exp generateExpression(int hmax) 
     {
         if(hmax <= 0)
         {
@@ -31,19 +31,19 @@ public abstract class EquationGenerator {
 
             if(rand < chances[0])
             {
-                return new Plus(generateEquation(hmax - 1), generateEquation(hmax - 1));
+                return new Plus(generateExpression(hmax - 1), generateExpression(hmax - 1));
             }
             else if(rand < chances[1])
             {
-                return new Times(generateEquation(hmax - 1), generateEquation(hmax - 1));
+                return new Times(generateExpression(hmax - 1), generateExpression(hmax - 1));
             }
             else if(rand < chances[2])
             {
-                return new Minus(generateEquation(hmax - 1), generateEquation(hmax - 1));
+                return new Minus(generateExpression(hmax - 1), generateExpression(hmax - 1));
             }
             else if(rand < chances[3])
             {
-                return new Divide(generateEquation(hmax - 1), generateEquation(hmax - 1));
+                return new Divide(generateExpression(hmax - 1), generateExpression(hmax - 1));
             }
             else
             {
@@ -79,4 +79,10 @@ public abstract class EquationGenerator {
         }
     }
 
+    public static Exp generateEquation(int hmax)
+    {
+        Exp eq = generateExpression(hmax);
+        putVariable(eq);
+        return eq;
+    }
 }
