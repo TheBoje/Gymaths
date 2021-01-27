@@ -19,7 +19,7 @@ public class Equals extends Exp {
 	@Override
 	public String toLatex()
 	{
-		return String.format("%s * %s", this.expLeft.print(), this.expRight.print());
+		return String.format("%s=%s", this.expLeft.toLatex(), this.expRight.toLatex());
 	}
 
 	@Override
