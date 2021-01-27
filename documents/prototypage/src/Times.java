@@ -25,7 +25,7 @@ public class Times extends Exp
 	@Override
 	public String print()
 	{
-		return String.format("(%s * %s)", this.expLeft.print(), this.expRight.print());
+		return String.format("(%s*%s)", this.expLeft.print(), this.expRight.print());
 	}
 
 	@Override
