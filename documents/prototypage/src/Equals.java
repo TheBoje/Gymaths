@@ -1,24 +1,25 @@
 public class Equals extends Exp {
 	int value;
 
-	public Equals(int value) {
-		super(null, null);
-		this.value = value;
+	public Equals(Exp expLeft, Exp expRight) {
+		super(expLeft, expRight);
 	}
 
 	@Override
 	public float evaluate() {
-		return this.value;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
-	public String print() {
-		return Integer.toString(value);
+	public String print()
+	{
+		return String.format("(%s = %s)", this.expLeft.print(), this.expRight.print());
 	}
 
 	@Override
-	public String toLatex() {
-		return Integer.toString(value);
+	public String toLatex()
+	{
+		return String.format("%s * %s", this.expLeft.print(), this.expRight.print());
 	}
 
 	@Override
