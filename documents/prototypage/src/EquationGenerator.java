@@ -7,7 +7,7 @@ public abstract class EquationGenerator {
 
     private static final int        NB_EXP = 3;                 // Nombre d'expressions pouvant être instancié
     private static final int        MAX = 100;
-    private static int[]            chances = {20, 40, 50, 80};  // Tableau contenant le % de chance d'instanciation (0 = Plus, 1 = Times, 2 = Number) il doit être de la forme [x, x + y, x + y + z]
+    private static int[]            chances = {20, 50, 70, 90, 100};  // Tableau contenant le % de chance d'instanciation (0 = Plus, 1 = Times, 2 = Number) il doit être de la forme [x, x + y, x + y + z]
     
     // Change le tableau de chance d'instanciation si la somme du nouveau tableau est = CHANCE_SUM
     public static void initChances(int[] c) throws Exception
@@ -54,15 +54,23 @@ public abstract class EquationGenerator {
 
     public static void putVariable(Exp tree)
     {
-        if(tree instanceof Number)
+        if(RAND.nextBoolean())
         {
-            tree = new Variable("x");
+            if(tree.expLeft instanceof Number)
+            {
+                tree.expLeft = new Variable("x");
+            }
+            else
+            {
+                putVariable(tree.expLeft);
+            }
+            
         }
         else
         {
-            if(RAND.nextBoolean())
+            if(tree.expRight instanceof Number)
             {
-                putVariable(tree.expLeft);
+                tree.expRight = new Variable("x");
             }
             else
             {
