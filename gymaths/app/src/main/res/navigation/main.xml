@@ -34,7 +34,7 @@
         android:id="@+id/Fragment6"
         android:name="com.example.gymaths.main.Fragment6"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/main_fragment4">
+        tools:layout="@layout/main_fragment6">
 
         <action
             android:id="@+id/Fragment6To9"
@@ -45,7 +45,7 @@
         android:id="@+id/Fragment9"
         android:name="com.example.gymaths.main.Fragment9"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/main_fragment4">
+        tools:layout="@layout/main_fragment9">
 
         <action
             android:id="@+id/Fragment9To3"
