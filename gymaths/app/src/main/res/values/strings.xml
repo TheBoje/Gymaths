@@ -28,4 +28,6 @@
     <string name="i_m_fragment_9">I\'m Fragment 9!</string>
     <string name="i_m_fragment_6">I\'m Fragment 6!</string>
     <string name="i_m_fragment_7">I\'m Fragment 7!</string>
+    <string name="exemple_eq">Soit l\'équation x + 2 = 5, quelle est la valeur de x?</string>
+    <string name="exemple_reponse">La réponse est 3! En effet, quand on remplace x par 3 on a bien 3 + 2 = 5!</string>
 </resources>
