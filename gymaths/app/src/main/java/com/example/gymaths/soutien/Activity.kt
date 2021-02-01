@@ -1,4 +1,4 @@
-package com.example.gymaths.exercices
+package com.example.gymaths.soutien
 
 import android.os.Bundle
 import android.view.*
@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.gymaths.R
 
 
-class ExercicesActivity : AppCompatActivity()
+class Activity : AppCompatActivity()
 {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

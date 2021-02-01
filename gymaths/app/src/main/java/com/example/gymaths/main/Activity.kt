@@ -8,7 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.example.gymaths.R
 
-class MainActivity : AppCompatActivity() {
+class Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

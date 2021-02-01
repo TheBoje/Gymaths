@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import com.example.gymaths.R
-import com.example.gymaths.exercices.ExercicesActivity
+import com.example.gymaths.exercices.Activity
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -32,7 +32,7 @@ class Fragment4 : Fragment() {
         }
 
         view.findViewById<Button>(R.id.btnSqrt).setOnClickListener {
-            val intent = Intent(activity, ExercicesActivity::class.java)
+            val intent = Intent(activity, Activity::class.java)
             startActivity(intent)
         }
     }
