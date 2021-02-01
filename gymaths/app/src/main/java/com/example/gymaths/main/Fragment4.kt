@@ -27,7 +27,7 @@ class Fragment4 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.button_second).setOnClickListener {
+        view.findViewById<Button>(R.id.btnNext).setOnClickListener {
             findNavController().navigate(R.id.Fragment4To3)
         }
 
