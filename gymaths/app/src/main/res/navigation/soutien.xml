@@ -13,7 +13,7 @@
         tools:layout="@layout/exercices_fragment5">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            android:id="@+id/Fragment3To4"
             app:destination="@id/SecondFragment" />
     </fragment>
 

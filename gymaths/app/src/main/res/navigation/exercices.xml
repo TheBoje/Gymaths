@@ -3,29 +3,40 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph_exercices"
-    app:startDestination="@id/FirstFragmentExercices">
+    android:id="@+id/exercices_nav"
+    app:startDestination="@id/Fragment5">
 
     <fragment
-        android:id="@+id/FirstFragmentExercices"
+        android:id="@+id/Fragment5"
         android:name="com.example.gymaths.exercices.Fragment5"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/exercices_fragment5">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/Fragment5To8"
+            app:destination="@id/Fragment8" />
     </fragment>
 
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.gymaths.main.Fragment4"
+        android:id="@+id/Fragment8"
+        android:name="com.example.gymaths.exercices.Fragment8"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/main_fragment4">
+        tools:layout="@layout/exercices_fragment8">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragmentExercices"
-            app:destination="@id/FirstFragmentExercices" />
+            android:id="@+id/Fragment8To11"
+            app:destination="@id/Fragment11" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Fragment11"
+        android:name="com.example.gymaths.exercices.Fragment11"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/exercices_fragment11">
+
+        <action
+            android:id="@+id/Fragment11To5"
+            app:destination="@id/Fragment5" />
     </fragment>
 
 </navigation>

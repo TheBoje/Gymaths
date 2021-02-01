@@ -23,7 +23,7 @@ class Fragment7 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.btnValidate).setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            findNavController().navigate(R.id.Fragment3To4)
         }
     }
 }
