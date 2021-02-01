@@ -16,14 +16,10 @@ class Fragment7 : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.exercices_fragment5, container, false)
+        return inflater.inflate(R.layout.soutien_fragment7, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        view.findViewById<Button>(R.id.btnValidate).setOnClickListener {
-            findNavController().navigate(R.id.Fragment3To4)
-        }
     }
 }

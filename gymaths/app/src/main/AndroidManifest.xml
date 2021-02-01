@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Gymaths">
 
         <activity
-            android:name=".main.Activity"
+            android:name=".main.Activity_main"
             android:label="@string/app_name"
             android:theme="@style/Theme.Gymaths.NoActionBar">
             <intent-filter>
@@ -22,7 +22,18 @@
         </activity>
 
         <activity
-            android:name=".exercices.Activity"
+            android:name=".exercices.Activity_exercices"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Gymaths.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".soutien.Activity_soutien"
             android:label="@string/app_name"
             android:theme="@style/Theme.Gymaths.NoActionBar">
             <intent-filter>

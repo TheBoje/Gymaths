@@ -4,28 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_exercices"
-    app:startDestination="@id/FirstFragmentExercices">
+    app:startDestination="@id/Fragment7">
 
     <fragment
-        android:id="@+id/FirstFragmentExercices"
-        android:name="com.example.gymaths.exercices.Fragment5"
+        android:id="@+id/Fragment7"
+        android:name="com.example.gymaths.soutien.Fragment7"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/exercices_fragment5">
-
-        <action
-            android:id="@+id/Fragment3To4"
-            app:destination="@id/SecondFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.gymaths.main.Fragment4"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/main_fragment4">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragmentExercices"
-            app:destination="@id/FirstFragmentExercices" />
+        tools:layout="@layout/soutien_fragment7">
     </fragment>
 
 </navigation>
