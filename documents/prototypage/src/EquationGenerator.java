@@ -9,6 +9,16 @@ public abstract class EquationGenerator {
     private static final int        MAX = 100;
     private static int[]            chances = {20, 50, 70, 90, 100};  // Tableau contenant le % de chance d'instanciation (0 = Plus, 1 = Times, 2 = Number) il doit être de la forme [x, x + y, x + y + z]
     
+    // PRESETS
+    public static Exp linear()
+    {
+        return new Plus(
+            new Times(
+                new Number(RAND.nextInt(BOUND)),
+                new Variable("x")
+            ), new Number(RAND.nextInt(BOUND)));
+    }
+
     // Change le tableau de chance d'instanciation si la somme du nouveau tableau est = CHANCE_SUM
     public static void initChances(int[] c) throws Exception
     {

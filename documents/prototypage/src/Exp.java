@@ -28,7 +28,7 @@ public abstract class Exp {
 	public static void main(String[] args) throws VariableEvaluationException {
 		Exp exp = new Plus(new Plus(new Number(3), new Number(2)), new Times(new Number(3), new Number(-1)));
 		Exp eq_3x7eq1 = null;
-		Exp generated = EquationGenerator.generateEquation(2);
+		Exp generated = EquationGenerator.linear();
 		
 		System.out.println(generated.toLatex());
 		System.out.println("Evaluate : " + generated.evaluate());
