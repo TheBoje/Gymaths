@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch Exp",
+            "request": "launch",
+            "mainClass": "Exp",
+            "projectName": "src_571db9b9"
+        },
+        {
             "name": "Java",
             "type": "java",
             "request": "launch",
