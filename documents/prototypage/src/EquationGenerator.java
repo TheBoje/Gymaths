@@ -1,5 +1,11 @@
 import java.util.Random;
 
+/**
+ * TODO -> faire une classe exposant
+ * 
+ * 
+ */
+
 public abstract class EquationGenerator {
 
     public static final Random      RAND = new Random();        // Random static permettant d'effectuer tous les aléatoires
@@ -9,6 +15,36 @@ public abstract class EquationGenerator {
     private static final int        MAX = 100;
     private static int[]            chances = {20, 50, 70, 90, 100};  // Tableau contenant le % de chance d'instanciation (0 = Plus, 1 = Times, 2 = Number) il doit être de la forme [x, x + y, x + y + z]
     
+    // PRESETS
+    public static Exp LINEAR()
+    {
+        return new Plus(
+            new Times(
+                new Number(RAND.nextInt(BOUND)),
+                new Variable("x")
+            ), new Number(RAND.nextInt(BOUND)));
+    }
+
+    public static Exp QUADRATIC()
+    {
+        return new Plus(
+            new Times(
+                new Number(RAND.nextInt(BOUND)),
+                new Times(
+                    new Variable("x"),
+                    new Variable("x")
+                )
+            ),
+            new Plus(
+                new Times(
+                    new Number(RAND.nextInt(BOUND)),
+                    new Variable("x")
+                ),
+                new Number(RAND.nextInt(BOUND))
+            )
+        );
+    }
+
     // Change le tableau de chance d'instanciation si la somme du nouveau tableau est = CHANCE_SUM
     public static void initChances(int[] c) throws Exception
     {
