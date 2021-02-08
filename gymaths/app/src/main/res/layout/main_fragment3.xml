@@ -26,7 +26,8 @@
                 android:layout_height="80dp"
                 android:layout_margin="16dp"
                 android:text="@string/regle_calculs"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                />
         </TableRow>
 
         <TableRow

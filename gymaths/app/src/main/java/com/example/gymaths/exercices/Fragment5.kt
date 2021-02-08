@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.gymaths.R
+import com.google.android.material.textfield.TextInputEditText
 
 class Fragment5 : Fragment() {
 
@@ -20,8 +21,7 @@ class Fragment5 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.btnValidate).setOnClickListener {
-            findNavController().navigate(R.id.Fragment5To8)
-        }
+
     }
+
 }
