@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/exercices_nav"
+    app:startDestination="@id/Fragment5">
+
+    <fragment
+        android:id="@+id/Fragment5"
+        android:name="com.example.gymaths.exercices.Fragment5"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/exercices_fragment5">
+
+        <action
+            android:id="@+id/Fragment5To8"
+            app:destination="@id/Fragment8" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Fragment8"
+        android:name="com.example.gymaths.exercices.Fragment8"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/exercices_fragment8">
+
+        <action
+            android:id="@+id/Fragment8To11"
+            app:destination="@id/Fragment11" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Fragment11"
+        android:name="com.example.gymaths.exercices.Fragment11"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/exercices_fragment11">
+
+        <action
+            android:id="@+id/Fragment11To5"
+            app:destination="@id/Fragment5" />
+    </fragment>
+
+</navigation>

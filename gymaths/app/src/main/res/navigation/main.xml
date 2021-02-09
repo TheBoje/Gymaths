@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/Fragment3">
+
+    <fragment
+        android:id="@+id/Fragment3"
+        android:name="com.example.gymaths.main.Fragment3"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/main_fragment3">
+
+        <action
+            android:id="@+id/Fragment3To4"
+            app:destination="@id/Fragment4" />
+        <action
+            android:id="@+id/Fragment3To6"
+            app:destination="@id/Fragment6" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Fragment4"
+        android:name="com.example.gymaths.main.Fragment4"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/main_fragment4">
+
+        <action
+            android:id="@+id/Fragment4To3"
+            app:destination="@id/Fragment3" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Fragment6"
+        android:name="com.example.gymaths.main.Fragment6"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/main_fragment6">
+
+        <action
+            android:id="@+id/Fragment6To9"
+            app:destination="@id/Fragment9" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Fragment9"
+        android:name="com.example.gymaths.main.Fragment9"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/main_fragment9">
+
+        <action
+            android:id="@+id/Fragment9To3"
+            app:destination="@id/Fragment3" />
+    </fragment>
+</navigation>
