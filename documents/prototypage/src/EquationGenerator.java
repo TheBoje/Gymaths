@@ -20,7 +20,7 @@ public abstract class EquationGenerator {
     {
         return new Plus(
             new Times(
-                new Number(RAND.nextInt(BOUND)),
+                generateExpression(2),
                 new Variable("x")
             ), new Number(RAND.nextInt(BOUND)));
     }

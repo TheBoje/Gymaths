@@ -30,8 +30,8 @@ public abstract class Exp {
 		Exp eq_3x7eq1 = null;
 		Exp generated = EquationGenerator.LINEAR();
 		System.out.println(generated.print());
-		generated = EquationGenerator.QUADRATIC();
-		System.out.println(generated.print());
+		/*generated = EquationGenerator.QUADRATIC();
+		System.out.println(generated.print());*/
 
 		System.out.println("Evaluate : " + generated.evaluate());
 	}
