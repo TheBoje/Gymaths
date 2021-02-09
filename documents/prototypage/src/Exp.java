@@ -1,4 +1,5 @@
-public abstract class Exp {
+public abstract class Exp
+{
 	public Exp expLeft;
 	public Exp expRight;
 
@@ -27,12 +28,14 @@ public abstract class Exp {
 
 	public static void main(String[] args) throws VariableEvaluationException {
 		Exp exp = new Plus(new Plus(new Number(3), new Number(2)), new Times(new Number(3), new Number(-1)));
-		Exp eq_3x7eq1 = null;
 		Exp generated = EquationGenerator.LINEAR();
 		System.out.println(generated.print());
 		generated = EquationGenerator.QUADRATIC();
 		System.out.println(generated.print());
 
-		System.out.println("Evaluate : " + generated.evaluate());
+		Exp eq_mult = new Times(new Variable("x"), new Number(0));
+		boolean res = EquationSimplificator.matchWithMult(eq_mult);
+		System.out.println("Evaluate : " + eq_mult.print());
+		System.out.format("%s\n", res ? "True" : "False");
 	}
 }

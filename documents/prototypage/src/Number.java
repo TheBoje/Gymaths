@@ -1,9 +1,13 @@
 public class Number extends Exp {
-	int value;
+	private int value;
 
 	public Number(int value) {
 		super(null, null);
 		this.value = value;
+	}
+
+	public int getValue(){
+		return this.value;
 	}
 
 	@Override
