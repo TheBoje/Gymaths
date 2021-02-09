@@ -6,12 +6,19 @@ public class Divide extends Exp
 	}
 
 	@Override
-	public float evaluate() throws VariableEvaluationException
+	public float evaluate() throws Exception
 	{
 		try {
-			return this.expLeft.evaluate() / this.expRight.evaluate();
-		} catch (VariableEvaluationException e) {
-			e.print();
+
+			float el = this.expLeft.evaluate();
+			float er = this.expRight.evaluate();
+
+			if(er == 0.0)
+				throw new UnsupportedOperationException();
+
+			return el / er;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 			this.simplify();
 			throw e;
 		}

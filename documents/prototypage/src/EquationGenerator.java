@@ -20,7 +20,7 @@ public abstract class EquationGenerator {
     {
         return new Plus(
             new Times(
-                generateExpression(2),
+                new Number(RAND.nextInt(BOUND)),
                 new Variable("x")
             ), new Number(RAND.nextInt(BOUND)));
     }
@@ -115,9 +115,27 @@ public abstract class EquationGenerator {
         }
     }
 
-    public static Exp generateEquation(int hmax)
+    public static Exp generateEquation(int hmax) throws Exception
     {
-        Exp eq = generateExpression(hmax);
+        boolean isValid = true;
+        Exp eq = new Divide(new Number(8), new Number(0));
+        do
+        {            
+            try
+            {
+                eq.evaluate();
+                isValid = true;
+            }
+            catch(Exception e)
+            {
+                //System.out.println("division par 0");
+                eq = generateExpression(hmax);
+                isValid = false;
+            }
+
+        }while(!isValid);
+
+
         //putVariable(eq);
         return eq;
     }

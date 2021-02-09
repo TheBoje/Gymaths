@@ -6,7 +6,7 @@ public class Minus extends Exp
 	}
 
 	@Override
-	public float evaluate() throws VariableEvaluationException
+	public float evaluate() throws Exception
 	{
 		try {
 			return this.expLeft.evaluate() - this.expRight.evaluate();
