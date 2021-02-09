@@ -136,7 +136,7 @@ public abstract class EquationGenerator {
         }while(!isValid);
 
 
-        //putVariable(eq);
+        putVariable(eq);
         return eq;
     }
 }
