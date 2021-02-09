@@ -39,11 +39,11 @@ public abstract class Exp {
 		/*generated = EquationGenerator.QUADRATIC();
 		System.out.println(generated.print());*/
 		
-		Exp eq_mult = new Plus(new Number(1), new Times(new Variable("x"), new Number(0)));
-		System.out.println("Print : " + eq_mult.print()); // 1 + (x * 0)
+		Exp eq_mult = new Plus(new Plus(new Number(1), new Times(new Number(0), new Variable("x"))), new Number(4));
+		System.out.println("Print : " + eq_mult.print());				// 1 + (x * 0) + 4
 		Exp simplified = EquationSimplificator.simplify(eq_mult);
-		System.out.println("Simplified : " + simplified.print()); // 1 + 0
+		System.out.println("1 - Simplified : " + simplified.print()); 	// 1 + 0 + 4
 		simplified = EquationSimplificator.simplify(simplified);
-		System.out.println("Simplified 2 : " + simplified.print()); // 1
+		System.out.println("2 - Simplified : " + simplified.print()); 	// 1 + 4
 	}
 }

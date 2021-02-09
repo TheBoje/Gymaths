@@ -34,7 +34,7 @@ public class EquationSimplificator {
             }
             else
             {
-                return matchWith(cible.expLeft, modele.expLeft) && matchWith(cible.expRight, modele.expRight);
+                return (matchWith(cible.expLeft, modele.expLeft) && matchWith(cible.expRight, modele.expRight)) || (matchWith(cible.expRight, modele.expLeft) && matchWith(cible.expLeft, modele.expRight));
             }
         }
         else
