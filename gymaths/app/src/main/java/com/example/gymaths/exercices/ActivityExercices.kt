@@ -6,6 +6,7 @@ import android.view.*
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
 import com.example.gymaths.R
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
@@ -45,6 +46,10 @@ class ActivityExercices : AppCompatActivity()
         var textInput = findViewById<TextInputEditText>(R.id.textInputEditText);
         var toSubmit = textInput.text.toString();
         answerField.text = toSubmit
+        if (answerField.text.toString() == getString(R.string.exemple_reponse))
+            answerField.text = getString(R.string.Bonjour)
+        else
+            answerField.text = getString(R.string.exemple_reponse)
     }
 
 }
