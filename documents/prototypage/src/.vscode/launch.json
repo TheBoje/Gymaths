@@ -9,17 +9,13 @@
             "name": "Launch Exp",
             "request": "launch",
             "mainClass": "Exp",
-<<<<<<< HEAD
-            "projectName": "src_571db9b9"
-=======
             "projectName": "src_9be38d24"
->>>>>>> 4250335940a2d39072aab22c03821b9b21f289ab
         },
         {
             "name": "Java",
             "type": "java",
             "request": "launch",
-            "stopOnEntry": true,
+            "stopOnEntry": false,
             "jdkPath": "${env:JAVA_HOME}/bin",
             "cwd": "${fileDirname}",
             "startupClass": "${fileBasenameNoExtension}",
@@ -32,7 +28,7 @@
             "name": "Java Console App",
             "type": "java",
             "request": "launch",
-            "stopOnEntry": true,
+            "stopOnEntry": false,
             "jdkPath": "${env:JAVA_HOME}/bin",
             "cwd": "${fileDirname}",
             "startupClass": "${fileBasenameNoExtension}",
