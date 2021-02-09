@@ -1,6 +1,6 @@
-public class Times extends Exp
+public class Minus extends Exp 
 {
-	public Times(Exp expLeft, Exp expRight)
+    public Minus(Exp expLeft, Exp expRight)
 	{
 		super(expLeft, expRight);
 	}
@@ -9,7 +9,7 @@ public class Times extends Exp
 	public float evaluate() throws Exception
 	{
 		try {
-			return this.expLeft.evaluate() * this.expRight.evaluate();
+			return this.expLeft.evaluate() - this.expRight.evaluate();
 		} catch (VariableEvaluationException e) {
 			e.print();
 			this.simplify();
@@ -25,12 +25,12 @@ public class Times extends Exp
 	@Override
 	public String print()
 	{
-		return String.format("(%s * %s)", this.expLeft.print(), this.expRight.print());
+		return String.format("(%s - %s)", this.expLeft.print(), this.expRight.print());
 	}
 
 	@Override
 	public String toLatex()
 	{
-		return String.format("%s*%s", this.expLeft.toLatex(), this.expRight.toLatex());
-	}
+		return String.format("%s-%s", this.expLeft.toLatex(), this.expRight.toLatex());
+	}   
 }

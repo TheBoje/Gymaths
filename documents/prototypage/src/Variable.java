@@ -8,10 +8,19 @@ public class Variable extends Exp
 		this.name = name;
 	}
 
+	public String getName(){
+		return this.name;
+	}
+
 	@Override
-	public float evaluate()
+	public float evaluate() throws VariableEvaluationException
 	{
-		return 0; // TODO Figure out how to work with this
+		throw new VariableEvaluationException();
+	}
+
+	@Override
+	public void simplify() {
+		throw new UnsupportedOperationException();
 	}
 
 	@Override

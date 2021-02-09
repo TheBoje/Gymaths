@@ -4,3 +4,5 @@
 # log files
 *.log
 .idea/
+
+documents/prototypage/src/.vscode/launch.json
