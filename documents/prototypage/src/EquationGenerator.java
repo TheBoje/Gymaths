@@ -17,7 +17,10 @@ public abstract class EquationGenerator {
     
     // PRESETS
 
-    // Génère une fonction de la forme ax + b avec a et b randoms
+    /** 
+     * Génère une fonction de la forme ax + b avec a et b randoms
+     * @return Exp
+     */
     public static Exp LINEAR()
     {
         return new Plus(
@@ -27,7 +30,11 @@ public abstract class EquationGenerator {
             ), new Number(RAND.nextInt(BOUND)));
     }
 
-    // Génère une fonction de la forme ax² + bx + c avec a, b et c randoms
+    
+    /** 
+     *  Génère une fonction de la forme ax² + bx + c avec a, b et c randoms
+     * @return Exp
+     */
     public static Exp QUADRATIC()
     {
         return new Plus(
@@ -63,7 +70,7 @@ public abstract class EquationGenerator {
     }
 
     /**
-     * génère une équation (arbre de type Exp)
+     * génère une équation (arbre de type Exp) (récursif)
      * @param hmax : hauteur maximale de l'arbre support de l'expression
      * @return arbre d'expression 
      */
@@ -101,8 +108,8 @@ public abstract class EquationGenerator {
     }
 
     /**
-     * Place une variable sur une feuille de l'arbre passé en paramètre
-     * @param tree : 
+     * Place une variable sur une feuille de l'arbre passé en paramètre (récursif)
+     * @param tree : arbre dans lequel on place la variable
      */
     public static void putVariable(Exp tree)
     {
@@ -131,6 +138,12 @@ public abstract class EquationGenerator {
         }
     }
 
+    /**
+     * Génère une équation en fonction de x TODO -> rajouter le egale en racine de l'arbre
+     * @param hmax : hauteur maximale de l'arbre
+     * @return Retourne un arbre d'expression Exp avec une variabel, cette expression ne contient pas de division par 0
+     * @throws Exception 
+     */
     public static Exp generateEquation(int hmax) throws Exception
     {
         boolean isValid = true;
