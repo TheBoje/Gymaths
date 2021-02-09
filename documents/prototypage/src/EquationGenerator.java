@@ -16,6 +16,8 @@ public abstract class EquationGenerator {
     private static int[]            chances = {20, 50, 70, 90, 100};  // Tableau contenant le % de chance d'instanciation (0 = Plus, 1 = Times, 2 = Number) il doit être de la forme [x, x + y, x + y + z]
     
     // PRESETS
+
+    // Génère une fonction de la forme ax + b avec a et b randoms
     public static Exp LINEAR()
     {
         return new Plus(
@@ -25,6 +27,7 @@ public abstract class EquationGenerator {
             ), new Number(RAND.nextInt(BOUND)));
     }
 
+    // Génère une fonction de la forme ax² + bx + c avec a, b et c randoms
     public static Exp QUADRATIC()
     {
         return new Plus(
@@ -45,7 +48,12 @@ public abstract class EquationGenerator {
         );
     }
 
-    // Change le tableau de chance d'instanciation si la somme du nouveau tableau est = CHANCE_SUM
+    // 
+    /**
+     * Change le tableau de chance d'instanciation si la somme du nouveau tableau est = CHANCE_SUM
+     * @param c : tableau contenant les chances d'apparition des opérateurs
+     * @throws Exception : Retourne une exception si le tableau est trop grand/trop petit par rappot au nombre d'expressions
+     */
     public static void initChances(int[] c) throws Exception
     {
         if(c.length == NB_EXP)
@@ -54,7 +62,11 @@ public abstract class EquationGenerator {
             throw new Exception("table length is not valid");
     }
 
-    // génère une équation (arbre de type Exp)
+    /**
+     * génère une équation (arbre de type Exp)
+     * @param hmax : hauteur maximale de l'arbre support de l'expression
+     * @return arbre d'expression 
+     */
     public static Exp generateExpression(int hmax) 
     {
         if(hmax <= 0)
@@ -88,6 +100,10 @@ public abstract class EquationGenerator {
         }
     }
 
+    /**
+     * Place une variable sur une feuille de l'arbre passé en paramètre
+     * @param tree : 
+     */
     public static void putVariable(Exp tree)
     {
         if(RAND.nextBoolean())
