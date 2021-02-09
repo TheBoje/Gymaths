@@ -9,7 +9,11 @@
             "name": "Launch Exp",
             "request": "launch",
             "mainClass": "Exp",
+<<<<<<< HEAD
+            "projectName": "src_571db9b9"
+=======
             "projectName": "src_9be38d24"
+>>>>>>> 4250335940a2d39072aab22c03821b9b21f289ab
         },
         {
             "name": "Java",

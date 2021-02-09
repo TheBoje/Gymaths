@@ -118,7 +118,7 @@ public abstract class EquationGenerator {
     public static Exp generateEquation(int hmax)
     {
         Exp eq = generateExpression(hmax);
-        putVariable(eq);
+        //putVariable(eq);
         return eq;
     }
 }
