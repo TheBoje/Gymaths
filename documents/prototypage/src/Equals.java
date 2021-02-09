@@ -22,9 +22,9 @@ public class Equals extends Exp {
 		return String.format("%s=%s", this.expLeft.toLatex(), this.expRight.toLatex());
 	}
 
+	// TODO This
 	@Override
-	public void simplify() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException();
+	public Exp simplify() {
+		return this;
 	}
 }

@@ -24,7 +24,7 @@ public class Ignored extends Exp{
     }
 
     @Override
-    public void simplify() {
+    public Exp simplify() {
         throw new UnsupportedOperationException();
     }
 

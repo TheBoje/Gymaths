@@ -18,9 +18,10 @@ public class Variable extends Exp
 		throw new VariableEvaluationException();
 	}
 
+	// TODO This
 	@Override
-	public void simplify() {
-		throw new UnsupportedOperationException();
+	public Exp simplify() {
+		return this;
 	}
 
 	@Override

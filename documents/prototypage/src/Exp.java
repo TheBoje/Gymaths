@@ -9,7 +9,7 @@ public abstract class Exp {
 
 	public abstract float evaluate() throws Exception;
 
-	public abstract void simplify();
+	public abstract Exp simplify();
 
 	public abstract String print();
 
@@ -45,5 +45,8 @@ public abstract class Exp {
 		System.out.println("1 - Simplified : " + simplified.print()); 	// 1 + 0 + 4
 		simplified = EquationSimplificator.simplify(simplified);
 		System.out.println("2 - Simplified : " + simplified.print()); 	// 1 + 4
+		System.out.println("Print : " + eq_mult.print());
+		Exp try_simplified = eq_mult.simplify();
+		System.out.println("1 - Simplified : " + try_simplified.print());
 	}
 }

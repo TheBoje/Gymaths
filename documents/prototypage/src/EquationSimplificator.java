@@ -15,7 +15,7 @@ public class EquationSimplificator {
      * @param modele
      * @return
      */
-    private static boolean matchWith(Exp cible, Exp modele)
+    public static boolean matchWith(Exp cible, Exp modele)
     {
         if (cible == null){
             return true;
@@ -40,21 +40,6 @@ public class EquationSimplificator {
         else
         {
             return false;
-        }
-    }
-
-
-    public static boolean matchWith(Exp cible, Exp modele, boolean invertNodes)
-    {
-        if (!invertNodes)
-        {
-            return matchWith(cible, modele);
-        }
-        else 
-        {
-            // On doit lancer la fonction matchWith sur tous les cas d'inversion
-            // de l'arbre cible. Si au moins un seul marche, on retourne vrai.
-        
         }
     }
 

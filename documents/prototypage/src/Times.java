@@ -1,5 +1,7 @@
 public class Times extends Exp
 {
+	private static final Exp times_0 = new Times(new Ignored(), new Number(0));
+	
 	public Times(Exp expLeft, Exp expRight)
 	{
 		super(expLeft, expRight);
@@ -17,9 +19,17 @@ public class Times extends Exp
 		}
 	}
 
+
 	@Override
-	public void simplify() {
-		throw new UnsupportedOperationException();
+	public Exp simplify() {
+		if (EquationSimplificator.matchWith(this, times_0))
+		{
+			return new Number(0);
+		}
+		else // ajouter des else if () avec les autres cas pour ajouter des cas de simplification
+		{
+			return this;
+		}
 	}
 
 	@Override

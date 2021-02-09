@@ -25,9 +25,9 @@ public class Number extends Exp {
 		return Integer.toString(value);
 	}
 
+	// TODO This
 	@Override
-	public void simplify() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException();
+	public Exp simplify() {
+		return this;
 	}
 }

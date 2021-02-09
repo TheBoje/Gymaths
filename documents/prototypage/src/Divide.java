@@ -24,9 +24,10 @@ public class Divide extends Exp
 		}
 	}
 
+	// TODO This
 	@Override
-	public void simplify() {
-		throw new UnsupportedOperationException();
+	public Exp simplify() {
+		return this;
 	}
 
 	@Override
