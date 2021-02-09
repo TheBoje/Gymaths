@@ -2,7 +2,7 @@ import java.util.Random;
 
 /**
  * TODO -> faire une classe exposant
- * 
+ * TODO -> faire une classe equal
  * 
  */
 
