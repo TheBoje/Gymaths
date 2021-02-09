@@ -1,5 +1,6 @@
-public abstract class Exp
-{
+import java.security.GeneralSecurityException;
+
+public abstract class Exp {
 	public Exp expLeft;
 	public Exp expRight;
 
@@ -8,7 +9,7 @@ public abstract class Exp
 		this.expRight = expRight;
 	}
 
-	public abstract float evaluate() throws VariableEvaluationException;
+	public abstract float evaluate() throws Exception;
 
 	public abstract void simplify();
 
@@ -26,12 +27,13 @@ public abstract class Exp
 		this.expRight = e;
 	}
 
-	public static void main(String[] args) throws VariableEvaluationException {
+	public static void main(String[] args) throws Exception {
 		Exp exp = new Plus(new Plus(new Number(3), new Number(2)), new Times(new Number(3), new Number(-1)));
-		Exp generated = EquationGenerator.LINEAR();
+		Exp eq_3x7eq1 = null;
+		Exp generated = EquationGenerator.generateEquation(10);
 		System.out.println(generated.print());
-		generated = EquationGenerator.QUADRATIC();
-		System.out.println(generated.print());
+		/*generated = EquationGenerator.QUADRATIC();
+		System.out.println(generated.print());*/
 
 		Exp eq_mult = new Times(new Variable("x"), new Number(0));
 		boolean res = EquationSimplificator.matchWithMult(eq_mult);
