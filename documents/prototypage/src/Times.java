@@ -28,14 +28,14 @@ public class Times extends Exp
 		}
 		else // ajouter des else if () avec les autres cas pour ajouter des cas de simplification
 		{
-			return this;
+			return new Times(this.expLeft.simplify(), this.expRight.simplify());
 		}
 	}
 
 	@Override
-	public String print()
+	public String toString()
 	{
-		return String.format("(%s * %s)", this.expLeft.print(), this.expRight.print());
+		return String.format("(%s * %s)", this.expLeft.toString(), this.expRight.toString());
 	}
 
 	@Override

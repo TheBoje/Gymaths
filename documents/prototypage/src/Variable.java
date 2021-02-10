@@ -25,7 +25,7 @@ public class Variable extends Exp
 	}
 
 	@Override
-	public String print()
+	public String toString()
 	{
 		return this.name;
 	}

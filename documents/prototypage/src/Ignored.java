@@ -29,7 +29,7 @@ public class Ignored extends Exp{
     }
 
     @Override
-    public String print() {
+    public String toString() {
         return "[ignored]";
     }
 

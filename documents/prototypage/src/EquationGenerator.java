@@ -176,6 +176,6 @@ public abstract class EquationGenerator {
 
     public static void main(String[] args)
     {
-        System.out.println(EquationGenerator.QUADRATIC().print());
+        System.out.println(EquationGenerator.QUADRATIC().toString());
     }
 }
