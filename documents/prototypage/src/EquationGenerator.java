@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -14,7 +16,8 @@ public abstract class EquationGenerator {
     private static final int        NB_EXP = 3;                 // Nombre d'expressions pouvant être instancié
     private static final int        MAX = 100;
     private static int[]            chances = {20, 50, 70, 90, 100};  // Tableau contenant le % de chance d'instanciation (0 = Plus, 1 = Times, 2 = Number) il doit être de la forme [x, x + y, x + y + z]
-    
+
+
     // PRESETS
 
     /** 
@@ -40,9 +43,9 @@ public abstract class EquationGenerator {
         return new Plus(
             new Times(
                 new Number(RAND.nextInt(BOUND)),
-                new Times(
+                new Pow(
                     new Variable("x"),
-                    new Variable("x")
+                    new Number(2)
                 )
             ),
             new Plus(
@@ -54,6 +57,7 @@ public abstract class EquationGenerator {
             )
         );
     }
+
 
     // 
     /**
