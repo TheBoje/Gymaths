@@ -1,8 +1,15 @@
 public class Equals extends Exp {
+	//private static final Exp equals_cl = new Equals(new Operator(new Ignored(), new Ignored()), new Ignored());
+
 	int value;
 
 	public Equals(Exp expLeft, Exp expRight) {
 		super(expLeft, expRight);
+	}
+
+	@Override
+	public Exp copy() {
+		return new Equals(this.expLeft.copy(), this.expRight.copy());
 	}
 
 	@Override
@@ -24,9 +31,9 @@ public class Equals extends Exp {
 
 	public void clRotateRight()
 	{
-		if(this.expLeft != null)
+		if(this.expLeft != null && this.expLeft instanceof Operator)
 		{
-			Exp p = this.expLeft.opposite(); // créer la méthode qui génère l'opérateur opposé
+			Operator p = ((Operator) this.expLeft).opposite(); // créer la méthode qui génère l'opérateur opposé
 			Exp u = p.expLeft;
 			Exp v = p.expRight;
 			Exp w = this.expRight;

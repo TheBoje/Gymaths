@@ -1,10 +1,15 @@
-public class Times extends Exp
+public class Times extends Operator
 {
 	private static final Exp times_0 = new Times(new Ignored(), new Number(0));
 	
 	public Times(Exp expLeft, Exp expRight)
 	{
 		super(expLeft, expRight);
+	}
+
+	@Override
+	public Exp copy() {
+		return new Times(this.expLeft.copy(), this.expRight.copy());
 	}
 
 	@Override
@@ -19,6 +24,11 @@ public class Times extends Exp
 		}
 	}
 
+	@Override
+	public Operator opposite() {
+		// TODO Eval expRight == 0 ?
+		return new Divide(this.expLeft, this.expRight);
+	}
 
 	@Override
 	public Exp simplify() {
@@ -33,9 +43,24 @@ public class Times extends Exp
 	}
 
 	@Override
-	public String toString()
+	public String toString() // TODO Improve this
 	{
-		return String.format("(%s * %s)", this.expLeft.toString(), this.expRight.toString());
+		if (this.expLeft instanceof Leaf && this.expRight instanceof Leaf)
+		{
+			return String.format("%s * %s", this.expLeft.toString(), this.expRight.toString());
+		}
+		else if (this.expLeft instanceof Leaf) // Cas ou juste le gauche est une feuille
+		{			
+			return String.format("%s * (%s)", this.expLeft.toString(), this.expRight.toString());
+		}
+		else if (this.expRight instanceof Leaf) // Cas ou juste le droit est une feuille
+		{			
+			return String.format("(%s) * %s", this.expLeft.toString(), this.expRight.toString());
+		}
+		else // Cas ou les deux fils sont des opérateurs 
+		{			
+			return String.format("(%s) * (%s)", this.expLeft.toString(), this.expRight.toString());
+		}
 	}
 
 	@Override

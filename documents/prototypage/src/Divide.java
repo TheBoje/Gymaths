@@ -1,8 +1,13 @@
-public class Divide extends Exp 
+public class Divide extends Operator 
 {
     public Divide(Exp expLeft, Exp expRight)
 	{
 		super(expLeft, expRight);
+	}
+
+	@Override
+	public Exp copy() {
+		return new Divide(this.expLeft.copy(), this.expRight.copy());
 	}
 
 	@Override
@@ -24,6 +29,11 @@ public class Divide extends Exp
 		}
 	}
 
+	@Override
+	public Operator opposite() {
+		return new Times(this.expLeft, this.expRight);
+	}
+	
 	// TODO This
 	@Override
 	public Exp simplify() {
@@ -46,5 +56,4 @@ public class Divide extends Exp
 	public String toLatexTree() {
 		return String.format("[./ %s %s ]", this.expLeft.toLatexTree(), this.expRight.toLatexTree());
 	}
-    
 }

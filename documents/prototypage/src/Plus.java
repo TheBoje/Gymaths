@@ -1,4 +1,4 @@
-public class Plus extends Exp
+public class Plus extends Operator
 {
 
 	private static final Exp add_0 = new Plus(new Ignored(), new Number(0));
@@ -6,6 +6,11 @@ public class Plus extends Exp
 	public Plus(Exp expLeft, Exp expRight)
 	{
 		super(expLeft, expRight);
+	}
+
+	@Override
+	public Exp copy() {
+		return new Plus(this.expLeft.copy(), this.expRight.copy());
 	}
 
 	@Override
@@ -18,6 +23,11 @@ public class Plus extends Exp
 			//this.simplify(); // TODO Check this out
 			throw e;
 		}
+	}
+
+	@Override
+	public Operator opposite() {
+		return new Minus(this.expLeft, this.expRight);
 	}
 
 	// TODO This
@@ -52,6 +62,5 @@ public class Plus extends Exp
 	@Override
 	public String toLatexTree() {
 		return String.format("[.+ %s %s ]", this.expLeft.toLatexTree(), this.expRight.toLatexTree());
-	}
-    
+	}   
 }

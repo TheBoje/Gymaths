@@ -1,4 +1,4 @@
-public class Variable extends Exp
+public class Variable extends Leaf
 {
 	private final String name;
 
@@ -10,6 +10,11 @@ public class Variable extends Exp
 
 	public String getName(){
 		return this.name;
+	}
+
+	@Override
+	public Exp copy() {
+		return new Variable(new String(this.getName()));
 	}
 
 	@Override

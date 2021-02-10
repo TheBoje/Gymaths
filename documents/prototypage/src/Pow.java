@@ -1,10 +1,15 @@
 
-public class Pow extends Exp
+public class Pow extends Operator
 {
 
     public Pow(Exp expLeft, Exp expRight) {
         super(expLeft, expRight);
     }
+
+    @Override
+	public Exp copy() {
+		return new Pow(this.expLeft.copy(), this.expRight.copy());
+	}
 
     @Override
     public float evaluate() throws Exception {
@@ -16,6 +21,12 @@ public class Pow extends Exp
 			throw e;
 		}
     }
+
+    @Override
+	public Operator opposite() {
+        // TODO ajouter l'implémentation apres l'ajout de sqrt
+		throw new UnsupportedOperationException();
+	}
 
     @Override
     public Exp simplify() {

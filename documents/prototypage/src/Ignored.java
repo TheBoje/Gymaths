@@ -19,6 +19,11 @@ public class Ignored extends Exp{
     }
 
     @Override
+	public Exp copy() {
+		return new Ignored();
+	}
+
+    @Override
     public float evaluate() throws Exception {
         throw new UnsupportedOperationException();
     }
@@ -42,6 +47,4 @@ public class Ignored extends Exp{
 	public String toLatexTree() {
 		return "ignored";
 	}
-    
-    
 }

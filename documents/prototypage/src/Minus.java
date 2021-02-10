@@ -1,8 +1,13 @@
-public class Minus extends Exp 
+public class Minus extends Operator 
 {
     public Minus(Exp expLeft, Exp expRight)
 	{
 		super(expLeft, expRight);
+	}
+
+	@Override
+	public Exp copy() {
+		return new Minus(this.expLeft.copy(), this.expRight.copy());
 	}
 
 	@Override
@@ -15,6 +20,11 @@ public class Minus extends Exp
 			this.simplify();
 			throw e;
 		}
+	}
+
+	@Override
+	public Operator opposite() {
+		return new Plus(this.expLeft, this.expRight);
 	}
 
 	// TODO This

@@ -7,9 +7,40 @@ public abstract class Exp {
 		this.expRight = expRight;
 	}
 
+	public abstract Exp copy();
+
 	public abstract float evaluate() throws Exception;
 
 	public abstract Exp simplify();
+
+	public static boolean areEqual(Exp e1, Exp e2) {
+		if ((e1 != null || e2 != null) && e1.getClass().getName().equals(e2.getClass().getName())) {
+			if (e1 instanceof Variable) {
+				return ((Variable) e1).getName() == ((Variable) e2).getName();
+			} else if (e1 instanceof Number) {
+				return ((Number) e1).getValue() == ((Number) e1).getValue();
+			} else {
+				return areEqual(e1.expLeft, e2.expLeft) && areEqual(e1.expRight, e2.expRight);
+			}
+		} else if (e1 == null && e2 == null)  
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	public Exp fullSimplify() {
+		Exp last = this.copy();
+		Exp actual = this;
+		do {
+			last = actual;
+			actual = actual.simplify();
+		} while (!areEqual(last, actual));
+		return actual;
+	}
 
 	@Override
 	public abstract String toString();
@@ -17,6 +48,7 @@ public abstract class Exp {
 	public abstract String toLatex();
 	
 	public abstract String toLatexTree();
+
 
 	public void setLeft(Exp e)
 	{
@@ -45,18 +77,17 @@ public abstract class Exp {
 
 		Exp eq_mult, simplified;
 		//eq_mult = new Plus(new Plus(new Number(1), new Times(new Number(0), new Variable("x"))), new Number(4));
-		eq_mult = new Times(new Plus(new Number(4), new Number(1)), new Number(0)); // (4 + 1) * 0 -> 0
+		eq_mult = new Plus(new Times(new Plus(new Number(4), new Number(1)), new Number(0)), new Plus(new Number(0), new Number(1))); 
 		//eq_mult = EquationGenerator.generateEquation(4);
 		System.out.println("Print          : " + eq_mult.toString());
-		System.out.println("Latex          : " + eq_mult.toLatex());
 		
 		simplified = eq_mult.simplify();
 		System.out.println("1 - Simplified : " + simplified.toString());
-		System.out.println("Latex          : " + simplified.toLatex());
-
+		
 		simplified = simplified.simplify();
 		System.out.println("2 - Simplified : " + simplified.toString()); 
-		System.out.println("Latex          : " + simplified.toLatex());
-		//System.out.println("Eval : " + simplified.evaluate());
+		
+		System.out.println("F - Simplified : " + eq_mult.fullSimplify().toString());
+		
 	}
 }
