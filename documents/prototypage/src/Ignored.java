@@ -29,7 +29,7 @@ public class Ignored extends Exp{
     }
 
     @Override
-    public String print() {
+    public String toString() {
         return "[ignored]";
     }
 
@@ -37,5 +37,11 @@ public class Ignored extends Exp{
     public String toLatex() {
         return "[ignored]";
     }
+
+    @Override
+	public String toLatexTree() {
+		return "ignored";
+	}
+    
     
 }

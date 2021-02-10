@@ -19,17 +19,21 @@ public class Pow extends Exp
 
     @Override
     public Exp simplify() {
-        return this;
+        return new Pow(this.expLeft.simplify(), this.expRight.simplify());
     }
 
     @Override
-    public String print() {
-        return String.format("%s^(%s)", this.expLeft.print(), this.expRight.print());
+    public String toString() {
+        return String.format("%s^(%s)", this.expLeft.toString(), this.expRight.toString());
     }
 
     @Override
     public String toLatex() {
-        return String.format("%s^{%s}", this.expLeft.print(), this.expRight.print());
+        return String.format("%s^{%s}", this.expLeft.toLatex(), this.expRight.toLatex());
     }
-    
+
+    @Override
+	public String toLatexTree() {
+		return String.format("[.^ %s %s ]", this.expLeft.toLatexTree(), this.expRight.toLatexTree());
+	}    
 }

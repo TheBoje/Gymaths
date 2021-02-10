@@ -11,9 +11,9 @@ public class Equals extends Exp {
 	}
 
 	@Override
-	public String print()
+	public String toString()
 	{
-		return String.format("(%s = %s)", this.expLeft.print(), this.expRight.print());
+		return String.format("(%s = %s)", this.expLeft.toString(), this.expRight.toString());
 	}
 
 	@Override
@@ -39,6 +39,12 @@ public class Equals extends Exp {
 	// TODO This
 	@Override
 	public Exp simplify() {
-		return this;
+		return new Equals(this.expLeft.simplify(), this.expRight.simplify());
 	}
+
+	@Override
+	public String toLatexTree() {
+		return String.format("[.= %s %s ]", this.expLeft.toLatexTree(), this.expRight.toLatexTree());
+	}
+
 }

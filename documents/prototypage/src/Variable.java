@@ -25,7 +25,7 @@ public class Variable extends Exp
 	}
 
 	@Override
-	public String print()
+	public String toString()
 	{
 		return this.name;
 	}
@@ -35,4 +35,9 @@ public class Variable extends Exp
 	{
 		return this.name;
 	}
+
+	@Override
+	public String toLatexTree() {
+		return String.format("%s", this.name);
+	} 
 }

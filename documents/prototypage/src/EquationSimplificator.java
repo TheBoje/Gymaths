@@ -26,11 +26,15 @@ public class EquationSimplificator {
         }
         else if (
                 cible.getClass().getName().equals(modele.getClass().getName()) 
-             || modele instanceof Ignored)
-        { // TODO C'est l'approche de vincent et je ne cautionne pas un tel déchet de code
-            if (modele instanceof Number) // Dans le cas ou le noeud est un nombre
+                || modele instanceof Ignored)
+        { 
+            if (modele instanceof Number && cible instanceof Number) // Dans le cas ou le noeud est un nombre
             {
                 return ((Number) cible).getValue() == ((Number) modele).getValue();
+            }
+            else if (modele instanceof Ignored)
+            {
+                return true;
             }
             else
             {

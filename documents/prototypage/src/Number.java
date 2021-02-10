@@ -16,7 +16,7 @@ public class Number extends Exp {
 	}
 
 	@Override
-	public String print() {
+	public String toString() {
 		return Integer.toString(value);
 	}
 
@@ -30,4 +30,10 @@ public class Number extends Exp {
 	public Exp simplify() {
 		return this;
 	}
+
+	@Override
+	public String toLatexTree() {
+		return String.format("%s", this.toString());
+	}
+    
 }

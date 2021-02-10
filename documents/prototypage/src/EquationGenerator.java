@@ -80,7 +80,7 @@ public abstract class EquationGenerator {
     {
         if(hmax <= 0)
         {
-            return new Number(RAND.nextInt(BOUND) + 1);
+            return new Number(RAND.nextInt(BOUND));
         }
         else
         {
@@ -104,7 +104,7 @@ public abstract class EquationGenerator {
             }
             else
             {
-                return new Number(RAND.nextInt(BOUND) + 1);
+                return new Number(RAND.nextInt(BOUND));
             }
         }
     }
@@ -176,6 +176,6 @@ public abstract class EquationGenerator {
 
     public static void main(String[] args)
     {
-        System.out.println(EquationGenerator.QUADRATIC().print());
+        System.out.println(EquationGenerator.QUADRATIC().toString());
     }
 }
