@@ -80,7 +80,7 @@ public abstract class Exp {
 		eq_mult = new Plus(new Times(new Plus(new Number(4), new Number(1)), new Number(0)), new Plus(new Number(0), new Number(1))); 
 		eq_equals = new Equals(new Times(new Variable("x"), new Number(5)), new Number(2));
 		//eq_mult = EquationGenerator.generateEquation(4);
-		System.out.println("Print          : " + generated.toString());
+		System.out.println("Print          : " + eq_mult.toString());
 		
 		simplified = eq_mult.simplify();
 		System.out.println("1 - Simplified : " + simplified.toString());
@@ -95,5 +95,7 @@ public abstract class Exp {
 		simplified = eq_equals.simplify();
 		System.out.println("1 - Simplified : " + simplified.toString());
 		
+		System.out.println("Eval           : " + simplified.evaluate());
+
 	}
 }

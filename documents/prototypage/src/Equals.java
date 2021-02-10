@@ -1,3 +1,5 @@
+import java.time.Year;
+
 public class Equals extends Exp {
 	private static final Exp equals_cl = new Equals(new Operator(new Ignored(), new Ignored()), new Ignored());
 
@@ -11,8 +13,19 @@ public class Equals extends Exp {
 	}
 
 	@Override
-	public float evaluate() {
-		throw new UnsupportedOperationException();
+	public float evaluate() throws Exception {
+		if (this.expLeft instanceof Variable)
+		{
+			return this.expRight.evaluate();
+		} 
+		else if (this.expRight instanceof Variable)
+		{
+			return this.expLeft.evaluate();
+		}
+		else
+		{
+			throw new UnbalancedEqualException();
+		}
 	}
 
 	@Override
