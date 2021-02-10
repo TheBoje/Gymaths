@@ -1,5 +1,8 @@
 public class Plus extends Exp
 {
+
+	private static final Exp add_0 = new Plus(new Ignored(), new Number(0));
+
 	public Plus(Exp expLeft, Exp expRight)
 	{
 		super(expLeft, expRight);
@@ -12,7 +15,7 @@ public class Plus extends Exp
 			return this.expLeft.evaluate() + this.expRight.evaluate();
 		} catch (VariableEvaluationException e) {
 			e.print();
-			this.simplify();
+			//this.simplify(); // TODO Check this out
 			throw e;
 		}
 	}
@@ -20,6 +23,17 @@ public class Plus extends Exp
 	// TODO This
 	@Override
 	public Exp simplify() {
+		if (EquationSimplificator.matchWith(this, add_0))
+		{
+			if (this.expLeft instanceof Number && ((Number)this.expLeft).getValue() == 0)
+			{
+				return this.expRight;
+			}
+			else
+			{
+				return this.expLeft;
+			}
+		}
 		return new Plus(this.expLeft.simplify(), this.expRight.simplify());
 	}
 

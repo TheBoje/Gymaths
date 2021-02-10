@@ -42,8 +42,8 @@ public abstract class Exp {
 		/*generated = EquationGenerator.QUADRATIC();
 		System.out.println(generated.print());*/
 		System.out.println("Tree : " + generated.toLatexTree());
-		
-		Exp eq_mult = new Plus(new Plus(new Number(1), new Times(new Number(0), new Variable("x"))), new Number(4));
+		Exp eq_mult;
+		eq_mult = new Plus(new Plus(new Number(1), new Times(new Number(0), new Variable("x"))), new Number(4));
 		System.out.println("Print : " + eq_mult.toString());				// 1 + (x * 0) + 4
 		Exp simplified = EquationSimplificator.simplify(eq_mult);
 		System.out.println("1 - Simplified : " + simplified.toString()); 	// 1 + 0 + 4
@@ -52,8 +52,10 @@ public abstract class Exp {
 		
 		eq_mult = new Plus(new Plus(new Number(1), new Times(new Number(0), new Variable("x"))), new Number(4));
 		System.out.println("Print : " + eq_mult.toString());
-		Exp try_simplified = eq_mult.simplify(); // TODO FIXME
-		System.out.println("1 - Simplified : " + try_simplified.toString()); // Simplifie le * et le + en une seule fois ?
-	
+		Exp try_simplified = eq_mult.simplify();
+		System.out.println("1 - Simplified : " + try_simplified.toString());
+		try_simplified = try_simplified.simplify();
+		System.out.println("2 - Simplified : " + try_simplified.toString()); 
+		
 	}
 }
