@@ -1,5 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 /**
@@ -176,8 +174,8 @@ public abstract class EquationGenerator {
         return eq;
     }
 
-    public static void main()
+    public static void main(String[] args)
     {
-        System.out.println(EquationGenerator.QUADRATIC().toString());
+        System.out.println(EquationGenerator.QUADRATIC().print());
     }
 }
