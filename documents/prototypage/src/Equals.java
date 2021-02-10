@@ -27,4 +27,10 @@ public class Equals extends Exp {
 	public Exp simplify() {
 		return this;
 	}
+
+	@Override
+	public String toLatexTree() {
+		return String.format("[.= %s %s ]", this.expLeft.toLatexTree(), this.expRight.toLatexTree());
+	}
+
 }

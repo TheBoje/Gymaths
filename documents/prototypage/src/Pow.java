@@ -31,5 +31,9 @@ public class Pow extends Exp
     public String toLatex() {
         return String.format("%s^{%s}", this.expLeft.print(), this.expRight.print());
     }
-    
+
+    @Override
+	public String toLatexTree() {
+		return String.format("[.^ %s %s ]", this.expLeft.toLatexTree(), this.expRight.toLatexTree());
+	}    
 }

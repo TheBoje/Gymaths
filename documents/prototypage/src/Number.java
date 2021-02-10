@@ -30,4 +30,10 @@ public class Number extends Exp {
 	public Exp simplify() {
 		return this;
 	}
+
+	@Override
+	public String toLatexTree() {
+		return String.format("%s", this.print());
+	}
+    
 }

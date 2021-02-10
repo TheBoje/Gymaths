@@ -34,4 +34,10 @@ public class Minus extends Exp
 	{
 		return String.format("%s-%s", this.expLeft.toLatex(), this.expRight.toLatex());
 	}   
+
+	@Override
+	public String toLatexTree() {
+		return String.format("[.- %s %s ]", this.expLeft.toLatexTree(), this.expRight.toLatexTree());
+	}
+    
 }

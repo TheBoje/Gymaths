@@ -14,6 +14,8 @@ public abstract class Exp {
 	public abstract String print();
 
 	public abstract String toLatex();
+	
+	public abstract String toLatexTree();
 
 	public void setLeft(Exp e)
 	{
@@ -34,12 +36,13 @@ public abstract class Exp {
 	public static void main(String[] args) throws Exception {
 		Exp exp = new Plus(new Plus(new Number(3), new Number(2)), new Times(new Number(3), new Number(-1)));
 		Exp eq_3x7eq1 = null;
-		//Exp generated = EquationGenerator.generateEquation(3); // Fait des execptions
+		Exp generated = EquationGenerator.generateEquation(5); // Fait des execptions
 		//System.out.println(generated.print());
 		/*generated = EquationGenerator.QUADRATIC();
 		System.out.println(generated.print());*/
 		
 		Exp eq_mult = new Plus(new Plus(new Number(1), new Times(new Number(0), new Variable("x"))), new Number(4));
+		System.out.println(generated.toLatexTree());
 		System.out.println("Print : " + eq_mult.print());				// 1 + (x * 0) + 4
 		Exp simplified = EquationSimplificator.simplify(eq_mult);
 		System.out.println("1 - Simplified : " + simplified.print()); 	// 1 + 0 + 4
