@@ -9,7 +9,7 @@ public class Pow extends Exp
     @Override
     public float evaluate() throws Exception {
         try {
-			return (float)Math.pow(this.expLeft.evaluate(), this.expRight.evaluate())
+			return (float)Math.pow(this.expLeft.evaluate(), this.expRight.evaluate());
 		} catch (VariableEvaluationException e) {
 			e.print();
 			this.simplify();

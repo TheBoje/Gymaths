@@ -175,4 +175,9 @@ public abstract class EquationGenerator {
         putVariable(eq);
         return eq;
     }
+
+    public static void main()
+    {
+        System.out.println(EquationGenerator.QUADRATIC().toString());
+    }
 }
