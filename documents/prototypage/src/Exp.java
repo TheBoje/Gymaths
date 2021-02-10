@@ -67,27 +67,33 @@ public abstract class Exp {
 	}
 
 	public static void main(String[] args) throws Exception {
-		Exp generated = EquationGenerator.generateEquation(3); // Fait des execptions
+		Exp generated = EquationGenerator.generateEquation(4); // Fait des execptions
 		//System.out.println(generated.print());
 		/*generated = EquationGenerator.QUADRATIC();
 		System.out.println(generated.print());*/
 
-		System.out.println("Tree : " + generated.toLatexTree());
+		//System.out.println("Tree           : " + generated.toLatexTree());
 
 
-		Exp eq_mult, simplified;
+		Exp eq_mult, eq_equals, simplified;
 		//eq_mult = new Plus(new Plus(new Number(1), new Times(new Number(0), new Variable("x"))), new Number(4));
 		eq_mult = new Plus(new Times(new Plus(new Number(4), new Number(1)), new Number(0)), new Plus(new Number(0), new Number(1))); 
+		eq_equals = new Equals(new Times(new Variable("x"), new Number(5)), new Number(2));
 		//eq_mult = EquationGenerator.generateEquation(4);
-		System.out.println("Print          : " + eq_mult.toString());
+		System.out.println("Print          : " + generated.toString());
 		
 		simplified = eq_mult.simplify();
 		System.out.println("1 - Simplified : " + simplified.toString());
 		
 		simplified = simplified.simplify();
 		System.out.println("2 - Simplified : " + simplified.toString()); 
+		//System.out.println("F - Simplified : " + generated.fullSimplify().toString());
+		//System.out.println("Tree           : " + generated.fullSimplify().toLatexTree());
 		
-		System.out.println("F - Simplified : " + eq_mult.fullSimplify().toString());
+		System.out.println("Print          : " + eq_equals.toString());
+		
+		simplified = eq_equals.simplify();
+		System.out.println("1 - Simplified : " + simplified.toString());
 		
 	}
 }

@@ -17,15 +17,15 @@ public class EquationSimplificator {
      */
     public static boolean matchWith(Exp cible, Exp modele)
     {
-        if (cible == null){
+        if (cible == null){ // FIXME c'est un peu à chier ça non ?
             return true;
         }
         else if (modele == null)
         {
             return false;
         }
-        else if (
-                cible.getClass().getName().equals(modele.getClass().getName()) 
+        else if ( cible.getClass() == modele.getClass()
+                || modele.getClass().isAssignableFrom(cible.getClass()) 
                 || modele instanceof Ignored)
         { 
             if (modele instanceof Number && cible instanceof Number) // Dans le cas ou le noeud est un nombre

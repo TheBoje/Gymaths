@@ -1,7 +1,5 @@
 public class Equals extends Exp {
-	//private static final Exp equals_cl = new Equals(new Operator(new Ignored(), new Ignored()), new Ignored());
-
-	int value;
+	private static final Exp equals_cl = new Equals(new Operator(new Ignored(), new Ignored()), new Ignored());
 
 	public Equals(Exp expLeft, Exp expRight) {
 		super(expLeft, expRight);
@@ -20,7 +18,7 @@ public class Equals extends Exp {
 	@Override
 	public String toString()
 	{
-		return String.format("(%s = %s)", this.expLeft.toString(), this.expRight.toString());
+		return String.format("%s = %s", this.expLeft.toString(), this.expRight.toString());
 	}
 
 	@Override
@@ -46,7 +44,16 @@ public class Equals extends Exp {
 	// TODO This
 	@Override
 	public Exp simplify() {
-		return new Equals(this.expLeft.simplify(), this.expRight.simplify());
+		if (EquationSimplificator.matchWith(this, equals_cl))
+		{
+			this.clRotateRight();
+			return this;
+		}
+		else
+		{
+			return new Equals(this.expLeft.simplify(), this.expRight.simplify());
+		}
+
 	}
 
 	@Override

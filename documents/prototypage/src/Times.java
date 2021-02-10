@@ -26,7 +26,7 @@ public class Times extends Operator
 
 	@Override
 	public Operator opposite() {
-		// TODO Eval expRight == 0 ?
+		// TODO Eval expRight == 0 ? (pour éviter la div par 0)
 		return new Divide(this.expLeft, this.expRight);
 	}
 
