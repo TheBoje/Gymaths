@@ -113,27 +113,30 @@ public abstract class EquationGenerator {
      */
     public static void putVariable(Exp tree)
     {
-        if(RAND.nextBoolean())
+        if(tree != null)
         {
-            if(tree.expLeft instanceof Number)
+            if(RAND.nextBoolean())
             {
-                tree.expLeft = new Variable("x");
+                if(tree.expLeft instanceof Number)
+                {
+                    tree.expLeft = new Variable("x");
+                }
+                else
+                {
+                    putVariable(tree.expLeft);
+                }
+                
             }
             else
             {
-                putVariable(tree.expLeft);
-            }
-            
-        }
-        else
-        {
-            if(tree.expRight instanceof Number)
-            {
-                tree.expRight = new Variable("x");
-            }
-            else
-            {
-                putVariable(tree.expRight);
+                if(tree.expRight instanceof Number)
+                {
+                    tree.expRight = new Variable("x");
+                }
+                else
+                {
+                    putVariable(tree.expRight);
+                }
             }
         }
     }
