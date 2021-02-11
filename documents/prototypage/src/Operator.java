@@ -52,5 +52,32 @@ public class Operator extends Exp {
     public String toLatexTree() {
         throw new UnsupportedOperationException();
     }
+ 
+    public void clRotateRight()
+	{
+		if(this.expLeft != null && this.expLeft instanceof Operator)
+		{
+			Operator p = ((Operator) this.expLeft).opposite(); // créer la méthode qui génère l'opérateur opposé
+			Exp u = p.expLeft;
+			Exp v = p.expRight;
+			Exp w = this.expRight;
+
+			p.setBoth(w, v);
+			this.setBoth(u, p);
+		}
+    }
     
+    public void clRotateLeft()
+    {
+        if(this.expRight != null && this.expRight instanceof Operator)
+        {
+            Operator p = ((Operator)this.expRight).opposite();
+            Exp u = this.expLeft;
+            Exp v = p.expLeft;
+            Exp w = p.expRight;
+
+            p.setBoth(u, w);
+            this.setBoth(p, v);
+        }
+    }
 }
