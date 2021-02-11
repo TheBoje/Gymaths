@@ -14,9 +14,9 @@ public abstract class Exp {
 	public abstract Exp simplify();
 
 	public static boolean areEqual(Exp e1, Exp e2) {
-		if ((e1 != null || e2 != null) && e1.getClass().getName().equals(e2.getClass().getName())) {
+		if ((e1 != null && e2 != null) && e1.getClass().getName().equals(e2.getClass().getName())) {
 			if (e1 instanceof Variable) {
-				return ((Variable) e1).getName() == ((Variable) e2).getName();
+				return ((Variable) e1).getName().equals(((Variable) e2).getName());
 			} else if (e1 instanceof Number) {
 				return ((Number) e1).getValue() == ((Number) e1).getValue();
 			} else {
@@ -36,7 +36,7 @@ public abstract class Exp {
 		Exp last = this.copy();
 		Exp actual = this;
 		do {
-			last = actual;
+			last = actual.copy();
 			actual = actual.simplify();
 		} while (!areEqual(last, actual));
 		return actual;
@@ -78,7 +78,7 @@ public abstract class Exp {
 		Exp eq_mult, eq_equals, simplified;
 		//eq_mult = new Plus(new Plus(new Number(1), new Times(new Number(0), new Variable("x"))), new Number(4));
 		eq_mult = new Plus(new Times(new Plus(new Number(4), new Number(1)), new Number(0)), new Plus(new Number(0), new Number(1))); 
-		eq_equals = new Equals(new Times(new Variable("x"), new Number(5)), new Number(2));
+		eq_equals = new Equals(new Plus(new Times(new Variable("x"), new Number(7)), new Number(2)), new Number(6));
 		//eq_mult = EquationGenerator.generateEquation(4);
 		System.out.println("Print          : " + eq_mult.toString());
 		
@@ -92,10 +92,11 @@ public abstract class Exp {
 		
 		System.out.println("Print          : " + eq_equals.toString());
 		
-		simplified = eq_equals.simplify();
-		System.out.println("1 - Simplified : " + simplified.toString());
+		simplified = eq_equals.fullSimplify();
+		System.out.println("F - Simplified : " + simplified.toString());
+
 		
-		System.out.println("Eval           : " + simplified.evaluate());
+		//System.out.println("Eval           : " + simplified.evaluate());
 
 	}
 }

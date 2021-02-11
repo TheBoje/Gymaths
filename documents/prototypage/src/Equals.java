@@ -1,4 +1,4 @@
-public class Equals extends Exp {
+public class Equals extends Operator {
 	private static final Exp equals_cl = new Equals(new Operator(new Ignored(), new Ignored()), new Ignored());
 
 	public Equals(Exp expLeft, Exp expRight) {
@@ -46,7 +46,7 @@ public class Equals extends Exp {
 		if (EquationSimplificator.matchWith(this, equals_cl))
 		{
 			this.clRotateRight();
-			return this;
+			return new Equals(this.expLeft.simplify(), this.expRight.simplify());
 		}
 		else
 		{
