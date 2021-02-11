@@ -14,7 +14,7 @@ public class Plus extends Operator
 	}
 
 	@Override
-	public float evaluate() throws Exception
+	public double evaluate() throws Exception
 	{
 		try {
 			return this.expLeft.evaluate() + this.expRight.evaluate();

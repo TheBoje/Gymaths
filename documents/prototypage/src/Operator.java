@@ -29,7 +29,7 @@ public class Operator extends Exp {
     }
 
     @Override
-    public float evaluate() throws Exception {
+    public double evaluate() throws Exception {
         throw new UnsupportedOperationException();
     }
 

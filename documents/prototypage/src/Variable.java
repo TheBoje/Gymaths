@@ -18,7 +18,7 @@ public class Variable extends Leaf
 	}
 
 	@Override
-	public float evaluate() throws VariableEvaluationException
+	public double evaluate() throws VariableEvaluationException
 	{
 		throw new VariableEvaluationException();
 	}

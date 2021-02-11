@@ -11,12 +11,12 @@ public class Divide extends Operator
 	}
 
 	@Override
-	public float evaluate() throws Exception
+	public double evaluate() throws Exception
 	{
 		try {
 
-			float el = this.expLeft.evaluate();
-			float er = this.expRight.evaluate();
+			double el = this.expLeft.evaluate();
+			double er = this.expRight.evaluate();
 
 			if(er == 0.0)
 				throw new UnsupportedOperationException();

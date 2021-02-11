@@ -11,7 +11,7 @@ public class Equals extends Operator {
 	}
 
 	@Override
-	public float evaluate() throws Exception {
+	public double evaluate() throws Exception {
 		if (this.expLeft instanceof Variable)
 		{
 			return this.expRight.evaluate();

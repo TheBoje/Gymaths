@@ -16,7 +16,7 @@ public class Number extends Leaf {
 	}
 
 	@Override
-	public float evaluate() {
+	public double evaluate() {
 		return this.value;
 	}
 

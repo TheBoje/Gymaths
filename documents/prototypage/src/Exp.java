@@ -9,7 +9,7 @@ public abstract class Exp {
 
 	public abstract Exp copy();
 
-	public abstract float evaluate() throws Exception;
+	public abstract double evaluate() throws Exception;
 
 	public abstract Exp simplify();
 
@@ -96,7 +96,6 @@ public abstract class Exp {
 		System.out.println("F - Simplified : " + simplified.toString());
 
 		
-		//System.out.println("Eval           : " + simplified.evaluate());
-
+		System.out.println("Eval           : " + simplified.evaluate());
 	}
 }
