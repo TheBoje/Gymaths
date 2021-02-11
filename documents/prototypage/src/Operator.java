@@ -65,5 +65,19 @@ public class Operator extends Exp {
 			p.setBoth(w, v);
 			this.setBoth(u, p);
 		}
-	}
+    }
+    
+    public void clRotateLeft()
+    {
+        if(this.expRight != null && this.expRight instanceof Operator)
+        {
+            Operator p = ((Operator)this.expRight).opposite();
+            Exp u = this.expLeft;
+            Exp v = p.expLeft;
+            Exp w = p.expRight;
+
+            p.setBoth(u, w);
+            this.setBoth(p, v);
+        }
+    }
 }
