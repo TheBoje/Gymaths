@@ -24,11 +24,14 @@ public abstract class EquationGenerator {
      */
     public static Exp LINEAR()
     {
-        return new Plus(
-            new Times(
-                new Number(RAND.nextInt(BOUND)),
-                new Variable("x")
-            ), new Number(RAND.nextInt(BOUND)));
+        return 
+        new Equals(
+            new Plus(
+                new Times(
+                    new Variable("x"),
+                    new Number(RAND.nextInt(BOUND))
+                ), new Number(RAND.nextInt(BOUND))),
+            new Number(RAND.nextInt(BOUND)));
     }
 
     
@@ -174,8 +177,12 @@ public abstract class EquationGenerator {
         return eq;
     }
 
-    public static void main(String[] args)
+    public static void main(String[] args) throws Exception
     {
-        System.out.println(EquationGenerator.QUADRATIC().toString());
+        Exp eq = EquationGenerator.LINEAR();
+        System.out.println(eq.toString());
+        System.out.println(eq.simplify().toString());
+        System.out.println(eq.simplify().toString());
+        System.out.println(eq.expRight.evaluate());
     }
 }
