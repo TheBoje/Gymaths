@@ -1,6 +1,6 @@
 import java.time.Year;
 
-public class Equals extends Exp {
+public class Equals extends Operator {
 	private static final Exp equals_cl = new Equals(new Operator(new Ignored(), new Ignored()), new Ignored());
 
 	public Equals(Exp expLeft, Exp expRight) {
@@ -40,19 +40,7 @@ public class Equals extends Exp {
 		return String.format("%s=%s", this.expLeft.toLatex(), this.expRight.toLatex());
 	}
 
-	public void clRotateRight()
-	{
-		if(this.expLeft != null && this.expLeft instanceof Operator)
-		{
-			Operator p = ((Operator) this.expLeft).opposite(); // créer la méthode qui génère l'opérateur opposé
-			Exp u = p.expLeft;
-			Exp v = p.expRight;
-			Exp w = this.expRight;
-
-			p.setBoth(w, v);
-			this.setBoth(u, p);
-		}
-	}
+	
 
 	// TODO This
 	@Override
