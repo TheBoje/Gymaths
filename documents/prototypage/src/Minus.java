@@ -1,5 +1,7 @@
 public class Minus extends Operator 
 {
+	private static final Exp minus_0 = new Minus(new Ignored(), new Number(0));
+
     public Minus(Exp expLeft, Exp expRight)
 	{
 		super(expLeft, expRight);
@@ -30,7 +32,21 @@ public class Minus extends Operator
 	// TODO This
 	@Override
 	public Exp simplify() {
-		return new Minus(this.expLeft.simplify(), this.expRight.simplify());
+		if (EquationSimplificator.matchWith(this, minus_0))
+		{
+			if (this.expLeft instanceof Number && ((Number)this.expLeft).getValue() == 0)
+			{
+				return this.expRight;
+			}
+			else
+			{
+				return this.expLeft;
+			}
+		}
+		else
+		{
+			return new Minus(this.expLeft.simplify(), this.expRight.simplify());
+		}
 	}
 
 	@Override

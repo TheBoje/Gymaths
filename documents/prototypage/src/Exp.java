@@ -77,7 +77,7 @@ public abstract class Exp {
 
 		Exp eq_mult, eq_equals, simplified;
 		//eq_mult = new Plus(new Plus(new Number(1), new Times(new Number(0), new Variable("x"))), new Number(4));
-		eq_mult = new Plus(new Times(new Plus(new Number(4), new Number(1)), new Number(0)), new Plus(new Number(0), new Number(1))); 
+		eq_mult = new Minus(new Times(new Minus(new Number(4), new Number(1)), new Number(0)), new Minus(new Number(0), new Number(1))); 
 		eq_equals = new Equals(new Plus(new Times(new Variable("x"), new Number(7)), new Number(2)), new Number(6));
 		//eq_mult = EquationGenerator.generateEquation(4);
 		System.out.println("Print          : " + eq_mult.toString());

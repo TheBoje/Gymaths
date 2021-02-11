@@ -1,7 +1,7 @@
 public class Plus extends Operator
 {
 
-	private static final Exp add_0 = new Plus(new Ignored(), new Number(0));
+	private static final Exp plus_0 = new Plus(new Ignored(), new Number(0));
 
 	public Plus(Exp expLeft, Exp expRight)
 	{
@@ -33,7 +33,7 @@ public class Plus extends Operator
 	// TODO This
 	@Override
 	public Exp simplify() {
-		if (EquationSimplificator.matchWith(this, add_0))
+		if (EquationSimplificator.matchWith(this, plus_0))
 		{
 			if (this.expLeft instanceof Number && ((Number)this.expLeft).getValue() == 0)
 			{
