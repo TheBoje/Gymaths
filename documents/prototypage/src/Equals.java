@@ -1,5 +1,3 @@
-import java.time.Year;
-
 public class Equals extends Exp {
 	private static final Exp equals_cl = new Equals(new Operator(new Ignored(), new Ignored()), new Ignored());
 
