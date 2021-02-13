@@ -1,0 +1,24 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="key_height">50dip</dimen>
+    <dimen name="key_spacing">0px</dimen>
+    <dimen name="candidate_font_height">16sp</dimen>
+    <dimen name="candidate_vertical_padding">6sp</dimen>
+    <item type="dimen" format="integer" name="ddx">-1000</item>
+    <item type="dimen" format="integer" name="lesseq">-1001</item>
+    <item type="dimen" format="integer" name="paren">-1002</item>
+    <item type="dimen" format="integer" name="ln">-1003</item>
+    <item type="dimen" format="integer" name="sin">-1004</item>
+    <item type="dimen" format="integer" name="cos">-1005</item>
+    <item type="dimen" format="integer" name="tan">-1006</item>
+    <item type="dimen" format="integer" name="csc">-1007</item>
+    <item type="dimen" format="integer" name="sec">-1008</item>
+    <item type="dimen" format="integer" name="cot">-1009</item>
+    <item type="dimen" format="integer" name="sbrack">-1010</item>
+    <item type="dimen" format="integer" name="cbrack">-1011</item>
+    <item type="dimen" format="integer" name="greateq">-1012</item>
+    <item type="dimen" format="integer" name="e">-1013</item>
+    <item type="dimen" format="integer" name="zeta">-1014</item>
+    <item type="dimen" format="integer" name="lim">-1015</item>
+</resources>
