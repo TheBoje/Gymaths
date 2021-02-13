@@ -9,6 +9,8 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputConnection
 import android.widget.EditText
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import android.widget.Button
 import com.example.gymaths.MyKeyboard
 import com.example.gymaths.R
 
@@ -31,9 +33,9 @@ class Fragment5 : Fragment()
         val ic : InputConnection  = editText.onCreateInputConnection(EditorInfo())
         keyboard.setInputConnection(ic)
 
-        /*view.findViewById<Button>(R.id.btnValidate).setOnClickListener {
+        view.findViewById<Button>(R.id.button_validate).setOnClickListener {
             findNavController().navigate(R.id.Fragment5To8)
-        }*/
+        }
 
         //Fait apparaître un bouton quand on clique dans le champ texte
         /*view.findViewById<TextInputEditText>(R.id.textInputEditText).setOnClickListener {

@@ -12,8 +12,10 @@ import android.widget.LinearLayout;
 
 public class MyKeyboard extends LinearLayout implements View.OnClickListener
 {
-    private Button button1, button2, button3, button4, button5, button6, button7, button8, button9,
-                   button0, buttonDelete, buttonEnter;
+    private Button buttonDelete, buttonOpenParenthesis, buttonCloseParenthesis, button7, button8,
+            button9, buttonPlus, buttonSqrt, buttonPower, button4, button5, button6, buttonMinus,
+            buttonABC, buttonX, button1, button2, button3, buttonMult, buttonValidate, button0,
+            buttonComma, buttonEquals, buttonDivide;
 
     private SparseArray<String> keyValues = new SparseArray<>();
     private InputConnection inputConnection;
@@ -37,42 +39,107 @@ public class MyKeyboard extends LinearLayout implements View.OnClickListener
     private void init(Context context, AttributeSet attrs)
     {
         LayoutInflater.from(context).inflate(R.layout.keyboard, this, true);
-        button1 = (Button) findViewById(R.id.button_1);
-        button1.setOnClickListener(this);
-        button2 = (Button) findViewById(R.id.button_2);
-        button2.setOnClickListener(this);
-        button3 = (Button) findViewById(R.id.button_3);
-        button3.setOnClickListener(this);
-        button4 = (Button) findViewById(R.id.button_4);
-        button4.setOnClickListener(this);
-        button5 = (Button) findViewById(R.id.button_5);
-        button5.setOnClickListener(this);
-        button6 = (Button) findViewById(R.id.button_6);
-        button6.setOnClickListener(this);
-        button7 = (Button) findViewById(R.id.button_7);
-        button7.setOnClickListener(this);
-        button8 = (Button) findViewById(R.id.button_8);
-        button8.setOnClickListener(this);
-        button9 = (Button) findViewById(R.id.button_9);
-        button9.setOnClickListener(this);
-        button0 = (Button) findViewById(R.id.button_0);
-        button0.setOnClickListener(this);
+
+        //First Row:
         buttonDelete = (Button) findViewById(R.id.button_delete);
         buttonDelete.setOnClickListener(this);
-        buttonEnter = (Button) findViewById(R.id.button_enter);
-        buttonEnter.setOnClickListener(this);
+        keyValues.put(R.id.button_delete, "Delete");
 
-        keyValues.put(R.id.button_1, "1");
-        keyValues.put(R.id.button_2, "2");
-        keyValues.put(R.id.button_3, "3");
-        keyValues.put(R.id.button_4, "4");
-        keyValues.put(R.id.button_5, "5");
-        keyValues.put(R.id.button_6, "6");
+        //Second Row:
+        buttonOpenParenthesis = (Button) findViewById(R.id.button_openParenthesis);
+        buttonOpenParenthesis.setOnClickListener(this);
+        keyValues.put(R.id.button_openParenthesis, "(");
+
+        buttonCloseParenthesis = (Button) findViewById(R.id.button_closeParenthesis);
+        buttonCloseParenthesis.setOnClickListener(this);
+        keyValues.put(R.id.button_closeParenthesis, ")");
+
+        button7 = (Button) findViewById(R.id.button_7);
+        button7.setOnClickListener(this);
         keyValues.put(R.id.button_7, "7");
+
+        button8 = (Button) findViewById(R.id.button_8);
+        button8.setOnClickListener(this);
         keyValues.put(R.id.button_8, "8");
+
+        button9 = (Button) findViewById(R.id.button_9);
+        button9.setOnClickListener(this);
         keyValues.put(R.id.button_9, "9");
+
+        buttonPlus = (Button) findViewById(R.id.button_plus);
+        buttonPlus.setOnClickListener(this);
+        keyValues.put(R.id.button_plus, "+");
+
+        //Third Row:
+        buttonSqrt = (Button) findViewById(R.id.button_sqrt);
+        buttonSqrt.setOnClickListener(this);
+        keyValues.put(R.id.button_sqrt, "√");
+
+        buttonPower = (Button) findViewById(R.id.button_power);
+        buttonPower.setOnClickListener(this);
+        keyValues.put(R.id.button_power, "^");
+
+        button4 = (Button) findViewById(R.id.button_4);
+        button4.setOnClickListener(this);
+        keyValues.put(R.id.button_4, "4");
+
+        button5 = (Button) findViewById(R.id.button_5);
+        button5.setOnClickListener(this);
+        keyValues.put(R.id.button_5, "5");
+
+        button6 = (Button) findViewById(R.id.button_6);
+        button6.setOnClickListener(this);
+        keyValues.put(R.id.button_6, "6");
+
+        buttonMinus = (Button) findViewById(R.id.button_minus);
+        buttonMinus.setOnClickListener(this);
+        keyValues.put(R.id.button_minus, "-");
+
+        //Fourth Row:
+        buttonABC = (Button) findViewById(R.id.button_abc);
+        buttonABC.setOnClickListener(this);
+        keyValues.put(R.id.button_abc, "ABC");
+
+        buttonX = (Button) findViewById(R.id.button_x);
+        buttonX.setOnClickListener(this);
+        keyValues.put(R.id.button_x, "x");
+
+        button1 = (Button) findViewById(R.id.button_1);
+        button1.setOnClickListener(this);
+        keyValues.put(R.id.button_1, "1");
+
+        button2 = (Button) findViewById(R.id.button_2);
+        button2.setOnClickListener(this);
+        keyValues.put(R.id.button_2, "2");
+
+        button3 = (Button) findViewById(R.id.button_3);
+        button3.setOnClickListener(this);
+        keyValues.put(R.id.button_3, "3");
+
+        buttonMult = (Button) findViewById(R.id.button_mult);
+        buttonMult.setOnClickListener(this);
+        keyValues.put(R.id.button_mult, "*");
+
+        //Fifth Row:
+        buttonValidate = (Button) findViewById(R.id.button_validate);
+        buttonValidate .setOnClickListener(this);
+        keyValues.put(R.id.button_validate, "Valider");
+
+        button0 = (Button) findViewById(R.id.button_0);
+        button0.setOnClickListener(this);
         keyValues.put(R.id.button_0, "0");
-        keyValues.put(R.id.button_enter, "\n");
+
+        buttonComma = (Button) findViewById(R.id.button_comma);
+        buttonComma.setOnClickListener(this);
+        keyValues.put(R.id.button_comma, ".");
+
+        buttonEquals = (Button) findViewById(R.id.button_equals);
+        buttonEquals.setOnClickListener(this);
+        keyValues.put(R.id.button_equals, "=");
+
+        buttonDivide = (Button) findViewById(R.id.button_divide);
+        buttonDivide.setOnClickListener(this);
+        keyValues.put(R.id.button_divide, "/");
     }
 
     @Override
