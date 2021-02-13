@@ -1,23 +1,16 @@
 package com.example.gymaths.exercices
 
-import android.inputmethodservice.Keyboard
-import android.inputmethodservice.KeyboardView
 import android.os.Bundle
 import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputConnection
-import android.widget.Button
 import android.widget.EditText
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.gymaths.MyKeyboard
 import com.example.gymaths.R
-import com.google.android.material.textfield.TextInputEditText
 
 
 class Fragment5 : Fragment()

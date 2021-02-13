@@ -22,6 +22,9 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/exercices_content" />
+    <include
+        layout="@layout/exercices_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

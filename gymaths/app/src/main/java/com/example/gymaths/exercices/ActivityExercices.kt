@@ -3,17 +3,20 @@ package com.example.gymaths.exercices
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.WindowManager
 import android.widget.EditText
+import android.view.*
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gymaths.R
 
+open class Button
 
 class ActivityExercices : AppCompatActivity()
 {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.exercices_activity)
+        //setSupportActionBar(findViewById(R.id.toolbar))
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -31,4 +34,16 @@ class ActivityExercices : AppCompatActivity()
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+    /* fun updateAnswer(view: View)
+    {
+        var answerField = findViewById<TextView>(R.id.solutionView);
+        var textInput = findViewById<EditText>(R.id.editText);
+        var toSubmit = textInput.text.toString();
+        answerField.text = toSubmit
+        if (answerField.text.toString() == getString(R.string.exemple_reponse))
+            answerField.text = getString(R.string.Bonjour)
+        else
+            answerField.text = getString(R.string.exemple_reponse)
+    } */
 }
