@@ -14,7 +14,7 @@ class ActivityExercices : AppCompatActivity()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.exercices_activity)
-        //setSupportActionBar(findViewById(R.id.toolbar))
+        setSupportActionBar(findViewById(R.id.toolbar))
 
         window.setFlags(
             WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM,
@@ -32,7 +32,7 @@ class ActivityExercices : AppCompatActivity()
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_profile -> true
             else -> super.onOptionsItemSelected(item)
         }
     }

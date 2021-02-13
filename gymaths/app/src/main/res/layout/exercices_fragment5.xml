@@ -16,7 +16,6 @@
         android:layout_marginTop="112dp"
         android:layout_marginEnd="128dp"
         android:layout_marginRight="128dp"
-        android:background="@drawable/back"
         android:text="@string/exemple_eq"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,12 +67,15 @@
         app:layout_constraintTop_toBottomOf="@+id/problemView" />-->
 
     <EditText
+        android:gravity="start"
+        android:hint="@string/editTextHint"
         android:id="@+id/editText"
-        android:layout_width="414dp"
+        android:layout_width="380dp"
         android:layout_height="163dp"
         android:layout_marginTop="48dp"
+        android:background="@drawable/back"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/problemView" />
 
