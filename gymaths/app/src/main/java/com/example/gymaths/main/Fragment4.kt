@@ -27,9 +27,9 @@ class Fragment4 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.btnNext).setOnClickListener {
+        /*view.findViewById<Button>(R.id.btnNext).setOnClickListener {
             findNavController().navigate(R.id.Fragment4To3)
-        }
+        }*/
 
         view.findViewById<Button>(R.id.btnSqrt).setOnClickListener {
             val intent = Intent(activity, ActivityExercices::class.java)
