@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="("/>
+            android:text="@string/openParenthesis"/>
 
         <Button
             android:id="@+id/button_closeParenthesis"
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text=")"/>
+            android:text="@string/closeParenthesis"/>
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="7"/>
+            android:text="@string/_7"/>
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="8"/>
+            android:text="@string/_8"/>
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="9"/>
+            android:text="@string/_9"/>
 
         <Button
             android:id="@+id/button_plus"
@@ -97,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="+"/>
+            android:text="@string/plus"/>
 
     </LinearLayout>
 
@@ -120,7 +120,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="^"/>
+            android:text="@string/power"/>
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
@@ -129,7 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="4"/>
+            android:text="@string/_4"/>
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
@@ -138,7 +138,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="5"/>
+            android:text="@string/_5"/>
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
@@ -147,7 +147,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="6"/>
+            android:text="@string/_6"/>
 
         <Button
             android:id="@+id/button_minus"
@@ -155,7 +155,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="-"/>
+            android:text="@string/minus"/>
 
     </LinearLayout>
 
@@ -165,21 +165,23 @@
         android:orientation="horizontal">
 
         <Button
-            android:textSize="12sp"
+            android:backgroundTint="@color/gymathsGrey"
+            android:textSize="10sp"
             android:id="@+id/button_abc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="ABC"/>
+            android:text="@string/abc"/>
 
         <Button
+            android:backgroundTint="@color/gymathsGrey"
             android:id="@+id/button_x"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="x"/>
+            android:text="@string/x"/>
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
@@ -188,7 +190,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="1"/>
+            android:text="@string/_1"/>
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
@@ -197,7 +199,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="2"/>
+            android:text="@string/_2"/>
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
@@ -206,7 +208,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="3"/>
+            android:text="@string/_3"/>
 
         <Button
             android:id="@+id/button_mult"
@@ -214,7 +216,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="*"/>
+            android:text="@string/mult"/>
 
     </LinearLayout>
 
@@ -230,7 +232,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:layout_margin="3dp"
-            android:text="Valider"/>
+            android:text="@string/valider"/>
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
@@ -239,7 +241,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="0"/>
+            android:text="@string/_0"/>
 
         <Button
             android:id="@+id/button_comma"
@@ -247,7 +249,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="."/>
+            android:text="@string/comma"/>
 
         <Button
             android:id="@+id/button_equals"
@@ -255,7 +257,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="="/>
+            android:text="@string/equals"/>
 
         <Button
             android:id="@+id/button_divide"
@@ -263,7 +265,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="/"/>
+            android:text="@string/divide"/>
 
     </LinearLayout>
 
