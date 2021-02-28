@@ -74,11 +74,11 @@ public class MyKeyboard extends LinearLayout implements View.OnClickListener
         //Third Row:
         buttonSqrt = (Button) findViewById(R.id.button_sqrt);
         buttonSqrt.setOnClickListener(this);
-        keyValues.put(R.id.button_sqrt, "√");
+        keyValues.put(R.id.button_sqrt, "√()");
 
         buttonPower = (Button) findViewById(R.id.button_power);
         buttonPower.setOnClickListener(this);
-        keyValues.put(R.id.button_power, "^");
+        keyValues.put(R.id.button_power, "^()");
 
         button4 = (Button) findViewById(R.id.button_4);
         button4.setOnClickListener(this);
