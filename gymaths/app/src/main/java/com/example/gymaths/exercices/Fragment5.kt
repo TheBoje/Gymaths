@@ -38,7 +38,8 @@ class Fragment5 : Fragment()
         keyboard.setInputConnection(ic)
 
         //Changement du champ problemView avec une fonction
-        val problem : String = "Résoudre l'équation : " + EquationGenerator.LINEAR()
+        val equation = EquationGenerator.LINEAR()
+        val problem : String = "Résoudre l'équation : " + equation
         val problemField : TextView = view.findViewById(R.id.problemView)
         problemField.text = problem
 
