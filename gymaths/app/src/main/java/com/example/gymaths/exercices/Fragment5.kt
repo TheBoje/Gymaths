@@ -26,16 +26,12 @@ class Fragment5 : Fragment()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-<<<<<<< HEAD
-    }
-=======
 
         val editText : EditText  = view.findViewById(R.id.editText)
         val keyboard : MyKeyboard  = view.findViewById(R.id.keyboard)
 
         editText.setRawInputType(InputType.TYPE_CLASS_TEXT)
         editText.setTextIsSelectable(true)
->>>>>>> ui
 
         val ic : InputConnection  = editText.onCreateInputConnection(EditorInfo())
         keyboard.setInputConnection(ic)
