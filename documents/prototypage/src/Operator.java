@@ -13,10 +13,33 @@ public class Operator extends Exp {
         Vincent toi qui regarde ce délice, sache
         que je ne suis pas fier.
     */
+    private static final int precedence = 0; // TODO Mettre à jour pour chaque opérateur
 
     public Operator(Exp expLeft, Exp expRight) {
         super(expLeft, expRight);
     }
+
+    public boolean isRightAssociative(){ // TODO Mettre à jour pour chaque opérateur
+        
+    }
+
+    public char getSymbol(){ // TODO Mettre à jour pour chaque opérateur
+        return 'a';
+    }
+
+    public int comparePrecedence(Exp o)// TODO Mettre à jour pour chaque opérateur
+    {
+        if (o instanceof Operator)
+        {
+            Operator other = (Operator) o;
+            return precedence > other.precedence ? 1 :
+                    other.precedence == precedence ? 0 : -1;
+        }
+        else{
+            return -((Operator)o).comparePrecedence(this);
+        }
+    }
+
 
 	public Operator opposite()
     {

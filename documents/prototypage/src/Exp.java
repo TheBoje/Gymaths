@@ -96,6 +96,6 @@ public abstract class Exp {
 		System.out.println("F - Simplified : " + simplified.toString());
 
 		
-		System.out.println("Eval           : " + simplified.evaluate());
+		System.out.println("Eval           : " + simplified.toLatexTree());
 	}
 }
