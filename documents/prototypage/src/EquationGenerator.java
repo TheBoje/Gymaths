@@ -179,10 +179,9 @@ public abstract class EquationGenerator {
 
     public static void main(String[] args) throws Exception
     {
-        Exp eq = EquationGenerator.LINEAR();
+        Exp eq = new Equals(new Times(new Plus(new Variable("x"), new Number(5)), new Number(4)), new Number(8)); //EquationGenerator.LINEAR();
         System.out.println(eq.toString());
         System.out.println(eq.simplify().toString());
         System.out.println(eq.simplify().toString());
-        System.out.println(eq.expRight.evaluate());
     }
 }
