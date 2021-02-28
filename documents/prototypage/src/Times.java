@@ -1,6 +1,10 @@
 public class Times extends Operator
 {
 	private static final Exp times_0 = new Times(new Ignored(), new Number(0));
+
+	// modèle pour la distribution TODO: peut être trouver un moyen de mettre uniquement une
+	private static final Exp distribPlus = new Times(new Plus(new Ignored(), new Ignored()), new Ignored());
+	private static final Exp distribMinus = new Times(new Minus(new Ignored(), new Ignored()), new Ignored());
 	
 	public Times(Exp expLeft, Exp expRight)
 	{
@@ -35,6 +39,14 @@ public class Times extends Operator
 		if (EquationSimplificator.matchWith(this, times_0))
 		{
 			return new Number(0);
+		}
+		else if(EquationSimplificator.matchWith(this, distribPlus))
+		{
+			return new Plus(new Times(this.expLeft.expLeft.simplify(), this.expRight), new Times(this.expLeft.expRight.simplify(), this.expRight));
+		}	
+		else if(EquationSimplificator.matchWith(this, distribMinus))
+		{
+			return new Minus(new Times(this.expLeft.expLeft.simplify(), this.expRight), new Times(this.expLeft.expRight.simplify(), this.expRight));
 		}
 		else // ajouter des else if () avec les autres cas pour ajouter des cas de simplification
 		{
