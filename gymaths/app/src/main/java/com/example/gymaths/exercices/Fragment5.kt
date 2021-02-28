@@ -44,7 +44,7 @@ class Fragment5 : Fragment()
         problemField.text = problem
 
         view.findViewById<Button>(R.id.button_validate).setOnClickListener {
-            findNavController().navigate(R.id.Fragment5To8)
+            findNavController().navigate(R.id.Fragment5To11)
         }
 
         //Fait apparaître un bouton quand on clique dans le champ texte
