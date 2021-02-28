@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.gymaths.R
 
 
-class Activity_soutien : AppCompatActivity()
+class ActivitySoutien : AppCompatActivity()
 {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,8 +22,9 @@ class Activity_soutien : AppCompatActivity()
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
+        return when (item.itemId)
+        {
+            R.id.action_profile -> true
             else -> super.onOptionsItemSelected(item)
         }
     }

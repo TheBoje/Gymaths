@@ -1,25 +1,27 @@
 package com.example.gymaths.exercices
 
 import android.os.Bundle
-import android.service.autofill.OnClickAction
-import android.view.*
-import android.widget.Button
-import android.widget.TextView
+import android.view.Menu
+import android.view.MenuItem
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gymaths.R
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.textfield.TextInputEditText
 
 open class Button
 
 class ActivityExercices : AppCompatActivity()
 {
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.exercices_activity)
+<<<<<<< HEAD
+=======
+        setSupportActionBar(findViewById(R.id.toolbar))
+>>>>>>> ui
 
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM,
+            WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -29,17 +31,20 @@ class ActivityExercices : AppCompatActivity()
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_profile -> true
             else -> super.onOptionsItemSelected(item)
         }
     }
 
-    fun updateAnswer(view: View)
+    /* fun updateAnswer(view: View)
     {
         var answerField = findViewById<TextView>(R.id.solutionView);
-        var textInput = findViewById<TextInputEditText>(R.id.textInputEditText);
+        var textInput = findViewById<EditText>(R.id.editText);
         var toSubmit = textInput.text.toString();
         answerField.text = toSubmit
-    }
-
+        if (answerField.text.toString() == getString(R.string.exemple_reponse))
+            answerField.text = getString(R.string.Bonjour)
+        else
+            answerField.text = getString(R.string.exemple_reponse)
+    } */
 }
