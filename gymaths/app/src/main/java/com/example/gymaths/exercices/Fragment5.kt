@@ -15,6 +15,9 @@ import android.widget.TextView
 import com.example.gymaths.MyKeyboard
 import com.example.gymaths.R
 import com.example.gymaths.equations.EquationGenerator
+import com.example.gymaths.equations.Exp
+import com.example.gymaths.equations.Parser
+import com.example.gymaths.equations.Variable
 
 
 class Fragment5 : Fragment()
@@ -44,7 +47,17 @@ class Fragment5 : Fragment()
         problemField.text = problem
 
         view.findViewById<Button>(R.id.button_validate).setOnClickListener {
-            findNavController().navigate(R.id.Fragment5To11)
+            val envoie : Bundle = Bundle()
+            val input : String = editText.text.toString()
+
+            val inputExp : Exp = Variable("x")//Parser.infixToExp(input)
+
+            envoie.putString("generated", equation.fullSimplify().expRight.evaluate().toString())
+            envoie.putString("input", input)
+            envoie.putBoolean("isSolved", false) // Exp.areEqual(inputExp, equation))
+
+
+            findNavController().navigate(R.id.Fragment5To11, envoie)
         }
 
         //Fait apparaître un bouton quand on clique dans le champ texte
