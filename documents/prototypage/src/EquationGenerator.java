@@ -14,7 +14,8 @@ public abstract class EquationGenerator {
     private static final int        NB_EXP = 3;                 // Nombre d'expressions pouvant être instancié
     private static final int        MAX = 100;
     private static int[]            chances = {20, 50, 70, 90, 100};  // Tableau contenant le % de chance d'instanciation (0 = Plus, 1 = Times, 2 = Number) il doit être de la forme [x, x + y, x + y + z]
-    
+
+
     // PRESETS
 
     /** 
@@ -23,11 +24,14 @@ public abstract class EquationGenerator {
      */
     public static Exp LINEAR()
     {
-        return new Plus(
-            new Times(
-                new Number(RAND.nextInt(BOUND)),
-                new Variable("x")
-            ), new Number(RAND.nextInt(BOUND)));
+        return 
+        new Equals(
+            new Plus(
+                new Times(
+                    new Variable("x"),
+                    new Number(RAND.nextInt(BOUND))
+                ), new Number(RAND.nextInt(BOUND))),
+            new Number(RAND.nextInt(BOUND)));
     }
 
     
@@ -40,9 +44,9 @@ public abstract class EquationGenerator {
         return new Plus(
             new Times(
                 new Number(RAND.nextInt(BOUND)),
-                new Times(
+                new Pow(
                     new Variable("x"),
-                    new Variable("x")
+                    new Number(2)
                 )
             ),
             new Plus(
@@ -54,6 +58,7 @@ public abstract class EquationGenerator {
             )
         );
     }
+
 
     // 
     /**
@@ -78,7 +83,7 @@ public abstract class EquationGenerator {
     {
         if(hmax <= 0)
         {
-            return new Number(RAND.nextInt(BOUND) + 1);
+            return new Number(RAND.nextInt(BOUND));
         }
         else
         {
@@ -102,7 +107,7 @@ public abstract class EquationGenerator {
             }
             else
             {
-                return new Number(RAND.nextInt(BOUND) + 1);
+                return new Number(RAND.nextInt(BOUND));
             }
         }
     }
@@ -113,27 +118,30 @@ public abstract class EquationGenerator {
      */
     public static void putVariable(Exp tree)
     {
-        if(RAND.nextBoolean())
+        if(tree != null)
         {
-            if(tree.expLeft instanceof Number)
+            if(RAND.nextBoolean())
             {
-                tree.expLeft = new Variable("x");
+                if(tree.expLeft instanceof Number)
+                {
+                    tree.expLeft = new Variable("x");
+                }
+                else
+                {
+                    putVariable(tree.expLeft);
+                }
+                
             }
             else
             {
-                putVariable(tree.expLeft);
-            }
-            
-        }
-        else
-        {
-            if(tree.expRight instanceof Number)
-            {
-                tree.expRight = new Variable("x");
-            }
-            else
-            {
-                putVariable(tree.expRight);
+                if(tree.expRight instanceof Number)
+                {
+                    tree.expRight = new Variable("x");
+                }
+                else
+                {
+                    putVariable(tree.expRight);
+                }
             }
         }
     }
@@ -167,5 +175,13 @@ public abstract class EquationGenerator {
 
         putVariable(eq);
         return eq;
+    }
+
+    public static void main(String[] args) throws Exception
+    {
+        Exp eq = new Equals(new Times(new Plus(new Variable("x"), new Number(5)), new Number(4)), new Number(8)); //EquationGenerator.LINEAR();
+        System.out.println(eq.toString());
+        System.out.println(eq.simplify().toString());
+        System.out.println(eq.simplify().toString());
     }
 }

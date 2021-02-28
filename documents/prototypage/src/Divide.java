@@ -1,4 +1,4 @@
-public class Divide extends Exp 
+public class Divide extends Operator 
 {
     public Divide(Exp expLeft, Exp expRight)
 	{
@@ -6,12 +6,17 @@ public class Divide extends Exp
 	}
 
 	@Override
-	public float evaluate() throws Exception
+	public Exp copy() {
+		return new Divide(this.expLeft.copy(), this.expRight.copy());
+	}
+
+	@Override
+	public double evaluate() throws Exception
 	{
 		try {
 
-			float el = this.expLeft.evaluate();
-			float er = this.expRight.evaluate();
+			double el = this.expLeft.evaluate();
+			double er = this.expRight.evaluate();
 
 			if(er == 0.0)
 				throw new UnsupportedOperationException();
@@ -25,14 +30,20 @@ public class Divide extends Exp
 	}
 
 	@Override
-	public void simplify() {
-		throw new UnsupportedOperationException();
+	public Operator opposite() {
+		return new Times(this.expLeft, this.expRight);
+	}
+	
+	// TODO This
+	@Override
+	public Exp simplify() {
+		return new Divide(this.expLeft.simplify(), this.expRight.simplify());
 	}
 
 	@Override
-	public String print()
+	public String toString()
 	{
-		return String.format("(%s / %s)", this.expLeft.print(), this.expRight.print());
+		return String.format("(%s / %s)", this.expLeft.toString(), this.expRight.toString());
 	}
 
 	@Override
@@ -40,5 +51,9 @@ public class Divide extends Exp
 	{
 		return String.format("\\frac{%s}{%s}", this.expLeft.toLatex(), this.expRight.toLatex());
 	}
-    
+
+	@Override
+	public String toLatexTree() {
+		return String.format("[./ %s %s ]", this.expLeft.toLatexTree(), this.expRight.toLatexTree());
+	}
 }
