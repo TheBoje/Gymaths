@@ -14,6 +14,7 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.gymaths.MyKeyboard
 import com.example.gymaths.R
+import com.example.gymaths.equations.EquationGenerator
 
 
 class Fragment5 : Fragment()
@@ -26,22 +27,19 @@ class Fragment5 : Fragment()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-<<<<<<< HEAD
-    }
-=======
 
         val editText : EditText  = view.findViewById(R.id.editText)
         val keyboard : MyKeyboard  = view.findViewById(R.id.keyboard)
 
         editText.setRawInputType(InputType.TYPE_CLASS_TEXT)
         editText.setTextIsSelectable(true)
->>>>>>> ui
+
 
         val ic : InputConnection  = editText.onCreateInputConnection(EditorInfo())
         keyboard.setInputConnection(ic)
 
         //Changement du champ problemView avec une fonction
-        val problem : String = testSum(3).toString()
+        val problem : String = "Résoudre l'équation : " + EquationGenerator.LINEAR()
         val problemField : TextView = view.findViewById(R.id.problemView)
         problemField.text = problem
 
