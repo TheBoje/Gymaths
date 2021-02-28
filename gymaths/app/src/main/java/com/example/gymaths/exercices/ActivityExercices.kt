@@ -14,6 +14,7 @@ class ActivityExercices : AppCompatActivity()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.exercices_activity)
+
         setSupportActionBar(findViewById(R.id.toolbar))
 
         window.setFlags(
