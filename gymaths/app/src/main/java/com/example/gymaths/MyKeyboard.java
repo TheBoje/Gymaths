@@ -134,9 +134,9 @@ public class MyKeyboard extends LinearLayout implements View.OnClickListener
         buttonComma.setOnClickListener(this);
         keyValues.put(R.id.button_comma, ".");
 
-        buttonEquals = (Button) findViewById(R.id.button_equals);
+        buttonEquals = (Button) findViewById(R.id.button_space);
         buttonEquals.setOnClickListener(this);
-        keyValues.put(R.id.button_equals, "=");
+        keyValues.put(R.id.button_space, " ");
 
         buttonDivide = (Button) findViewById(R.id.button_divide);
         buttonDivide.setOnClickListener(this);
