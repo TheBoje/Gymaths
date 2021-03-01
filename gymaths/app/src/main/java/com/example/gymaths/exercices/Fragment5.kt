@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import android.widget.Button
 import android.widget.TextView
 import com.example.gymaths.MyKeyboard
+import com.example.gymaths.MyKeyboard_abc
 import com.example.gymaths.R
 import com.example.gymaths.equations.EquationGenerator
 import com.example.gymaths.equations.Exp
@@ -31,14 +32,26 @@ class Fragment5 : Fragment()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //Clavier mathématique:
         val editText : EditText  = view.findViewById(R.id.editText)
         val keyboard : MyKeyboard  = view.findViewById(R.id.keyboard)
 
+        //Clavier alphabétique:
+        val keyboard_abc : MyKeyboard_abc = view.findViewById(R.id.keyboard_abc)
+
+
+        //Clavier mathématique:
         editText.setRawInputType(InputType.TYPE_CLASS_TEXT)
         editText.setTextIsSelectable(true)
 
         val ic : InputConnection  = editText.onCreateInputConnection(EditorInfo())
-        keyboard.setInputConnection(ic)
+        keyboard.setInputConnection(ic, keyboard_abc)
+
+        //Clavier alphabétique:
+        val ic_abc : InputConnection  = editText.onCreateInputConnection(EditorInfo())
+        keyboard_abc.setInputConnection(ic_abc, keyboard)
+
+
 
         //Changement du champ problemView avec une fonction
         val equation = EquationGenerator.LINEAR()

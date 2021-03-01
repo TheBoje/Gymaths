@@ -35,7 +35,7 @@
         <Button
             android:backgroundTint="@color/white"
             android:drawableRight="@drawable/sym_keyboard_delete_blackonwhite"
-            android:id="@+id/button_delete"
+            android:id="@+id/button_delete_kbdABC"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -49,7 +49,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button_openParenthesis"
+            android:id="@+id/button_openParenthesis_kbdABC"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -57,7 +57,7 @@
             android:text="@string/openParenthesis"/>
 
         <Button
-            android:id="@+id/button_closeParenthesis"
+            android:id="@+id/button_closeParenthesis_kbdABC"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -66,33 +66,33 @@
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
-            android:id="@+id/button_7"
+            android:id="@+id/button_abc_kbdABC"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_margin="3dp"
-            android:text="@string/_7"/>
+            android:layout_margin="10sp"
+            android:text="abc"/>
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
-            android:id="@+id/button_8"
+            android:id="@+id/button_def"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="@string/_8"/>
+            android:text="def"/>
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
-            android:id="@+id/button_9"
+            android:id="@+id/button_hij"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="@string/_9"/>
+            android:text="hij"/>
 
         <Button
-            android:id="@+id/button_plus"
+            android:id="@+id/button_plus_kbdABC"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -107,7 +107,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button_sqrt"
+            android:id="@+id/button_sqrt_kbdABC"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -115,7 +115,7 @@
             android:text="@string/sqrtSymbol"/>
 
         <Button
-            android:id="@+id/button_power"
+            android:id="@+id/button_power_kbdABC"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -124,33 +124,33 @@
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
-            android:id="@+id/button_4"
+            android:id="@+id/button_klm"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="@string/_4"/>
+            android:text="klm"/>
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
-            android:id="@+id/button_5"
+            android:id="@+id/button_nop"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="@string/_5"/>
+            android:text="nop"/>
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
-            android:id="@+id/button_6"
+            android:id="@+id/button_qrs"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="@string/_6"/>
+            android:text="qrs"/>
 
         <Button
-            android:id="@+id/button_minus"
+            android:id="@+id/button_minus_kbdABC"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -167,17 +167,17 @@
         <Button
             android:backgroundTint="@color/gymathsGrey"
             android:textSize="10sp"
-            android:id="@+id/button_ABC"
+            android:id="@+id/button_ABC_kbdABC"
             android:layout_gravity="center"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="@string/abc_uppercase"/>
+            android:text="@string/abc"/>
 
         <Button
             android:backgroundTint="@color/gymathsGrey"
-            android:id="@+id/button_x"
+            android:id="@+id/button_x_kbdABC"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -186,33 +186,33 @@
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
-            android:id="@+id/button_1"
+            android:id="@+id/button_tuv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="@string/_1"/>
+            android:text="tuv"/>
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
-            android:id="@+id/button_2"
+            android:id="@+id/button_wx"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="@string/_2"/>
+            android:text="wx"/>
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
-            android:id="@+id/button_3"
+            android:id="@+id/button_yz"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="@string/_3"/>
+            android:text="yz"/>
 
         <Button
-            android:id="@+id/button_mult"
+            android:id="@+id/button_mult_kbdABC"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -228,7 +228,7 @@
 
         <Button
             android:backgroundTint="@color/gymathsValidate"
-            android:id="@+id/button_validate"
+            android:id="@+id/button_validate_kbdABC"
             android:layout_width="8dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -237,7 +237,7 @@
 
         <Button
             android:backgroundTint="@color/gymathsDarkBlue"
-            android:id="@+id/button_0"
+            android:id="@+id/button_0_kbdABC"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -245,7 +245,7 @@
             android:text="@string/_0"/>
 
         <Button
-            android:id="@+id/button_comma"
+            android:id="@+id/button_comma_kbdABC"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -253,7 +253,7 @@
             android:text="@string/comma"/>
 
         <Button
-            android:id="@+id/button_space"
+            android:id="@+id/button_space_kbdABC"
             android:gravity="center"
             android:layout_gravity="center"
             android:layout_width="0dp"
@@ -265,7 +265,7 @@
             android:drawableLeft="@drawable/space_bar2"/>
 
         <Button
-            android:id="@+id/button_divide"
+            android:id="@+id/button_divide_kbdABC"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

@@ -48,7 +48,6 @@
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="minus">-</string>
-    <string name="abc">ABC</string>
     <string name="x">x</string>
     <string name="_1">1</string>
     <string name="_2">2</string>
@@ -59,4 +58,14 @@
     <string name="comma">.</string>
     <string name="equals">=</string>
     <string name="divide">/</string>
+    <string name="abc_uppercase">ABC</string>
+    <string name="abc">abc</string>
+    <string name="def">def</string>
+    <string name="ghi">ghi</string>
+    <string name="jkl">jkl</string>
+    <string name="mno">mno</string>
+    <string name="pqr">pqr</string>
+    <string name="stu">stu</string>
+    <string name="vwx">vwx</string>
+    <string name="yz">yz</string>
 </resources>

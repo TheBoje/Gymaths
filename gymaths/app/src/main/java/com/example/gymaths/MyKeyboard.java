@@ -20,6 +20,7 @@ public class MyKeyboard extends LinearLayout implements View.OnClickListener
 
     private SparseArray<String> keyValues = new SparseArray<>();
     private InputConnection inputConnection;
+    private MyKeyboard_abc alphaKdb;
 
     public MyKeyboard(Context context)
     {
@@ -40,6 +41,7 @@ public class MyKeyboard extends LinearLayout implements View.OnClickListener
     private void init(Context context, AttributeSet attrs)
     {
         LayoutInflater.from(context).inflate(R.layout.keyboard, this, true);
+        //LayoutInflater.from(context).inflate(R.layout.keyboard_abc, this, true);
 
         //First Row:
         buttonDelete = (Button) findViewById(R.id.button_delete);
@@ -97,9 +99,15 @@ public class MyKeyboard extends LinearLayout implements View.OnClickListener
         keyValues.put(R.id.button_minus, "-");
 
         //Fourth Row:
-        buttonABC = (Button) findViewById(R.id.button_abc);
+        buttonABC = (Button) findViewById(R.id.button_ABC);
         buttonABC.setOnClickListener(this);
-        keyValues.put(R.id.button_abc, "ABC");
+        /*buttonABC.setOnClickListener(v -> {
+            this.setVisibility(View.INVISIBLE);
+
+            //View keyboard_abc = v.findViewById(R.id.keyboard_abc);
+            //keyboard_abc.setVisibility(View.VISIBLE);
+        });*/
+        //keyValues.put(R.id.button_ABC, "ABC");
 
         buttonX = (Button) findViewById(R.id.button_x);
         buttonX.setOnClickListener(this);
@@ -164,6 +172,12 @@ public class MyKeyboard extends LinearLayout implements View.OnClickListener
             }
         }
 
+        else if(view.getId() == R.id.button_ABC)
+        {
+            this.setVisibility(View.INVISIBLE);
+            alphaKdb.setVisibility(View.VISIBLE);
+        }
+
         else
         {
             String value = keyValues.get(view.getId());
@@ -171,7 +185,8 @@ public class MyKeyboard extends LinearLayout implements View.OnClickListener
         }
     }
 
-    public void setInputConnection(InputConnection ic) {
+    public void setInputConnection(InputConnection ic, MyKeyboard_abc alphaKdb) {
         this.inputConnection = ic;
+        this.alphaKdb = alphaKdb;
     }
 }
