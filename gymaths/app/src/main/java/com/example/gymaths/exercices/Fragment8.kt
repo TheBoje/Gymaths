@@ -21,8 +21,10 @@ class Fragment8 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         view.findViewById<Button>(R.id.btnValidate).setOnClickListener {
-            findNavController().navigate(R.id.Fragment8To11)
+            this.activity?.finish()
         }
+
     }
 }

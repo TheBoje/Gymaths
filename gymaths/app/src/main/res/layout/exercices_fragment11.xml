@@ -6,6 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".exercices.ActivityExercices">
 
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="334dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="8dp"
+        android:max="10"
+        android:progress="0"
+        app:layout_constraintBottom_toTopOf="@+id/textViewSolution"
+        app:layout_constraintEnd_toEndOf="@+id/textViewSolution"
+        app:layout_constraintStart_toStartOf="@+id/textViewSolution"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/textViewSolution"
         android:layout_width="332dp"
@@ -14,15 +29,16 @@
         android:layout_marginLeft="128dp"
         android:layout_marginEnd="128dp"
         android:layout_marginRight="128dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/back"
         android:text="@string/i_m_fragment_11"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/textViewUtilisateur"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.588" />
+        app:layout_constraintVertical_bias="0.913" />
 
     <TextView
         android:id="@+id/textViewUtilisateur"
@@ -39,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.684" />
+        app:layout_constraintVertical_bias="0.775" />
 
     <Button
         android:id="@+id/btnValidate"

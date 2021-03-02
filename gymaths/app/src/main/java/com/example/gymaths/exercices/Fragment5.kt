@@ -11,6 +11,7 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import com.example.gymaths.MyKeyboard
 import com.example.gymaths.MyKeyboard_abc
@@ -51,6 +52,15 @@ class Fragment5 : Fragment()
         val ic_abc : InputConnection  = editText.onCreateInputConnection(EditorInfo())
         keyboard_abc.setInputConnection(ic_abc, keyboard)
 
+        //On gére la progress bar
+        var progressBarValue : Int? = this.arguments?.getInt("progressBarValue") //on reçoit le bundle de frag11
+        val progressBar : ProgressBar = view.findViewById(R.id.progressBar)
+        if (progressBarValue != null) {
+            progressBar.progress = progressBarValue
+        }
+        progressBar.incrementProgressBy(1)
+
+
 
 
         //Changement du champ problemView avec une fonction
@@ -62,16 +72,29 @@ class Fragment5 : Fragment()
         view.findViewById<Button>(R.id.button_validate).setOnClickListener {
             val envoie : Bundle = Bundle()
             val input : String = editText.text.toString()
+            val progressBar : ProgressBar = view.findViewById(R.id.progressBar)
+            val progressBarValue : Int = progressBar.progress
 
             val inputExp : Exp = Variable("x")//Parser.infixToExp(input)
 
             envoie.putString("generated", equation.fullSimplify().expRight.evaluate().toString())
             envoie.putString("input", input)
             envoie.putBoolean("isSolved", false) // Exp.areEqual(inputExp, equation))
+            envoie.putInt("progressBarValue", progressBarValue)
 
 
             findNavController().navigate(R.id.Fragment5To11, envoie)
         }
+
+        /*
+        view.findViewById<Button>(R.id.button_plus).setOnClickListener {
+            val progressBar : ProgressBar = view.findViewById(R.id.progressBar)
+
+            progressBar.incrementProgressBy(1)
+
+        }
+
+         */
 
         //Fait apparaître un bouton quand on clique dans le champ texte
         /*view.findViewById<TextInputEditText>(R.id.textInputEditText).setOnClickListener {
@@ -82,5 +105,7 @@ class Fragment5 : Fragment()
         view.findViewById<ConstraintLayout>(R.id.exercicesFragment5Layout).setOnClickListener {
             view.findViewById<Button>(R.id.btnTest).visibility = View.GONE
         }*/
+
+
     }
 }
