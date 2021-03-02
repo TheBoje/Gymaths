@@ -31,9 +31,12 @@ class Fragment4 : Fragment() {
             findNavController().navigate(R.id.Fragment4To3)
         }*/
 
-        view.findViewById<Button>(R.id.btnSqrt).setOnClickListener {
+        /*
+        view.findViewById<Button>(R.id.btnOperations).setOnClickListener {
             val intent = Intent(activity, ActivityExercices::class.java)
             startActivity(intent)
         }
+
+         */
     }
 }
