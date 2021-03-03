@@ -16,45 +16,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <Button
+            android:id="@+id/btnRegleCalculs"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_margin="16dp"
+            android:text="@string/regle_calculs"
+            android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/btnRegleCalculs"
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:layout_margin="16dp"
-                android:text="@string/regle_calculs"
-                android:textSize="20sp"
-                />
-        </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <Button
+            android:id="@+id/btnIdRemarquables"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_margin="16dp"
+            android:text="@string/id_remarquables"
+            android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/btnIdRemarquables"
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:layout_margin="16dp"
-                android:text="@string/id_remarquables"
-                android:textSize="20sp" />
-        </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <Button
+            android:id="@+id/btnEqIneq"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_margin="16dp"
+            android:text="@string/eq_ineq"
+            android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/btnEqIneq"
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:layout_margin="16dp"
-                android:text="@string/eq_ineq"
-                android:textSize="20sp" />
-        </TableRow>
 
     </TableLayout>
 
