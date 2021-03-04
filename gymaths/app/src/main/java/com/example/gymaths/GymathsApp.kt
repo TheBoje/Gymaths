@@ -8,6 +8,6 @@ class GymathsApp : Application()
 {
     override fun onCreate() {
         super.onCreate();
-        Instabug.Builder(this, "cd4f5356f3ebc2e24a42eb3836610c64").build();
+        Instabug.Builder(this, "37249dd332412e7f002966b57169fef9").build();
     }
 }
