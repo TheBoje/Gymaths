@@ -1,17 +1,37 @@
 package com.example.gymaths.equations;
 
+/**
+ *
+ */
 public class Equals extends Operator {
+    /**
+     *
+     */
     private static final Exp equals_cl = new Equals(new Operator(new Ignored(), new Ignored()), new Ignored());
 
+    /**
+     *
+     * @param expLeft
+     * @param expRight
+     */
     public Equals(Exp expLeft, Exp expRight) {
         super(expLeft, expRight);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public Exp copy() {
         return new Equals(this.expLeft.copy(), this.expRight.copy());
     }
 
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     @Override
     public double evaluate() throws Exception {
         if (this.expLeft instanceof Variable) {
@@ -23,11 +43,19 @@ public class Equals extends Operator {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return String.format("%s = %s", this.expLeft.toString(), this.expRight.toString());
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toLatex() {
         return String.format("%s=%s", this.expLeft.toLatex(), this.expRight.toLatex());
@@ -35,6 +63,11 @@ public class Equals extends Operator {
 
 
     // TODO This
+
+    /**
+     *
+     * @return
+     */
     @Override
     public Exp simplify() {
         if (EquationSimplificator.matchWith(this, equals_cl)) {
@@ -46,6 +79,10 @@ public class Equals extends Operator {
 
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toLatexTree() {
         return String.format("[.= %s %s ]", this.expLeft.toLatexTree(), this.expRight.toLatexTree());

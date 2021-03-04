@@ -49,6 +49,11 @@ public class EquationSimplificator {
         }
     }
 
+    /**
+     *
+     * @param exp
+     * @return
+     */
     public static Exp simplify(Exp exp){
         if (exp == null)
         {

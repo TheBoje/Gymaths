@@ -4,20 +4,29 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
-
+/**
+ *
+ */
 public abstract class Exp {
     public Exp expLeft;
     public Exp expRight;
 
     /**
-     * @param expLeft Arbre de gauche
-     * @param expRight Arbre de droite
-     * */
+     *
+     * @param expLeft
+     * @param expRight
+     */
     public Exp(Exp expLeft, Exp expRight) {
         this.expLeft = expLeft;
         this.expRight = expRight;
     }
 
+    /**
+     *
+     * @param e1
+     * @param e2
+     * @return
+     */
     public static boolean areEqual(Exp e1, Exp e2) {
         if ((e1 != null && e2 != null) && e1.getClass().getName().equals(e2.getClass().getName())) {
             if (e1 instanceof Variable) {
@@ -30,6 +39,88 @@ public abstract class Exp {
         } else return e1 == null && e2 == null;
     }
 
+    /**
+     *
+     * @return
+     */
+    public abstract Exp copy();
+
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
+    public abstract double evaluate() throws Exception;
+
+    /**
+     *
+     * @return
+     */
+    public abstract Exp simplify();
+
+    /**
+     *
+     * @return
+     */
+    public Exp fullSimplify() {
+        Exp last = this.copy();
+        Exp actual = this;
+        do {
+            last = actual.copy();
+            actual = actual.simplify();
+        } while (!areEqual(last, actual));
+        return actual;
+    }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public abstract String toString();
+
+    /**
+     *
+     * @return
+     */
+    public abstract String toLatex();
+
+    /**
+     *
+     * @return
+     */
+    public abstract String toLatexTree();
+
+    /**
+     *
+     * @param e
+     */
+    public void setLeft(Exp e) {
+        this.expLeft = e;
+    }
+
+    /**
+     *
+     * @param e
+     */
+    public void setRight(Exp e) {
+        this.expRight = e;
+    }
+
+    /**
+     *
+     * @param left
+     * @param right
+     */
+    public void setBoth(Exp left, Exp right) {
+        setLeft(left);
+        setRight(right);
+    }
+
+    /**
+     *
+     * @param args
+     */
     @RequiresApi(api = Build.VERSION_CODES.R)
     public static void main(String[] args) throws Exception {
         Exp generated = EquationGenerator.generateEquation(4);
@@ -44,41 +135,5 @@ public abstract class Exp {
         System.out.println("Parse 3       : " + Parser.parse("3"));
         System.out.println("Parse 3.4     : " + Parser.parse("3.4"));
         System.out.println("Parse 13.3/12 : " + Parser.parse("13.3/12").evaluate());
-    }
-
-    public abstract Exp copy();
-
-    public abstract double evaluate() throws Exception;
-
-    public abstract Exp simplify();
-
-    public Exp fullSimplify() {
-        Exp last = this.copy();
-        Exp actual = this;
-        do {
-            last = actual.copy();
-            actual = actual.simplify();
-        } while (!areEqual(last, actual));
-        return actual;
-    }
-
-    @Override
-    public abstract String toString();
-
-    public abstract String toLatex();
-
-    public abstract String toLatexTree();
-
-    public void setLeft(Exp e) {
-        this.expLeft = e;
-    }
-
-    public void setRight(Exp e) {
-        this.expRight = e;
-    }
-
-    public void setBoth(Exp left, Exp right) {
-        setLeft(left);
-        setRight(right);
     }
 }
