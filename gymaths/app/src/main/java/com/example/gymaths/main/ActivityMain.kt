@@ -4,7 +4,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.ProgressBar
+import androidx.navigation.fragment.findNavController
 import com.example.gymaths.R
+import com.example.gymaths.equations.Exp
+import com.example.gymaths.equations.Variable
+import com.instabug.library.Instabug
 
 class ActivityMain : AppCompatActivity() {
 
@@ -26,6 +32,9 @@ class ActivityMain : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_profile -> true
+            R.id.action_bug -> {
+                Instabug.show()
+                true}
             else -> super.onOptionsItemSelected(item)
         }
     }
