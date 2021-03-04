@@ -33,7 +33,7 @@
     <string name="exercices_hint">Écrire la réponse ici</string>
     <string name="btnTest">Test</string>
     <string name="Bonjour"> Hello World !</string>
-    <string name="editTextHint">Écrivez votre réponse ici</string>
+    <string name="editTextHint"><font fgcolor="#A9A9A9">Écrivez votre réponse ici</font></string>
     <string name="profile">Profil</string>
     <string name="about">À propos</string>
     <string name="bug">Signaler un bug</string>

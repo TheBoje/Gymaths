@@ -1,7 +1,6 @@
-package com.example.gymaths;
+package com.example.gymaths.claviers;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.SparseArray;
@@ -11,7 +10,9 @@ import android.view.inputmethod.InputConnection;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-public class MyKeyboard extends LinearLayout implements View.OnClickListener
+import com.example.gymaths.R;
+
+public class SimpleMathsKeyboard extends LinearLayout implements View.OnClickListener
 {
     private Button buttonDelete, buttonOpenParenthesis, buttonCloseParenthesis, button7, button8,
             button9, buttonPlus, buttonSqrt, buttonPower, button4, button5, button6, buttonMinus,
@@ -20,19 +21,19 @@ public class MyKeyboard extends LinearLayout implements View.OnClickListener
 
     private SparseArray<String> keyValues = new SparseArray<>();
     private InputConnection inputConnection;
-    private MyKeyboard_abc alphaKdb;
+    private AlphabeticKeyboard alphaKdb;
 
-    public MyKeyboard(Context context)
+    public SimpleMathsKeyboard(Context context)
     {
         this(context, null, 0);
     }
 
-    public MyKeyboard(Context context, AttributeSet attrs)
+    public SimpleMathsKeyboard(Context context, AttributeSet attrs)
     {
         this(context, attrs, 0);
     }
 
-    public MyKeyboard(Context context, AttributeSet attrs, int defStyleAttr)
+    public SimpleMathsKeyboard(Context context, AttributeSet attrs, int defStyleAttr)
     {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
@@ -40,8 +41,7 @@ public class MyKeyboard extends LinearLayout implements View.OnClickListener
 
     private void init(Context context, AttributeSet attrs)
     {
-        LayoutInflater.from(context).inflate(R.layout.keyboard, this, true);
-        //LayoutInflater.from(context).inflate(R.layout.keyboard_abc, this, true);
+        LayoutInflater.from(context).inflate(R.layout.keyboard_simple_maths, this, true);
 
         //First Row:
         buttonDelete = (Button) findViewById(R.id.button_delete);
@@ -101,13 +101,6 @@ public class MyKeyboard extends LinearLayout implements View.OnClickListener
         //Fourth Row:
         buttonABC = (Button) findViewById(R.id.button_ABC);
         buttonABC.setOnClickListener(this);
-        /*buttonABC.setOnClickListener(v -> {
-            this.setVisibility(View.INVISIBLE);
-
-            //View keyboard_abc = v.findViewById(R.id.keyboard_abc);
-            //keyboard_abc.setVisibility(View.VISIBLE);
-        });*/
-        //keyValues.put(R.id.button_ABC, "ABC");
 
         buttonX = (Button) findViewById(R.id.button_x);
         buttonX.setOnClickListener(this);
@@ -185,7 +178,7 @@ public class MyKeyboard extends LinearLayout implements View.OnClickListener
         }
     }
 
-    public void setInputConnection(InputConnection ic, MyKeyboard_abc alphaKdb) {
+    public void setInputConnection(InputConnection ic, AlphabeticKeyboard alphaKdb) {
         this.inputConnection = ic;
         this.alphaKdb = alphaKdb;
     }
