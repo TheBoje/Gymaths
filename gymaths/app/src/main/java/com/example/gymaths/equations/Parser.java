@@ -4,9 +4,6 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
-import java.util.HashMap;
-import java.util.Stack;
-
 @RequiresApi(api = Build.VERSION_CODES.R)
 public class Parser {
 
@@ -18,11 +15,9 @@ public class Parser {
         {
             String[] temp = input.split("/");
             return new Divide(
-                        new Number(Float.parseFloat(temp[0])),
-                        new Number(Float.parseFloat(temp[1])));
-        }
-        else
-        {
+                    new Number(Float.parseFloat(temp[0])),
+                    new Number(Float.parseFloat(temp[1])));
+        } else {
             return new Number(Float.parseFloat(input));
         }
 

@@ -21,29 +21,26 @@ public class Operator extends Exp {
         super(expLeft, expRight);
     }
 
-    public boolean isRightAssociative(){ // TODO Mettre à jour pour chaque opérateur
+    public boolean isRightAssociative() { // TODO Mettre à jour pour chaque opérateur
         return false; // FIXME
     }
 
-    public char getSymbol(){ // TODO Mettre à jour pour chaque opérateur
+    public char getSymbol() { // TODO Mettre à jour pour chaque opérateur
         return 'a';
     }
 
     public int comparePrecedence(Exp o)// TODO Mettre à jour pour chaque opérateur
     {
-        if (o instanceof Operator)
-        {
+        if (o instanceof Operator) {
             Operator other = (Operator) o;
-            return Integer.compare(precedence, other.precedence);
-        }
-        else{
-            return -((Operator)o).comparePrecedence(this);
+            return Integer.compare(precedence, precedence);
+        } else {
+            return -((Operator) o).comparePrecedence(this);
         }
     }
 
 
-	public Operator opposite()
-    {
+    public Operator opposite() {
         throw new UnsupportedOperationException();
     }
 
@@ -71,31 +68,27 @@ public class Operator extends Exp {
     public String toLatex() {
         throw new UnsupportedOperationException();
     }
-    
+
     @Override
     public String toLatexTree() {
         throw new UnsupportedOperationException();
     }
- 
-    public void clRotateRight()
-	{
-		if(this.expLeft != null && this.expLeft instanceof Operator)
-		{
-			Operator p = ((Operator) this.expLeft).opposite(); // créer la méthode qui génère l'opérateur opposé
-			Exp u = p.expLeft;
-			Exp v = p.expRight;
-			Exp w = this.expRight;
 
-			p.setBoth(w, v);
-			this.setBoth(u, p);
-		}
+    public void clRotateRight() {
+        if (this.expLeft != null && this.expLeft instanceof Operator) {
+            Operator p = ((Operator) this.expLeft).opposite(); // créer la méthode qui génère l'opérateur opposé
+            Exp u = p.expLeft;
+            Exp v = p.expRight;
+            Exp w = this.expRight;
+
+            p.setBoth(w, v);
+            this.setBoth(u, p);
+        }
     }
-    
-    public void clRotateLeft()
-    {
-        if(this.expRight != null && this.expRight instanceof Operator)
-        {
-            Operator p = ((Operator)this.expRight).opposite();
+
+    public void clRotateLeft() {
+        if (this.expRight != null && this.expRight instanceof Operator) {
+            Operator p = ((Operator) this.expRight).opposite();
             Exp u = this.expLeft;
             Exp v = p.expLeft;
             Exp w = p.expRight;

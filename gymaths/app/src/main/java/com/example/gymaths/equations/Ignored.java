@@ -1,6 +1,6 @@
 package com.example.gymaths.equations;
 
-public class Ignored extends Exp{
+public class Ignored extends Exp {
 
     /*
         Cette classe permet de passer à travers la 
@@ -15,15 +15,14 @@ public class Ignored extends Exp{
     */
 
     // Ce noeud ne contient ni valeur ni enfants.
-    public Ignored()
-    {
+    public Ignored() {
         super(null, null);
     }
 
     @Override
-	public Exp copy() {
-		return new Ignored();
-	}
+    public Exp copy() {
+        return new Ignored();
+    }
 
     @Override
     public double evaluate() throws Exception {
@@ -46,7 +45,7 @@ public class Ignored extends Exp{
     }
 
     @Override
-	public String toLatexTree() {
-		return "ignored";
-	}
+    public String toLatexTree() {
+        return "ignored";
+    }
 }
