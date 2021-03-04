@@ -1,16 +1,25 @@
 package com.example.gymaths.equations;
 
 /**
+ * Implémentation de l'opération de division pour les <code>Exp</code>
  *
+ * @author Vincent Commin & Louis Leenart
  */
 public class Divide extends Operator {
+
+    /**
+     * Constructeur de l'opération de division
+     * @param expLeft Sous-arbre gauche
+     * @param expRight Sous-arbre droit
+     */
     public Divide(Exp expLeft, Exp expRight) {
         super(expLeft, expRight);
     }
 
     /**
-     *
-     * @return
+     * Permet de faire une "copie profonde" (deep copy) de l'objet. À implémenter dans les
+     * sous-classes.
+     * @return Retourne une copie profonde de l'arbre
      */
     @Override
     public Exp copy() {
@@ -18,25 +27,21 @@ public class Divide extends Operator {
     }
 
     /**
-     *
-     * @return
-     * @throws Exception
+     * Évalue l'expression
+     * @return Valeur de l'expression
+     * @throws Exception Si <code>expRight</code> est évalué à 0, alors on ne peut pas évaluer
+     * l'expression pour cet opérateur. Sinon, exception montante de l'évaluation d'un des
+     * sous-arbres
      */
     @Override
     public double evaluate() throws Exception {
-        try {
-
-            double el = this.expLeft.evaluate();
-            double er = this.expRight.evaluate();
-
-            if (er == 0.0)
-                throw new UnsupportedOperationException();
-
-            return el / er;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            this.simplify();
-            throw e;
+        double evaluateLeft = this.expLeft.evaluate();
+        double evaluateRight = this.expRight.evaluate();
+        if (evaluateRight == 0.0)
+        {
+            throw new UnsupportedOperationException();
+        } else {
+            return evaluateLeft / evaluateRight;
         }
     }
 

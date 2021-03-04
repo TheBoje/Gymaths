@@ -7,21 +7,19 @@ import androidx.annotation.RequiresApi;
 /**
  * Cette classe permet de manipuler les expressions mathématiques utilisés dans le cadre de
  * l'application Gymaths.
+ * <p>
+ * Le but est de pouvoir générer, résoudre, simplifier et afficher les expressions pour d'un
+ * côté mettre au point des exercices, et comparer les résultats avec les propositions de
+ * l'utilisateur.
+ * <p>
+ * La structure utilisé pour répondre à ce problème est l'utilisation d'AST (arbre abstrait de
+ * syntaxe) dont chaque noeud représente un opérateur et chaque feuille représente un nombre ou
+ * une variable. On utilise aussi le principe de polymorphisme pour ajouter des opérations aisément.
  *
  * @author Vincent Commin & Louis Leenart
  */
 public abstract class Exp {
-    /*
-    * Le but est de pouvoir générer, résoudre, simplifier et afficher les expressions pour d'un
-    * côté mettre au point des exercices, et comparer les résultats avec les propositions de
-    * l'utilisateur.
-    *
-    * La structure utilisé pour répondre à ce problème est l'utilisation d'AST (arbre abstrait de
-    * syntaxe) dont chaque noeud représente un opérateur et chaque feuille représente un nombre ou
-    * une variable. On utilise aussi le principe de polymorphisme pour ajouter des opérations aisément.
-    *
-    * Plus particulièrement, notre implémentation comporte deux sous arbres représentés par les
-    * attributs expLeft et expRight.
+    /**
     *
     * */
     public Exp expLeft;
@@ -70,7 +68,7 @@ public abstract class Exp {
 
     /**
      * Évalue l'expression
-     * @return valeur de l'expression
+     * @return Valeur de l'expression
      * @throws Exception si l'arbre contient une variable ou une division par 0
      */
     public abstract double evaluate() throws Exception;
