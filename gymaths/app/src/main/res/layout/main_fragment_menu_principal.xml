@@ -45,6 +45,7 @@
     </TableLayout>
 
     <ImageButton
+        android:background="#00000000"
         android:id="@+id/btnSupport"
         android:layout_width="32dp"
         android:layout_height="32dp"
