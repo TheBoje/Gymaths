@@ -6,6 +6,7 @@ import android.view.MenuItem
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gymaths.R
+import com.instabug.library.Instabug
 
 class ActivityExercices : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +27,10 @@ class ActivityExercices : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_profile -> true
+            //R.id.action_profile -> true
+            R.id.action_bug -> {
+                Instabug.show()
+                true}
             else -> super.onOptionsItemSelected(item)
         }
     }
