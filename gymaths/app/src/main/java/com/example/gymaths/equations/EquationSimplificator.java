@@ -27,9 +27,9 @@ public class EquationSimplificator {
             return false;
         }
         else if ( cible.getClass() == modele.getClass()
-                || modele.getClass().isAssignableFrom(cible.getClass()) 
+                || modele.getClass().isAssignableFrom(cible.getClass())
                 || modele instanceof Ignored)
-        { 
+        {
             if (modele instanceof Number && cible instanceof Number) // Dans le cas ou le noeud est un nombre
             {
                 return ((Number) cible).getValue() == ((Number) modele).getValue();
@@ -49,11 +49,16 @@ public class EquationSimplificator {
         }
     }
 
+    /**
+     *
+     * @param exp
+     * @return
+     */
     public static Exp simplify(Exp exp){
         if (exp == null)
         {
             return exp;
-        } 
+        }
         else if (matchWith(exp, mult_0))
         {
             return new Number(0);

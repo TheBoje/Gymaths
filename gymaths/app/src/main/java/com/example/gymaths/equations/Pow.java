@@ -1,33 +1,32 @@
 package com.example.gymaths.equations;
 
-public class Pow extends Operator
-{
+public class Pow extends Operator {
 
     public Pow(Exp expLeft, Exp expRight) {
         super(expLeft, expRight);
     }
 
     @Override
-	public Exp copy() {
-		return new Pow(this.expLeft.copy(), this.expRight.copy());
-	}
+    public Exp copy() {
+        return new Pow(this.expLeft.copy(), this.expRight.copy());
+    }
 
     @Override
     public double evaluate() throws Exception {
         try {
-			return (float)Math.pow(this.expLeft.evaluate(), this.expRight.evaluate());
-		} catch (VariableEvaluationException e) {
-			e.print();
-			this.simplify();
-			throw e;
-		}
+            return (float) Math.pow(this.expLeft.evaluate(), this.expRight.evaluate());
+        } catch (VariableEvaluationException e) {
+            e.print();
+            this.simplify();
+            throw e;
+        }
     }
 
     @Override
-	public Operator opposite() {
+    public Operator opposite() {
         // TODO ajouter l'implémentation apres l'ajout de sqrt
-		throw new UnsupportedOperationException();
-	}
+        throw new UnsupportedOperationException();
+    }
 
     @Override
     public Exp simplify() {
@@ -45,7 +44,7 @@ public class Pow extends Operator
     }
 
     @Override
-	public String toLatexTree() {
-		return String.format("[.^ %s %s ]", this.expLeft.toLatexTree(), this.expRight.toLatexTree());
-	}    
+    public String toLatexTree() {
+        return String.format("[.^ %s %s ]", this.expLeft.toLatexTree(), this.expRight.toLatexTree());
+    }
 }
