@@ -12,7 +12,7 @@ public class Plus extends Operator
 
 	@Override
 	public Exp copy() {
-		return new Plus(this.expLeft.copy(), this.expRight.copy());
+		return new Plus(this.expLeft != null ? this.expLeft.copy() : null, this.expRight != null ? this.expRight.copy() : null);
 	}
 
 	@Override

@@ -1,5 +1,9 @@
 package com.example.gymaths.equations;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 public abstract class Exp {
 	public Exp expLeft;
 	public Exp expRight;
@@ -68,36 +72,19 @@ public abstract class Exp {
 		setRight(right);
 	}
 
+	@RequiresApi(api = Build.VERSION_CODES.R)
 	public static void main(String[] args) throws Exception {
-		Exp generated = EquationGenerator.generateEquation(4); // Fait des execptions
-		//System.out.println(generated.print());
-		/*generated = EquationGenerator.QUADRATIC();
-		System.out.println(generated.print());*/
-
-		//System.out.println("Tree           : " + generated.toLatexTree());
+		Exp generated = EquationGenerator.generateEquation(4);
 
 
 		Exp eq_mult, eq_equals, simplified;
 		//eq_mult = new Plus(new Plus(new Number(1), new Times(new Number(0), new Variable("x"))), new Number(4));
 		eq_mult = new Minus(new Times(new Minus(new Number(4), new Number(1)), new Number(0)), new Minus(new Number(0), new Number(1))); 
 		eq_equals = new Equals(new Plus(new Times(new Variable("x"), new Number(7)), new Number(2)), new Number(6));
-		//eq_mult = EquationGenerator.generateEquation(4);
-		System.out.println("Print          : " + eq_mult.toString());
-		
-		simplified = eq_mult.simplify();
-		System.out.println("1 - Simplified : " + simplified.toString());
-		
-		simplified = simplified.simplify();
-		System.out.println("2 - Simplified : " + simplified.toString()); 
-		//System.out.println("F - Simplified : " + generated.fullSimplify().toString());
-		//System.out.println("Tree           : " + generated.fullSimplify().toLatexTree());
-		
-		System.out.println("Print          : " + eq_equals.toString());
-		
-		simplified = eq_equals.fullSimplify();
-		System.out.println("F - Simplified : " + simplified.toString());
 
-		
-		System.out.println("Eval           : " + simplified.toLatexTree());
+		System.out.println("Print         : " + eq_mult.toString());
+		System.out.println("Parse 3       : " + Parser.parse("3"));
+		System.out.println("Parse 3.4     : " + Parser.parse("3.4"));
+		System.out.println("Parse 13.3/12 : " + Parser.parse("13.3/12").evaluate());
 	}
 }

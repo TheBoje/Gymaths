@@ -1,9 +1,9 @@
 package com.example.gymaths.equations;
 
 public class Number extends Leaf {
-	private int value;
+	private float value;
 
-	public Number(int value) {
+	public Number(float value) {
 		super(null, null);
 		this.value = value;
 	}
@@ -13,7 +13,7 @@ public class Number extends Leaf {
 		return new Number(this.getValue());
 	}
 
-	public int getValue(){
+	public float getValue(){
 		return this.value;
 	}
 
@@ -30,12 +30,12 @@ public class Number extends Leaf {
 
 	@Override
 	public String toString() {
-		return Integer.toString(value);
+		return Float.toString(value);
 	}
 
 	@Override
 	public String toLatex() {
-		return Integer.toString(value);
+		return Float.toString(value);
 	}
 
 

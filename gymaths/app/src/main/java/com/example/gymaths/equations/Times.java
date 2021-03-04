@@ -15,7 +15,7 @@ public class Times extends Operator
 
 	@Override
 	public Exp copy() {
-		return new Times(this.expLeft.copy(), this.expRight.copy());
+		return new Times(this.expLeft != null ? this.expLeft.copy() : null, this.expRight != null ? this.expRight.copy() : null);
 	}
 
 	@Override

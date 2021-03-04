@@ -34,8 +34,7 @@ public class Operator extends Exp {
         if (o instanceof Operator)
         {
             Operator other = (Operator) o;
-            return precedence > other.precedence ? 1 :
-                    other.precedence == precedence ? 0 : -1;
+            return Integer.compare(precedence, other.precedence);
         }
         else{
             return -((Operator)o).comparePrecedence(this);
