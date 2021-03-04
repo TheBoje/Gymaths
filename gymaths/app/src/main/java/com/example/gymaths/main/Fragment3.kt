@@ -6,14 +6,12 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
 import com.example.gymaths.R
@@ -25,17 +23,22 @@ import com.example.gymaths.soutien.ActivitySoutien
  */
 class Fragment3 : Fragment() {
 
-    override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
+    {
+        // Transforme le layout qui est en xml en objets Kotlins:
         return inflater.inflate(R.layout.main_fragment3, container, false)
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        //Si l'application plante, on récupère ce qu'on peut
+        // de l'état du fragment avant le crash:
         super.onViewCreated(view, savedInstanceState)
+
+
+        /* ============================================================= */
+        /* ======== Branchements des boutons du menu principal  ======== */
+        /* ============================================================= */
 
         view.findViewById<Button>(R.id.btnRegleCalculs).setOnClickListener {
             findNavController().navigate(R.id.Fragment3To4)
@@ -51,42 +54,32 @@ class Fragment3 : Fragment() {
             startActivity(intent)
         }
 
-       /* view.findViewById<ImageButton>(R.id.btnSupport).setOnClickListener{
-            val alertSupport = AlertDialog.Builder(this.activity);
-            val dialogClickListener = DialogInterface.OnClickListener{_,which ->
-                when(which){
-                    DialogInterface.BUTTON_POSITIVE -> startActivity(Intent(activity, ActivitySoutien::class.java))
-                    DialogInterface.BUTTON_NEGATIVE -> exitTransition
-                }
-            }
-            alertSupport.setTitle("Soutenez l'équipe !");
-            alertSupport.setMessage("Vous pouvez nous soutenir en regardant une publicité, ça vous tente ?");
 
-            alertSupport.setPositiveButton("Bien sûr !", dialogClickListener)
-            alertSupport.setNegativeButton("Te mère", dialogClickListener)
+        /* ============================================================= */
+        /* ============== Branchement bouton de soutien  =============== */
+        /* ============================================================= */
 
-            val dialog = alertSupport.create()
-            dialog.getButton(AlertDialog.BUTTON_POSITIVE).background.setTint(Color.TRANSPARENT)
-
-            dialog.show()
-        }*/
         view.findViewById<ImageButton>(R.id.btnSupport).setOnClickListener{
             val alertSupport = AlertDialog.Builder(this.context).create();
             alertSupport.setTitle("Soutenez l'équipe !");
             alertSupport.setMessage("Vous pouvez nous soutenir en regardant une publicité, ça vous tente ?");
 
-            alertSupport.setButton(AlertDialog.BUTTON_POSITIVE, "Bien sûr", DialogInterface.OnClickListener { dialogInterface: DialogInterface, i: Int ->
+            alertSupport.setButton(AlertDialog.BUTTON_POSITIVE, "Bien sûr",
+                                   DialogInterface.OnClickListener {
+                                       dialogInterface: DialogInterface, i: Int ->
+                                       startActivity(Intent(activity, ActivitySoutien::class.java))
+                                   })
 
-                startActivity(Intent(activity, ActivitySoutien::class.java))
-            })
-
-            alertSupport.setButton(AlertDialog.BUTTON_NEGATIVE, "Non, merci", DialogInterface.OnClickListener { dialogInterface: DialogInterface, i: Int ->
-                exitTransition
-            })
+            alertSupport.setButton(AlertDialog.BUTTON_NEGATIVE, "Non, merci",
+                                   DialogInterface.OnClickListener {
+                                       dialogInterface: DialogInterface, i: Int ->
+                                       exitTransition
+                                   })
             alertSupport.show()
-
             alertSupport.getButton(AlertDialog.BUTTON_POSITIVE).background.setTint(Color.TRANSPARENT)
+            alertSupport.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(resources.getColor(R.color.gymathsBlue))
             alertSupport.getButton(AlertDialog.BUTTON_NEGATIVE).background.setTint(Color.TRANSPARENT)
-            }
+            alertSupport.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(resources.getColor(R.color.gymathsBlue))
+        }
     }
 }

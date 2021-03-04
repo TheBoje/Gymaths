@@ -15,11 +15,9 @@ import androidx.navigation.fragment.navArgs
 import com.example.gymaths.R
 
 class Fragment11 : Fragment() {
-    override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
+    {
+        // Transforme le layout qui est en xml en objets Kotlins:
         return inflater.inflate(R.layout.exercices_fragment11, container, false)
     }
 
@@ -27,26 +25,34 @@ class Fragment11 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val envoie : Bundle = Bundle()
 
+        /* ================================================================ */
+        /* = Récupération et traitement des données du fragment Question  = */
+        /* ================================================================ */
+
+        // Récupération des données:
         var equa : String? = this.arguments?.getString("generated")
         var input : String? = this.arguments?.getString("input")
         var isSolved : Boolean? = this.arguments?.getBoolean("isSolved")
         var progressBarValue : Int? = this.arguments?.getInt("progressBarValue")
 
-        var equaView : TextView = view.findViewById(R.id.textViewSolution)
-        var userView : TextView = view.findViewById(R.id.textViewUtilisateur)
+        // Mise à jour de la barre de progression:
         var progressBar : ProgressBar = view.findViewById(R.id.progressBar2)
-
         if (progressBarValue != null) {
             progressBar.progress = progressBarValue
             envoie.putInt("progressBarValue", progressBarValue)
         }
+
+        // Affichage solution générée VS solution utilisateur:
+        var equaView : TextView = view.findViewById(R.id.textViewSolution)
+        var userView : TextView = view.findViewById(R.id.textViewUtilisateur)
         equaView.text = "x = " + equa
         userView.text = input
         println(isSolved)
 
 
-
-
+        /* ================================================================ */
+        /* =============== Branchement barre de progression =============== */
+        /* ================================================================ */
 
         view.findViewById<Button>(R.id.btnValidate).setOnClickListener {
             if (progressBar.progress == progressBar.max)
