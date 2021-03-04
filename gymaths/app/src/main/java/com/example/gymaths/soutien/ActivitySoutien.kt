@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gymaths.R
+import com.instabug.library.Instabug
 
 
 class ActivitySoutien : AppCompatActivity()
@@ -24,7 +25,10 @@ class ActivitySoutien : AppCompatActivity()
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId)
         {
-            R.id.action_profile -> true
+            //R.id.action_profile -> true
+            R.id.action_bug -> {
+                Instabug.show()
+                true}
             else -> super.onOptionsItemSelected(item)
         }
     }
