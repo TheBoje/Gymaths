@@ -21,12 +21,12 @@ import com.example.gymaths.soutien.ActivitySoutien
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class Fragment3 : Fragment() {
+class FragmentMenuPrincipal : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
     {
         // Transforme le layout qui est en xml en objets Kotlins:
-        return inflater.inflate(R.layout.main_fragment3, container, false)
+        return inflater.inflate(R.layout.main_fragment_menu_principal, container, false)
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)

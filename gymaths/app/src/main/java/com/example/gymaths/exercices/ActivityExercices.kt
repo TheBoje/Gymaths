@@ -7,10 +7,7 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gymaths.R
 
-open class Button
-
-class ActivityExercices : AppCompatActivity()
-{
+class ActivityExercices : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.exercices_activity)
@@ -18,12 +15,12 @@ class ActivityExercices : AppCompatActivity()
         setSupportActionBar(findViewById(R.id.toolbar))
 
         window.setFlags(
-            WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM,
-            WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM)
+                WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM,
+                WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
+        menuInflater.inflate(R.menu.toolbar_menu, menu)
         return true
     }
 
@@ -33,16 +30,4 @@ class ActivityExercices : AppCompatActivity()
             else -> super.onOptionsItemSelected(item)
         }
     }
-
-    /* fun updateAnswer(view: View)
-    {
-        var answerField = findViewById<TextView>(R.id.solutionView);
-        var textInput = findViewById<EditText>(R.id.editText);
-        var toSubmit = textInput.text.toString();
-        answerField.text = toSubmit
-        if (answerField.text.toString() == getString(R.string.exemple_reponse))
-            answerField.text = getString(R.string.Bonjour)
-        else
-            answerField.text = getString(R.string.exemple_reponse)
-    } */
 }

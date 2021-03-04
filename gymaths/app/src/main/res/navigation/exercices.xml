@@ -8,9 +8,9 @@
 
     <fragment
         android:id="@+id/Fragment5"
-        android:name="com.example.gymaths.exercices.Fragment5"
+        android:name="com.example.gymaths.exercices.FragmentQuestion"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/exercices_fragment5">
+        tools:layout="@layout/exercices_fragmentQuestion">
 
         <action
             android:id="@+id/Fragment5To11"
@@ -19,18 +19,18 @@
 
     <fragment
         android:id="@+id/Fragment8"
-        android:name="com.example.gymaths.exercices.Fragment8"
+        android:name="com.example.gymaths.exercices.FragmentBilan"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/exercices_fragment8">
+        tools:layout="@layout/exercices_fragment_bilan">
 
 
     </fragment>
 
     <fragment
         android:id="@+id/Fragment11"
-        android:name="com.example.gymaths.exercices.Fragment11"
+        android:name="com.example.gymaths.exercices.FragmentReponse"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/exercices_fragment11">
+        tools:layout="@layout/exercices_fragment_reponse">
 
         <action
             android:id="@+id/Fragment11To5"

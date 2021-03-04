@@ -1,24 +1,21 @@
 package com.example.gymaths.exercices
 
 import android.os.Bundle
-import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.example.gymaths.R
 
-class Fragment11 : Fragment() {
+class FragmentReponse : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
     {
         // Transforme le layout qui est en xml en objets Kotlins:
-        return inflater.inflate(R.layout.exercices_fragment11, container, false)
+        return inflater.inflate(R.layout.exercices_fragment_reponse, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

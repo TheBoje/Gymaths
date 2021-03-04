@@ -1,13 +1,9 @@
 package com.example.gymaths.main
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.view.Window
-import android.view.WindowManager
 import com.example.gymaths.R
 
 class ActivityMain : AppCompatActivity() {
@@ -16,16 +12,11 @@ class ActivityMain : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
         setSupportActionBar(findViewById(R.id.toolbar))
-
-        /*findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }*/
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
+        menuInflater.inflate(R.menu.toolbar_menu, menu)
         return true
     }
 

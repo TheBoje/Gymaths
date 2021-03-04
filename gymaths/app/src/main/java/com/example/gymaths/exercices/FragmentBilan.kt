@@ -6,14 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.gymaths.R
 
-class Fragment8 : Fragment() {
+class FragmentBilan : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
     {
         // Transforme le layout qui est en xml en objets Kotlins:
-        return inflater.inflate(R.layout.exercices_fragment8, container, false)
+        return inflater.inflate(R.layout.exercices_fragment_bilan, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
