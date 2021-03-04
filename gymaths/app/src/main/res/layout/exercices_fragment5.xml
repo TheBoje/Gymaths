@@ -8,48 +8,6 @@
     tools:context=".exercices.ActivityExercices">
 
 
-    <!--  <Button
-        android:id="@+id/btnTest"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="32dp"
-        android:text="@string/btnTest"
-        android:textSize="20sp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.846"
-        app:layout_constraintStart_toStartOf="parent" />
-
-     <Button
-        android:id="@+id/btnValidate"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="36dp"
-        android:text="@string/btnValidate"
-        android:textSize="20sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="updateAnswer"
-        /> -->
-
-    <!--<TextView
-        android:id="@+id/solutionView"
-        android:layout_width="339dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/back"
-        android:text="@string/exemple_reponse"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/problemView" />-->
-
     <TextView
         android:id="@+id/problemView"
         android:layout_width="match_parent"
