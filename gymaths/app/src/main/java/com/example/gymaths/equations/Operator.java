@@ -97,8 +97,28 @@ public class Operator extends Exp {
     }
 
     /**
-     * Opération de rotation vers la droite de l'arbre.
-     * TODO: Expliciter
+     * Opération de rotation vers la droite de l'arbre
+     * respectant l'équivalence d'une équation.
+     * 
+     *      P             P
+     *     / \           / \
+     *    Q   w  <=>    u  Q-1
+     *   / \               / \
+     *  u   v             w   v
+     * 
+     * où Q-1 correspond à l'opération inverse de Q
+     * 
+     * <p> exemple :
+     * x*a + b = c <=> x*a = c - b
+     * 
+     *        =                 _=_
+     *       / \               /   \
+     *      +   c             *     -
+     *     / \               / \   / \
+     *    *   b    <=>      x   a c   b
+     *   / \
+     *  x   a
+     * </p>
      */
     public void clRotateRight() {
         if (this.expLeft != null && this.expLeft instanceof Operator) {

@@ -1,5 +1,8 @@
 package com.example.gymaths.equations;
 
+/**
+ * 
+ */
 public class Minus extends Operator {
     private static final Exp minus_0 = new Minus(new Ignored(), new Number(0));
 
