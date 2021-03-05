@@ -99,7 +99,16 @@ public class Operator extends Exp {
     /**
      * Opération de rotation vers la droite de l'arbre
      * respectant l'équivalence d'une équation.
-     * <p>
+     * 
+     *      P             P
+     *     / \           / \
+     *    Q   w  <=>    u  Q-1
+     *   / \               / \
+     *  u   v             w   v
+     * 
+     * où Q-1 correspond à l'opération inverse de Q
+     * 
+     * <p> exemple :
      * x*a + b = c <=> x*a = c - b
      * 
      *        =                 _=_
