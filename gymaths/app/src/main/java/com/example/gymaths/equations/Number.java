@@ -1,5 +1,10 @@
 package com.example.gymaths.equations;
 
+/**
+ * La classe Number correspond au nombre réels de
+ * l'arbre de syntaxe. Cette classe sera toujours une feuille
+ * de l'arbre.
+ */
 public class Number extends Leaf {
     private final float value;
 
@@ -13,6 +18,10 @@ public class Number extends Leaf {
         return new Number(this.getValue());
     }
 
+    /**
+     * 
+     * @return La valeur du noeud Number
+     */
     public float getValue() {
         return this.value;
     }
@@ -22,7 +31,11 @@ public class Number extends Leaf {
         return this.value;
     }
 
-    // TODO This
+    /**
+     * On retourne le noeud car le nombre est déjà au
+     * maximum de la simplification.
+     * @return le noeud
+     */
     @Override
     public Exp simplify() {
         return this;
