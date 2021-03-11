@@ -1,6 +1,5 @@
 package com.example.gymaths.equations;
 
-import org.jetbrains.annotations.NotNull;
 
 /**
  * 
@@ -47,7 +46,6 @@ public class Minus extends Operator {
         }
     }
 
-    @NotNull
     @Override
     public String toString() {
         return String.format("(%s - %s)", this.expLeft.toString(), this.expRight.toString());

@@ -1,7 +1,5 @@
 package com.example.gymaths.equations;
 
-import org.jetbrains.annotations.NotNull;
-
 public class Ignored extends Exp {
 
     /*
@@ -36,7 +34,6 @@ public class Ignored extends Exp {
         throw new UnsupportedOperationException();
     }
 
-    @NotNull
     @Override
     public String toString() {
         return "[ignored]";

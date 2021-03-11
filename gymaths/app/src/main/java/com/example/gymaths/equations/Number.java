@@ -1,7 +1,5 @@
 package com.example.gymaths.equations;
 
-import org.jetbrains.annotations.NotNull;
-
 /**
  * La classe Number correspond au nombre réels de
  * l'arbre de syntaxe. Cette classe sera toujours une feuille
@@ -43,7 +41,6 @@ public class Number extends Leaf {
         return this;
     }
 
-    @NotNull
     @Override
     public String toString() {
         return Float.toString(value);

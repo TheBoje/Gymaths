@@ -1,7 +1,5 @@
 package com.example.gymaths.equations;
 
-import org.jetbrains.annotations.NotNull;
-
 public class Times extends Operator {
     private static final Exp times_0 = new Times(new Ignored(), new Number(0));
 
@@ -49,7 +47,6 @@ public class Times extends Operator {
         }
     }
 
-    @NotNull
     @Override
     public String toString() // TODO Improve this
     {

@@ -1,7 +1,5 @@
 package com.example.gymaths.equations;
 
-import org.jetbrains.annotations.NotNull;
-
 public class Variable extends Leaf {
     private final String name;
 
@@ -30,7 +28,6 @@ public class Variable extends Leaf {
         return this;
     }
 
-    @NotNull
     @Override
     public String toString() {
         return this.name;
