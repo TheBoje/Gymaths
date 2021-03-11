@@ -1,5 +1,7 @@
 package com.example.gymaths.equations;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Times extends Operator {
     private static final Exp times_0 = new Times(new Ignored(), new Number(0));
 
@@ -37,9 +39,9 @@ public class Times extends Operator {
     public Exp simplify() {
         if (EquationSimplificator.matchWith(this, times_0)) {
             return new Number(0);
-        } else if (EquationSimplificator.matchWith(this, distribPlus)) {
+        } else if (EquationSimplificator.matchWith(this, distribPlus) && this.expLeft.expLeft != null && this.expLeft.expRight != null ) {
             return new Plus(new Times(this.expLeft.expLeft.simplify(), this.expRight), new Times(this.expLeft.expRight.simplify(), this.expRight));
-        } else if (EquationSimplificator.matchWith(this, distribMinus)) {
+        } else if (EquationSimplificator.matchWith(this, distribMinus) && this.expLeft.expLeft != null && this.expLeft.expRight != null) {
             return new Minus(new Times(this.expLeft.expLeft.simplify(), this.expRight), new Times(this.expLeft.expRight.simplify(), this.expRight));
         } else // ajouter des else if () avec les autres cas pour ajouter des cas de simplification
         {
@@ -47,6 +49,7 @@ public class Times extends Operator {
         }
     }
 
+    @NotNull
     @Override
     public String toString() // TODO Improve this
     {

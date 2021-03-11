@@ -1,10 +1,5 @@
 package com.example.gymaths.equations;
 
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
-
-@RequiresApi(api = Build.VERSION_CODES.R)
 public class Parser {
 
     // Retourne NumberFormatException si le nombre

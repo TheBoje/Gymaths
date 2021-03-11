@@ -1,5 +1,7 @@
 package com.example.gymaths.equations;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Implémentation de l'opération de division pour les <code>Exp</code>
  *
@@ -68,6 +70,7 @@ public class Divide extends Operator {
      *
      * @return
      */
+    @NotNull
     @Override
     public String toString() {
         return String.format("(%s / %s)", this.expLeft.toString(), this.expRight.toString());

@@ -1,8 +1,5 @@
 package com.example.gymaths.equations;
 
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
 
 /**
  * Cette classe permet de manipuler les expressions mathématiques utilisés dans le cadre de
@@ -20,14 +17,15 @@ import androidx.annotation.RequiresApi;
  */
 public abstract class Exp {
     /**
-    *
-    * */
+     *
+     */
     public Exp expLeft;
     public Exp expRight;
 
     /**
      * Contructeur de l'expression suivant la structure d'un AST.
-     * @param expLeft Arbre d'expression gauche
+     *
+     * @param expLeft  Arbre d'expression gauche
      * @param expRight Arbre d'expression droit
      */
     public Exp(Exp expLeft, Exp expRight) {
@@ -37,9 +35,10 @@ public abstract class Exp {
 
     /**
      * Compare si deux expressions sont égales algébriquement
-     * @param exp1 expression à comparer avec <code>exp2</code>
-     * @param exp2 expression à comparer avec <code>exp1</code>
-     * @return Booléen : true si <code>exp1</code> et <code>exp2</code> sont identiques
+     *
+     * @param exp1 expression à comparer avec {@code exp2}
+     * @param exp2 expression à comparer avec {@code exp1}
+     * @return Booléen : true si {@code exp1} et {@code exp2} sont identiques
      * algébriquement, false dans le cas contraire.
      */
     public static boolean areEqual(Exp exp1, Exp exp2) {
@@ -49,7 +48,7 @@ public abstract class Exp {
             // utile, mais sera important si utilisation de plusieurs variables.
             if (exp1 instanceof Variable) {
                 return ((Variable) exp1).getName().equals(((Variable) exp2).getName());
-            // Dans le cas d'un nombre, on vérifie que la valeur est identique
+                // Dans le cas d'un nombre, on vérifie que la valeur est identique
             } else if (exp1 instanceof Number) {
                 return ((Number) exp1).getValue() == ((Number) exp1).getValue();
             } else {
@@ -60,14 +59,50 @@ public abstract class Exp {
     }
 
     /**
+     * Zone de tests
+     *
+     * @param args non utilisé ici
+     */
+    public static void main(String[] args) throws Exception {
+        Exp generated;
+        int iterations = 1000000;
+        for (int i = 0; i < iterations; i++) {
+            try{
+                generated = EquationGenerator.generateExpression(5);
+                //System.out.println(generated.toString());
+                generated.fullSimplify();
+                generated.evaluate();
+                //System.out.println(generated.evaluate());
+            }
+            catch (UnsupportedOperationException e)
+            {
+                System.out.println("Catch - Division par zero");
+            }
+            System.out.println("[" + i + " / " + iterations + "]");
+        }
+
+        /*
+        Exp eq_mult;
+        eq_mult = new Minus(new Times(new Minus(new Number(4), new Number(1)), new Number(0)), new Minus(new Number(0), new Number(1)));
+        System.out.println(eq_mult.fullSimplify());
+        System.out.println("Print         : " + eq_mult.toString());
+        System.out.println("Parse 3       : " + Parser.parse("3"));
+        System.out.println("Parse 3.4     : " + Parser.parse("3.4").toLatexTree());
+        System.out.println("Parse 13.3/12 : " + Parser.parse("13.3/12").evaluate());
+         */
+    }
+
+    /**
      * Permet de faire une "copie profonde" (deep copy) de l'objet. À implémenter dans les
      * sous-classes.
+     *
      * @return Retourne une copie profonde de l'arbre
      */
     public abstract Exp copy();
 
     /**
      * Évalue l'expression
+     *
      * @return Valeur de l'expression
      * @throws Exception si l'arbre contient une variable ou une division par 0
      */
@@ -75,12 +110,14 @@ public abstract class Exp {
 
     /**
      * Lance une itération de simplification de l'arbre
+     *
      * @return Retourne l'arbre simplifié
      */
     public abstract Exp simplify();
 
     /**
      * Simplifie entièrement l'arbre dans la mesure des opérations de simplification implémentées
+     *
      * @return Retourne l'arbre simplifié
      */
     public Exp fullSimplify() {
@@ -95,6 +132,7 @@ public abstract class Exp {
 
     /**
      * Affiche l'expression à partir de l'arbre
+     *
      * @return Retourne le string contenant l'expression
      */
     @Override
@@ -102,6 +140,7 @@ public abstract class Exp {
 
     /**
      * Affiche le mot en LaTeX de l'expression
+     *
      * @return Retourne le string LaTeX de l'expression
      */
     public abstract String toLatex();
@@ -109,37 +148,19 @@ public abstract class Exp {
     /**
      * Affiche le mot en LaTeX pour dessiner l'arbre en suivant la méthode suivante proposé sur
      * <a href="https://tex.stackexchange.com/a/5451">tex.stackexchange.com/</a>
+     *
      * @return Retourne le string LaTeX de l'arbre
      */
     public abstract String toLatexTree();
 
-
     /**
-     * Remplace les deux sous-arbres par respectivement <code>left</code> et <code>right</code>.
-     * @param left nouveau sous-arbre gauche
+     * Remplace les deux sous-arbres par respectivement {@code left} et {@code right}.
+     *
+     * @param left  nouveau sous-arbre gauche
      * @param right nouveau sous-arbre droit
      */
     public void setBoth(Exp left, Exp right) {
         this.expLeft = left;
         this.expRight = right;
-    }
-
-    /**
-     * Zone de tests
-     * @param args non utilisé ici
-     */
-    @RequiresApi(api = Build.VERSION_CODES.R)
-    public static void main(String[] args) throws Exception {
-        Exp generated = EquationGenerator.generateEquation(4);
-
-
-        Exp eq_mult, eq_equals, simplified;
-        eq_mult = new Minus(new Times(new Minus(new Number(4), new Number(1)), new Number(0)), new Minus(new Number(0), new Number(1)));
-        eq_equals = new Equals(new Plus(new Times(new Variable("x"), new Number(7)), new Number(2)), new Number(6));
-
-        System.out.println("Print         : " + eq_mult.toString());
-        System.out.println("Parse 3       : " + Parser.parse("3"));
-        System.out.println("Parse 3.4     : " + Parser.parse("3.4").toLatexTree());
-        System.out.println("Parse 13.3/12 : " + Parser.parse("13.3/12").evaluate());
     }
 }

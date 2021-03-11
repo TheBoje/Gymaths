@@ -1,5 +1,7 @@
 package com.example.gymaths.equations;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Pow extends Operator {
 
     public Pow(Exp expLeft, Exp expRight) {
@@ -33,6 +35,7 @@ public class Pow extends Operator {
         return new Pow(this.expLeft.simplify(), this.expRight.simplify());
     }
 
+    @NotNull
     @Override
     public String toString() {
         return String.format("%s^(%s)", this.expLeft.toString(), this.expRight.toString());

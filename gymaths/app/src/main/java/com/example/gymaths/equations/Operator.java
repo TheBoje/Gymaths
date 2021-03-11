@@ -1,5 +1,7 @@
 package com.example.gymaths.equations;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Implémentation du type Opérateur pour les <code>Exp</code>
  *
@@ -72,6 +74,7 @@ public class Operator extends Exp {
      * Affiche l'expression à partir de l'arbre
      * @return Retourne le string contenant l'expression
      */
+    @NotNull
     @Override
     public String toString() {
         throw new UnsupportedOperationException();

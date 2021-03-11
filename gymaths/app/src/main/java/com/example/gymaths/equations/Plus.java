@@ -1,5 +1,7 @@
 package com.example.gymaths.equations;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Plus extends Operator {
 
     private static final Exp plus_0 = new Plus(new Ignored(), new Number(0));
@@ -42,6 +44,7 @@ public class Plus extends Operator {
         return new Plus(this.expLeft.simplify(), this.expRight.simplify());
     }
 
+    @NotNull
     @Override
     public String toString() {
         return String.format("%s + %s", this.expLeft.toString(), this.expRight.toString());

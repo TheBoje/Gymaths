@@ -1,5 +1,7 @@
 package com.example.gymaths.equations;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  *
  */
@@ -47,6 +49,7 @@ public class Equals extends Operator {
      *
      * @return
      */
+    @NotNull
     @Override
     public String toString() {
         return String.format("%s = %s", this.expLeft.toString(), this.expRight.toString());
