@@ -26,7 +26,7 @@ jobs:
           ref: dev
 
       - name: Installation Javadoc package
-        run : sudo apt-get javadoc
+        run : sudo apt-get install javadoc
 
       # Runs a set of commands using the runners shell
       - name: Run JavaDoc Generation
