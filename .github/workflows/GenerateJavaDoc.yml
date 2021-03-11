@@ -30,4 +30,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run JavaDoc Generation
-        run: javadoc -protected -splitindex -use -author -d ./docs -Xdoclint:non
+        run: javadoc -d /docs -sourcepath gymaths/app/src/main/java/com/example/gymaths -subpackages equations -verbose -protected -author -Xdoclint:non -use -splitindex
