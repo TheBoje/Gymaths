@@ -3,8 +3,8 @@ package com.example.gymaths.equations;
 import java.util.Random;
 
 /**
- * TODO -> faire une classe exposant
- * TODO -> faire une classe equal
+ * TODO: faire une classe exposant
+ * TODO: faire une classe equal
  */
 public abstract class EquationGenerator {
 
@@ -126,7 +126,7 @@ public abstract class EquationGenerator {
     }
 
     /**
-     * Génère une équation en fonction de x TODO -> rajouter le egale en racine de l'arbre
+     * Génère une équation en fonction de x TODO: rajouter le egale en racine de l'arbre
      *
      * @param hmax : hauteur maximale de l'arbre
      * @return Retourne un arbre d'expression Exp avec une variabel, cette expression ne contient pas de division par 0

@@ -2,7 +2,7 @@ package com.example.gymaths.equations;
 
 
 /**
- * Implémentation du type Opérateur pour les <code>Exp</code>
+ * Implémentation du type Opérateur pour les {@code Exp}
  *
  * @author Vincent Commin & Louis Leenart
  */
