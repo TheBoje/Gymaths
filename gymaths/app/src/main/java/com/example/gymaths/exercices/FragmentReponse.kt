@@ -44,7 +44,7 @@ class FragmentReponse : Fragment() {
         var userView : TextView = view.findViewById(R.id.textViewUtilisateur)
         equaView.text = "x = " + equa
         userView.text = input
-        println(isSolved)
+        println("Is the equation solved : $isSolved")
 
 
         /* ================================================================ */

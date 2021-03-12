@@ -4,7 +4,7 @@ public class Parser {
 
     // Retourne NumberFormatException si le nombre
     // n'est pas parsable.
-    public static Exp parse(String input) {
+    public static Exp parse(String input) throws NumberFormatException {
         input = input.replace(" ", "");
         if (input.contains("/") && input.split("/").length == 2) // TODO Optimisable !
         {

@@ -18,6 +18,8 @@ import com.example.gymaths.claviers.AlphabeticKeyboard
 import com.example.gymaths.R
 import com.example.gymaths.equations.EquationGenerator
 import com.example.gymaths.equations.Exp
+import com.example.gymaths.equations.Number
+import com.example.gymaths.equations.Parser
 import com.example.gymaths.equations.Variable
 
 
@@ -79,16 +81,25 @@ class FragmentQuestion : Fragment()
         progressBar.incrementProgressBy(1)
 
         // Passage écran solution + progress bar depuis le SimpleMathsKeyboard:
+        // FIXME: Duplication de code avec AlphabeticKeyboard
         view.findViewById<Button>(R.id.button_validate).setOnClickListener {
             val envoie : Bundle = Bundle()
             val input : String = editText.text.toString()
             val progressBar : ProgressBar = view.findViewById(R.id.progressBar)
             val progressBarValue : Int = progressBar.progress
-            val inputExp : Exp = Variable("x")//Parser.infixToExp(input)
+            var inputExp : Exp = Number(0f);
+
+            try {
+                inputExp = Parser.parse(input)
+            } catch (e: NumberFormatException) {
+                // TODO: Si le nombre saisit n'est pas correct, il ne faut pas passer au fragment suivant et redemander une autre entrée
+                e.printStackTrace()
+            }
+
 
             envoie.putString("generated", equation.fullSimplify().expRight.evaluate().toString())
-            envoie.putString("input", input)
-            envoie.putBoolean("isSolved", false) // Exp.areEqual(inputExp, equation))
+            envoie.putString("input", inputExp.toString())
+            envoie.putBoolean("isSolved", inputExp.evaluate() == equation.fullSimplify().expRight.evaluate())
             envoie.putInt("progressBarValue", progressBarValue)
 
             findNavController().navigate(R.id.Fragment5To11, envoie)
@@ -100,11 +111,19 @@ class FragmentQuestion : Fragment()
             val input : String = editText.text.toString()
             val progressBar : ProgressBar = view.findViewById(R.id.progressBar)
             val progressBarValue : Int = progressBar.progress
-            val inputExp : Exp = Variable("x")//Parser.infixToExp(input)
+            var inputExp : Exp = Number(0f);
+
+            try {
+                inputExp = Parser.parse(input)
+            } catch (e: NumberFormatException) {
+                // TODO: Si le nombre saisit n'est pas correct, il ne faut pas passer au fragment suivant et redemander une autre entrée
+                e.printStackTrace()
+            }
+
 
             envoie.putString("generated", equation.fullSimplify().expRight.evaluate().toString())
-            envoie.putString("input", input)
-            envoie.putBoolean("isSolved", false) // Exp.areEqual(inputExp, equation))
+            envoie.putString("input", inputExp.toString())
+            envoie.putBoolean("isSolved", Exp.areEqual(inputExp, equation.fullSimplify().expRight))
             envoie.putInt("progressBarValue", progressBarValue)
 
             findNavController().navigate(R.id.Fragment5To11, envoie)
