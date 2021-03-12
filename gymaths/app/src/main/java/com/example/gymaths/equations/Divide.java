@@ -1,7 +1,7 @@
 package com.example.gymaths.equations;
 
 /**
- * Implémentation de l'opération de division pour les <code>Exp</code>
+ * Implémentation de l'opération de division pour les {@code Exp}
  *
  * @author Vincent Commin & Louis Leenart
  */

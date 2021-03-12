@@ -2,7 +2,9 @@ package com.example.gymaths.equations;
 
 
 /**
+ * Implémentation de l'opération d'égalité pour les {@code Exp}
  *
+ * @author Vincent Commin & Louis Leenart
  */
 public class Equals extends Operator {
     /**
