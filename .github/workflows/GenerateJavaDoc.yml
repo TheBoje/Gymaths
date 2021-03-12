@@ -34,4 +34,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run JavaDoc Generation
         run: 
-          javadoc -d docs -sourcepath gymaths/app/src/main/java -subpackages com.example.gymaths.equations -verbose -package
+          javadoc -d docs -sourcepath gymaths/app/src/main/java -subpackages com.example.gymaths.equations -verbose -package -Xdoclint:none
