@@ -17,7 +17,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.gymaths.R
 import com.example.gymaths.exercices.ActivityExercices
 import com.example.gymaths.soutien.ActivitySoutien
-import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
@@ -64,34 +63,41 @@ class FragmentMenuPrincipal : Fragment() {
         /* ============================================================= */
 
         view.findViewById<ImageButton>(R.id.btnSupport).setOnClickListener{
-            val alertSupport = AlertDialog.Builder(this.context).create();
-            alertSupport.setTitle("Soutenez l'équipe !");
-            alertSupport.setMessage("Vous pouvez nous soutenir en regardant une publicité, ça vous tente ?");
 
-            //Publicité:
+            //On crée la publicité :
             MobileAds.initialize(this.activity, "ca-app-pub-3940256099942544~3347511713")
             val mInterstitialAd = InterstitialAd(this.requireActivity())
             mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
             mInterstitialAd.loadAd(AdRequest.Builder().build())
 
+            //On crée le popup et son contenu:
+            val alertSupport = AlertDialog.Builder(this.context).create()
+            alertSupport.setTitle("Soutenez l'équipe !")
+            alertSupport.setMessage("Vous pouvez nous soutenir en regardant une publicité, ça vous tente ?")
+
+            //On associe les boutons du popup à leurs gestionnaires d'événements respectifs:
             alertSupport.setButton(AlertDialog.BUTTON_POSITIVE, "Bien sûr",
                                    DialogInterface.OnClickListener {
-                                       dialogInterface: DialogInterface, i: Int ->
+                                       _: DialogInterface, _: Int ->
 
                                        //On affiche la publicité
                                        if (mInterstitialAd.isLoaded) {
                                            mInterstitialAd.show()
                                        } else {
-                                          System.err.println("Échec du chargement de l'objet publicité mInterstitialAd")
+                                          System.err.println("Échec du chargement de l'objet publicité")
                                        }
                                    })
 
             alertSupport.setButton(AlertDialog.BUTTON_NEGATIVE, "Non, merci",
                                    DialogInterface.OnClickListener {
-                                       dialogInterface: DialogInterface, i: Int ->
+                                       _: DialogInterface, _: Int ->
                                        exitTransition
                                    })
+
+            //On affiche le popup (ce qui crée ses boutons):
             alertSupport.show()
+
+            //On modifie quelques aspects graphiques de boutons du popup:
             alertSupport.getButton(AlertDialog.BUTTON_POSITIVE).background.setTint(Color.TRANSPARENT)
             alertSupport.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(resources.getColor(R.color.gymathsBlue))
             alertSupport.getButton(AlertDialog.BUTTON_NEGATIVE).background.setTint(Color.TRANSPARENT)
