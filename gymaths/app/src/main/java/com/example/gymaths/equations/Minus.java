@@ -2,11 +2,20 @@ package com.example.gymaths.equations;
 
 
 /**
- * 
+ * Implémentation de l'opération moins pour les {@code Exp}
+ *
+ * @author Vincent Commin & Louis Leenart
  */
 public class Minus extends Operator {
+    /** Modèle pour comparaison dans le cadre de la simplification. */
     private static final Exp minus_0 = new Minus(new Ignored(), new Number(0));
 
+    /**
+     * Constructeur de l'opération moins
+     *
+     * @param expLeft  Sous-arbre gauche
+     * @param expRight Sous-arbre droit
+     */
     public Minus(Exp expLeft, Exp expRight) {
         super(expLeft, expRight);
     }
@@ -32,7 +41,7 @@ public class Minus extends Operator {
         return new Plus(this.expLeft, this.expRight);
     }
 
-    // TODO This
+    // TODO: Implémenter les différentes opérations de simplifications
     @Override
     public Exp simplify() {
         if (EquationSimplificator.matchWith(this, minus_0)) {
