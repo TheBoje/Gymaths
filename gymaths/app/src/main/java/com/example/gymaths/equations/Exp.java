@@ -67,15 +67,13 @@ public abstract class Exp {
         Exp generated;
         int iterations = 1000000;
         for (int i = 0; i < iterations; i++) {
-            try{
+            try {
                 generated = EquationGenerator.generateExpression(5);
                 //System.out.println(generated.toString());
                 generated.fullSimplify();
                 generated.evaluate();
                 //System.out.println(generated.evaluate());
-            }
-            catch (UnsupportedOperationException e)
-            {
+            } catch (UnsupportedOperationException e) {
                 System.out.println("Catch - Division par zero");
             }
             System.out.println("[" + i + " / " + iterations + "]");

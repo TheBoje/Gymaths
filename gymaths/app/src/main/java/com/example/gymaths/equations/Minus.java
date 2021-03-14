@@ -2,7 +2,7 @@ package com.example.gymaths.equations;
 
 
 /**
- * Implémentation de l'opération moins pour les {@code Exp}
+ * Implémentation de l'opération Moins pour les {@code Exp}
  *
  * @author Vincent Commin & Louis Leenart
  */
@@ -11,7 +11,7 @@ public class Minus extends Operator {
     private static final Exp minus_0 = new Minus(new Ignored(), new Number(0));
 
     /**
-     * Constructeur de l'opération moins
+     * Constructeur de l'opération Moins
      *
      * @param expLeft  Sous-arbre gauche
      * @param expRight Sous-arbre droit

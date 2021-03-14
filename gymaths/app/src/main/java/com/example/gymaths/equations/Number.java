@@ -1,13 +1,25 @@
 package com.example.gymaths.equations;
 
 /**
- * La classe Number correspond au nombre réels de
- * l'arbre de syntaxe. Cette classe sera toujours une feuille
- * de l'arbre.
+ * Implémentation de la feuille nombre pour les {@code Exp}
+ *
+ * @author Vincent Commin & Louis Leenart
  */
+
 public class Number extends Leaf {
+    /*
+     * La classe Number correspond au nombre réels de l'arbre de syntaxe. Cette classe sera
+     * toujours une feuille de l'arbre.
+     */
+
+
     private final float value;
 
+    /**
+     * Constructeur de la feuille Nombre
+     *
+     * @param value Valeur du nombre
+     */
     public Number(float value) {
         super(null, null);
         this.value = value;
@@ -19,7 +31,8 @@ public class Number extends Leaf {
     }
 
     /**
-     * 
+     * Valeur contenue dans la feuille
+     *
      * @return La valeur du noeud Number
      */
     public float getValue() {
@@ -31,11 +44,6 @@ public class Number extends Leaf {
         return this.value;
     }
 
-    /**
-     * On retourne le noeud car le nombre est déjà au
-     * maximum de la simplification.
-     * @return le noeud
-     */
     @Override
     public Exp simplify() {
         return this;
