@@ -1,7 +1,18 @@
 package com.example.gymaths.equations;
 
+/**
+ * Implémentation de l'opération Puissance pour les {@code Exp}
+ *
+ * @author Vincent Commin & Louis Leenart
+ */
 public class Pow extends Operator {
 
+    /**
+     * Constructeur de l'opération Puissance
+     *
+     * @param expLeft  Sous-arbre gauche
+     * @param expRight Sous-arbre droit
+     */
     public Pow(Exp expLeft, Exp expRight) {
         super(expLeft, expRight);
     }
@@ -13,18 +24,12 @@ public class Pow extends Operator {
 
     @Override
     public double evaluate() throws Exception {
-        try {
-            return (float) Math.pow(this.expLeft.evaluate(), this.expRight.evaluate());
-        } catch (VariableEvaluationException e) {
-            e.print();
-            this.simplify();
-            throw e;
-        }
+        return (float) Math.pow(this.expLeft.evaluate(), this.expRight.evaluate());
     }
 
     @Override
     public Operator opposite() {
-        // TODO ajouter l'implémentation apres l'ajout de sqrt
+        // TODO: ajouter l'implémentation apres l'ajout de sqrt
         throw new UnsupportedOperationException();
     }
 
