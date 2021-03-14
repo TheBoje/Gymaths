@@ -16,11 +16,7 @@ public class Divide extends Operator {
         super(expLeft, expRight);
     }
 
-    /**
-     * Permet de faire une "copie profonde" (deep copy) de l'objet. À implémenter dans les
-     * sous-classes.
-     * @return Retourne une copie profonde de l'arbre
-     */
+
     @Override
     public Exp copy() {
         return new Divide(this.expLeft.copy(), this.expRight.copy());
@@ -29,7 +25,7 @@ public class Divide extends Operator {
     /**
      * Évalue l'expression
      * @return Valeur de l'expression
-     * @throws Exception Si <code>expRight</code> est évalué à 0, alors on ne peut pas évaluer
+     * @throws Exception Si {@code expRight} est évalué à 0, alors on ne peut pas évaluer
      * l'expression pour cet opérateur. Sinon, exception montante de l'évaluation d'un des
      * sous-arbres
      */
@@ -45,47 +41,31 @@ public class Divide extends Operator {
         }
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public Operator opposite() {
         return new Times(this.expLeft, this.expRight);
     }
 
-    /**
-     *
-     * @return
-     */
-    // TODO This
+
+    // TODO: Implémenter les différentes opérations de simplifications
     @Override
     public Exp simplify() {
         return new Divide(this.expLeft.simplify(), this.expRight.simplify());
     }
 
-    /**
-     *
-     * @return
-     */
+
     @Override
     public String toString() {
         return String.format("(%s / %s)", this.expLeft.toString(), this.expRight.toString());
     }
 
-    /**
-     *
-     * @return
-     */
+
     @Override
     public String toLatex() {
         return String.format("\\frac{%s}{%s}", this.expLeft.toLatex(), this.expRight.toLatex());
     }
 
-    /**
-     *
-     * @return
-     */
+
     @Override
     public String toLatexTree() {
         return String.format("[./ %s %s ]", this.expLeft.toLatexTree(), this.expRight.toLatexTree());
