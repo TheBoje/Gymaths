@@ -54,10 +54,12 @@ public class Times extends Operator {
     }
 
     @Override
-    public String toString() // FIXME: A améliorer, utiliser la priorité des opérations et leur
-    // précédence pour déterminer si la parenthèse est nécessaire. La méthode actuelle ne permet
-    // pas d'afficher un nombre minimal de parenthèses et est peut-être responsable de problèmes
-    // d'affichage.
+    public String toString()
+    /*
+        FIXME: A améliorer, utiliser la priorité des opérations et leur précédence pour
+         déterminer si la parenthèse est nécessaire. La méthode actuelle ne permet pas d'afficher
+         un nombre minimal de parenthèses et est peut-être responsable de problèmes d'affichage.
+    */
     {
         if (this.expLeft instanceof Leaf && this.expRight instanceof Leaf) {
             return String.format("%s * %s", this.expLeft.toString(), this.expRight.toString());

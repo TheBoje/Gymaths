@@ -135,7 +135,7 @@ public class Operator extends Exp {
 
     /**
      * Opération de rotation vers la droite de l'arbre.
-     * TODO: Expliciter
+     * Voir {@code clRotateRight()} pour plus de détails
      */
     public void clRotateLeft() {
         if (this.expRight != null && this.expRight instanceof Operator) {

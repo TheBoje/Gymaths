@@ -6,7 +6,7 @@ public class Parser {
     // n'est pas parsable.
     public static Exp parse(String input) throws NumberFormatException {
         input = input.replace(" ", "");
-        if (input.contains("/") && input.split("/").length == 2) // TODO Optimisable !
+        if (input.contains("/") && input.split("/").length == 2) // TODO Optimisable
         {
             String[] temp = input.split("/");
             return new Divide(

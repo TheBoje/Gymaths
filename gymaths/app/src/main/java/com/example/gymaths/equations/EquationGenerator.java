@@ -2,9 +2,14 @@ package com.example.gymaths.equations;
 
 import java.util.Random;
 
-/**
+/*
  * TODO: faire une classe exposant
- * TODO: faire une classe equal
+ */
+
+/**
+ * Classe abstraite permettant la génération d'équations de type {@code Exp}.
+ *
+ * @author Vincent Commin & Louis Leenart
  */
 public abstract class EquationGenerator {
 

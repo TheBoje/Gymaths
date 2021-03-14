@@ -1,18 +1,24 @@
 package com.example.gymaths.equations;
 
+/**
+ * Classe abstraite contenant certaines classes nécessaires à la simplifications d'équations de
+ * type {@code Exp}.
+ *
+ * @author Vincent Commin & Louis Leenart
+ */
 public abstract class EquationSimplificator {
-    // Sources : 
-    // https://stackoverflow.com/questions/4480334/how-to-call-a-method-stored-in-a-hashmap-java
-    // https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html
 
 
     // TODO Inverser les fils de chaque noeud (sauf pour division?) pour pouvoir 
     // faire le test dans tous les cas de structuration du l'input
 
     /**
-     * @param cible
-     * @param modele
-     * @return
+     * Compare les {@code Exp cible} et {@code modele} pour déterminer si les deux arbres sont
+     * identiques (ou équivalents).
+     *
+     * @param cible Arbre d'expression à comparer
+     * @param modele Arbre d'expression modèle
+     * @return booléen, vrai si les deux arbres sont égaux ou équivalents, faux le cas contraire
      */
     public static boolean matchWith(Exp cible, Exp modele) {
         if (cible == null && modele == null) {
