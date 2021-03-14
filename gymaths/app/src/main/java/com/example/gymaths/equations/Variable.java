@@ -1,13 +1,29 @@
 package com.example.gymaths.equations;
 
+/**
+ * Implémentation de la feuille Variable pour les {@code Exp}
+ *
+ * @author Vincent Commin & Louis Leenart
+ */
 public class Variable extends Leaf {
+    // Conteneur du nom de la variable. ex : "x".
     private final String name;
 
+    /**
+     * Constructeur de la feuille Vombre
+     *
+     * @param name Nom de la variable
+     */
     public Variable(String name) {
         super(null, null);
         this.name = name;
     }
 
+    /**
+     * Retourne le nom de la variable
+     *
+     * @return Le nom du noeud Variable
+     */
     public String getName() {
         return this.name;
     }
@@ -22,7 +38,6 @@ public class Variable extends Leaf {
         throw new VariableEvaluationException();
     }
 
-    // TODO This
     @Override
     public Exp simplify() {
         return this;

@@ -1,12 +1,24 @@
 package com.example.gymaths.equations;
 
+/**
+ * Implémentation de l'opération de multiplication pour les {@code Exp}
+ *
+ * @author Vincent Commin & Louis Leenart
+ */
 public class Times extends Operator {
+    /** Modèle pour comparaison dans le cadre de la simplification. */
     private static final Exp times_0 = new Times(new Ignored(), new Number(0));
 
-    // modèle pour la distribution TODO: peut être trouver un moyen de mettre uniquement une
+    // TODO: peut être trouver un moyen de mettre uniquement une seule?
     private static final Exp distribPlus = new Times(new Plus(new Ignored(), new Ignored()), new Ignored());
     private static final Exp distribMinus = new Times(new Minus(new Ignored(), new Ignored()), new Ignored());
 
+    /**
+     * Constructeur de l'opération de multiplication
+     *
+     * @param expLeft  Sous-arbre gauche
+     * @param expRight Sous-arbre droit
+     */
     public Times(Exp expLeft, Exp expRight) {
         super(expLeft, expRight);
     }
@@ -18,18 +30,12 @@ public class Times extends Operator {
 
     @Override
     public double evaluate() throws Exception {
-        try {
-            return this.expLeft.evaluate() * this.expRight.evaluate();
-        } catch (VariableEvaluationException e) {
-            e.print();
-            this.simplify();
-            throw e;
-        }
+        return this.expLeft.evaluate() * this.expRight.evaluate();
     }
 
     @Override
     public Operator opposite() {
-        // TODO Eval expRight == 0 ? (pour éviter la div par 0)
+        // TODO: Eval expRight == 0 ? (pour éviter la div par 0)
         return new Divide(this.expLeft, this.expRight);
     }
 
@@ -48,7 +54,10 @@ public class Times extends Operator {
     }
 
     @Override
-    public String toString() // TODO Improve this
+    public String toString() // FIXME: A améliorer, utiliser la priorité des opérations et leur
+    // précédence pour déterminer si la parenthèse est nécessaire. La méthode actuelle ne permet
+    // pas d'afficher un nombre minimal de parenthèses et est peut-être responsable de problèmes
+    // d'affichage.
     {
         if (this.expLeft instanceof Leaf && this.expRight instanceof Leaf) {
             return String.format("%s * %s", this.expLeft.toString(), this.expRight.toString());

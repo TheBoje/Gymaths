@@ -1,11 +1,10 @@
 package com.example.gymaths.equations;
 
 /**
- * Implémentation de la feuille nombre pour les {@code Exp}
+ * Implémentation de la feuille Nombre pour les {@code Exp}
  *
  * @author Vincent Commin & Louis Leenart
  */
-
 public class Number extends Leaf {
     /*
      * La classe Number correspond au nombre réels de l'arbre de syntaxe. Cette classe sera

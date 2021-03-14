@@ -27,13 +27,7 @@ public class Minus extends Operator {
 
     @Override
     public double evaluate() throws Exception {
-        try {
-            return this.expLeft.evaluate() - this.expRight.evaluate();
-        } catch (VariableEvaluationException e) {
-            e.print();
-            this.simplify();
-            throw e;
-        }
+        return this.expLeft.evaluate() - this.expRight.evaluate();
     }
 
     @Override
