@@ -1,5 +1,6 @@
 package com.example.gymaths.exercices
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,6 +32,7 @@ class FragmentReponse : Fragment() {
         var input : String? = this.arguments?.getString("input")
         var isSolved : Boolean? = this.arguments?.getBoolean("isSolved")
         var progressBarValue : Int? = this.arguments?.getInt("progressBarValue")
+        var score : Int? = this.arguments?.getInt("score")
 
         // Mise à jour de la barre de progression:
         var progressBar : ProgressBar = view.findViewById(R.id.progressBar2)
@@ -46,10 +48,25 @@ class FragmentReponse : Fragment() {
         userView.text = input
         println("Is the equation solved : $isSolved")
 
+        if(isSolved!!)
+        {
+            userView.setBackgroundResource(R.drawable.back_valid)
+            score = score?.inc()
+        }
+
+        else
+        {
+            equaView.append("\n\nTu feras mieux la prochaine fois!")
+        }
+
 
         /* ================================================================ */
         /* =============== Branchement barre de progression =============== */
         /* ================================================================ */
+
+        if (score != null) {
+            envoie.putInt("score", score)
+        }
 
         view.findViewById<Button>(R.id.btnValidate).setOnClickListener {
             if (progressBar.progress == progressBar.max)

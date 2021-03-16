@@ -87,7 +87,8 @@ class FragmentQuestion : Fragment()
             val input : String = editText.text.toString()
             val progressBar : ProgressBar = view.findViewById(R.id.progressBar)
             val progressBarValue : Int = progressBar.progress
-            var inputExp : Exp = Number(0f);
+            var inputExp : Exp = Number(0f)
+            var score : Int? = this.arguments?.getInt("score")
 
             try {
                 inputExp = Parser.parse(input)
@@ -101,6 +102,13 @@ class FragmentQuestion : Fragment()
             envoie.putString("input", inputExp.toString())
             envoie.putBoolean("isSolved", inputExp.evaluate() == equation.fullSimplify().expRight.evaluate())
             envoie.putInt("progressBarValue", progressBarValue)
+            if (score != null) {
+                envoie.putInt("score", score)
+            }
+            else {
+                score = 0
+                envoie.putInt("score", score)
+            }
 
             findNavController().navigate(R.id.Fragment5To11, envoie)
         }
@@ -111,15 +119,14 @@ class FragmentQuestion : Fragment()
             val input : String = editText.text.toString()
             val progressBar : ProgressBar = view.findViewById(R.id.progressBar)
             val progressBarValue : Int = progressBar.progress
-            var inputExp : Exp = Number(0f);
+            var inputExp : Exp = Number(0f)
 
             try {
                 inputExp = Parser.parse(input)
             } catch (e: NumberFormatException) {
-                // TODO: Si le nombre saisit n'est pas correct, il ne faut pas passer au fragment suivant et redemander une autre entrée
+                // TODO: Si le nombre saisi n'est pas correct, il ne faut pas passer au fragment suivant et redemander une autre entrée
                 e.printStackTrace()
             }
-
 
             envoie.putString("generated", equation.fullSimplify().expRight.evaluate().toString())
             envoie.putString("input", inputExp.toString())
