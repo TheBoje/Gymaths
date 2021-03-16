@@ -17,4 +17,9 @@
         android:orderInCategory="100"
         android:title="@string/bug"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/manuel_utilisation"
+        android:orderInCategory="100"
+        android:title="@string/manuel"
+        app:showAsAction="never" />
 </menu>
