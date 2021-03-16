@@ -1,5 +1,6 @@
 package com.example.gymaths.exercices
 
+import android.graphics.Color
 import android.os.Bundle
 import android.text.InputType
 import android.view.LayoutInflater
@@ -40,19 +41,21 @@ class FragmentQuestion : Fragment()
 
         // Clavier mathématique:
         val editText : EditText  = view.findViewById(R.id.editText)
+        editText.setRawInputType(InputType.TYPE_CLASS_TEXT)
+        editText.setTextIsSelectable(true)
+
+
+        // Clavier mathématique:
         val keyboard : SimpleMathsKeyboard = view.findViewById(R.id.keyboard)
 
         // Clavier alphabétique:
         val keyboard_abc : AlphabeticKeyboard = view.findViewById(R.id.keyboard_abc)
 
-        // Clavier mathématique:
-        editText.setRawInputType(InputType.TYPE_CLASS_TEXT)
-        editText.setTextIsSelectable(true)
 
+        // Clavier alphabétique:
         val ic : InputConnection  = editText.onCreateInputConnection(EditorInfo())
         keyboard.setInputConnection(ic, keyboard_abc)
 
-        // Clavier alphabétique:
         val ic_abc : InputConnection  = editText.onCreateInputConnection(EditorInfo())
         keyboard_abc.setInputConnection(ic_abc, keyboard)
 
@@ -73,7 +76,7 @@ class FragmentQuestion : Fragment()
         /* ============================================================= */
 
         // On récupère la progress bar du fragment solution:
-        var progressBarValue : Int? = this.arguments?.getInt("progressBarValue") //on reçoit le bundle de frag11
+        var progressBarValue : Int? = this.arguments?.getInt("progressBarValue")
         val progressBar : ProgressBar = view.findViewById(R.id.progressBar)
         if (progressBarValue != null) {
             progressBar.progress = progressBarValue
