@@ -50,7 +50,13 @@ public class Number extends Leaf {
 
     @Override
     public String toString() {
-        return Float.toString(value);
+        if (value == Math.floor(value))
+        {
+            return Integer.toString((int) value);
+        }
+        else {
+            return Float.toString(value);
+        }
     }
 
     @Override

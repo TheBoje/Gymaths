@@ -34,9 +34,9 @@ public abstract class EquationGenerator {
                         new Plus(
                                 new Times(
                                         new Variable("x"),
-                                        new Number(RAND.nextInt(BOUND))
-                                ), new Number(RAND.nextInt(BOUND))),
-                        new Number(RAND.nextInt(BOUND)));
+                                        new Number(RAND.nextInt(BOUND) + 1)
+                                ), new Number(RAND.nextInt(BOUND)  + 1)),
+                        new Number(RAND.nextInt(BOUND) + 1));
     }
 
 
@@ -48,7 +48,7 @@ public abstract class EquationGenerator {
     public static Exp QUADRATIC() {
         return new Plus(
                 new Times(
-                        new Number(RAND.nextInt(BOUND)),
+                        new Number(RAND.nextInt(BOUND - 1) + 1),
                         new Pow(
                                 new Variable("x"),
                                 new Number(2)
@@ -56,10 +56,10 @@ public abstract class EquationGenerator {
                 ),
                 new Plus(
                         new Times(
-                                new Number(RAND.nextInt(BOUND)),
+                                new Number(RAND.nextInt(BOUND - 1) + 1),
                                 new Variable("x")
                         ),
-                        new Number(RAND.nextInt(BOUND))
+                        new Number(RAND.nextInt(BOUND - 1) + 1)
                 )
         );
     }
