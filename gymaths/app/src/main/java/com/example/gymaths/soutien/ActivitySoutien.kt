@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.example.gymaths.ActivityApropos
 import com.example.gymaths.R
 import com.instabug.library.Instabug
 
@@ -28,7 +29,12 @@ class ActivitySoutien : AppCompatActivity()
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            //R.id.action_profile -> true
+            R.id.action_about -> {
+                val intent = Intent(this, ActivityApropos::class.java)
+                startActivity(intent)
+                true
+            }
+
             R.id.action_bug -> {
                 Instabug.show()
                 true
