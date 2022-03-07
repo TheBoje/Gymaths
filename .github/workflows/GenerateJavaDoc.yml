@@ -44,4 +44,3 @@ jobs:
           author_name: TheBoJe
           branch: dev
           push: true
-
