@@ -31,5 +31,50 @@
     <string name="exemple_eq">Soit l\'équation x + 2 = 5, quelle est la valeur de x?</string>
     <string name="exemple_reponse">La réponse est 3! En effet, quand on remplace x par 3 on a bien 3 + 2 = 5!</string>
     <string name="exercices_hint">Écrire la réponse ici</string>
+    <string name="btnTest">Test</string>
     <string name="Bonjour"> Hello World !</string>
+    <string name="editTextHint"><font fgcolor="#A9A9A9">Écrivez votre réponse ici</font></string>
+    <string name="profile">Profil</string>
+    <string name="about">À propos</string>
+    <string name="bug">Signaler un bug</string>
+    <string name="manuel">Manuel d\'utilisation</string>
+    <string name="openParenthesis">(</string>
+    <string name="closeParenthesis">)</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="plus">+</string>
+    <string name="power">^</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="minus">-</string>
+    <string name="x">x</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="mult">*</string>
+    <string name="valider">Valider</string>
+    <string name="_0">0</string>
+    <string name="comma">.</string>
+    <string name="equals">=</string>
+    <string name="divide">/</string>
+    <string name="abc_uppercase">ABC</string>
+    <string name="abc">abc</string>
+    <string name="def">def</string>
+    <string name="ghi">ghi</string>
+    <string name="jkl">jkl</string>
+    <string name="mno">mno</string>
+    <string name="pqr">pqr</string>
+    <string name="stu">stu</string>
+    <string name="vwx">vwx</string>
+    <string name="yz">yz</string>
+    <string name="apropos_content">\t L\'informatique est partout. Nous en avons tous les 5 conscience et
+    avons décidé d\'en faire notre métier, chacun dans des spécialités différentes. Nous souhaitons, au
+    bout du compte, apporter notre contribution à ce domaine qui nous passionne.\n\n
+         \t Gymaths était pour nous l\'occasion de faire un premier pas vers cet objectif commun. En effet avec ce
+    projet nous nous sommes donné un véritable défi: dépasser la programmation pour notre entraînement
+    personnel et nous approcher du monde de l\'entreprise et des besoins du monde réel.\n\n
+         \t Nous espérons avoir atteint cet objectif... Mais ce n\'est pas notre rôle d\'en juger. C\'est à vous, utilisateur, de nous dire si
+    nous sommes parvenu à vous satisfaire. D\'ici là, nous n\'aurons de cesse de nous améliorer... Pour vous!</string>
 </resources>

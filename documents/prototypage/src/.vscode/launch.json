@@ -9,6 +9,13 @@
             "name": "Launch Exp",
             "request": "launch",
             "mainClass": "Exp",
+            "projectName": "src_571db9b9"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exp",
+            "request": "launch",
+            "mainClass": "Exp",
             "projectName": "src_9be38d24"
         },
         {

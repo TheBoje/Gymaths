@@ -1,4 +1,4 @@
-public class Number extends Exp {
+public class Number extends Leaf {
 	private int value;
 
 	public Number(int value) {
@@ -6,17 +6,28 @@ public class Number extends Exp {
 		this.value = value;
 	}
 
+	@Override
+	public Exp copy() {
+		return new Number(this.getValue());
+	}
+
 	public int getValue(){
 		return this.value;
 	}
 
 	@Override
-	public float evaluate() {
+	public double evaluate() {
 		return this.value;
 	}
 
+	// TODO This
 	@Override
-	public String print() {
+	public Exp simplify() {
+		return this;
+	}
+
+	@Override
+	public String toString() {
 		return Integer.toString(value);
 	}
 
@@ -25,9 +36,10 @@ public class Number extends Exp {
 		return Integer.toString(value);
 	}
 
+
 	@Override
-	public void simplify() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException();
+	public String toLatexTree() {
+		return String.format("%s", this.toString());
 	}
+    
 }

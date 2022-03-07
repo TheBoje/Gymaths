@@ -1,12 +1,19 @@
-public class Minus extends Exp 
+public class Minus extends Operator 
 {
+	private static final Exp minus_0 = new Minus(new Ignored(), new Number(0));
+
     public Minus(Exp expLeft, Exp expRight)
 	{
 		super(expLeft, expRight);
 	}
 
 	@Override
-	public float evaluate() throws Exception
+	public Exp copy() {
+		return new Minus(this.expLeft.copy(), this.expRight.copy());
+	}
+
+	@Override
+	public double evaluate() throws Exception
 	{
 		try {
 			return this.expLeft.evaluate() - this.expRight.evaluate();
@@ -18,14 +25,34 @@ public class Minus extends Exp
 	}
 
 	@Override
-	public void simplify() {
-		throw new UnsupportedOperationException();
+	public Operator opposite() {
+		return new Plus(this.expLeft, this.expRight);
+	}
+
+	// TODO This
+	@Override
+	public Exp simplify() {
+		if (EquationSimplificator.matchWith(this, minus_0))
+		{
+			if (this.expLeft instanceof Number && ((Number)this.expLeft).getValue() == 0)
+			{
+				return this.expRight;
+			}
+			else
+			{
+				return this.expLeft;
+			}
+		}
+		else
+		{
+			return new Minus(this.expLeft.simplify(), this.expRight.simplify());
+		}
 	}
 
 	@Override
-	public String print()
+	public String toString()
 	{
-		return String.format("(%s - %s)", this.expLeft.print(), this.expRight.print());
+		return String.format("(%s - %s)", this.expLeft.toString(), this.expRight.toString());
 	}
 
 	@Override
@@ -33,4 +60,10 @@ public class Minus extends Exp
 	{
 		return String.format("%s-%s", this.expLeft.toLatex(), this.expRight.toLatex());
 	}   
+
+	@Override
+	public String toLatexTree() {
+		return String.format("[.- %s %s ]", this.expLeft.toLatexTree(), this.expRight.toLatexTree());
+	}
+    
 }

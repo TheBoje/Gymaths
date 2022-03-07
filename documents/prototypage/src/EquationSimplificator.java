@@ -15,22 +15,26 @@ public class EquationSimplificator {
      * @param modele
      * @return
      */
-    private static boolean matchWith(Exp cible, Exp modele)
+    public static boolean matchWith(Exp cible, Exp modele)
     {
-        if (cible == null){
+        if (cible == null){ // FIXME c'est un peu à chier ça non ?
             return true;
         }
         else if (modele == null)
         {
             return false;
         }
-        else if (
-                cible.getClass().getName().equals(modele.getClass().getName()) 
-             || modele instanceof Ignored)
-        { // TODO C'est l'approche de vincent et je ne cautionne pas un tel déchet de code
-            if (modele instanceof Number) // Dans le cas ou le noeud est un nombre
+        else if ( cible.getClass() == modele.getClass()
+                || modele.getClass().isAssignableFrom(cible.getClass()) 
+                || modele instanceof Ignored)
+        { 
+            if (modele instanceof Number && cible instanceof Number) // Dans le cas ou le noeud est un nombre
             {
                 return ((Number) cible).getValue() == ((Number) modele).getValue();
+            }
+            else if (modele instanceof Ignored)
+            {
+                return true;
             }
             else
             {
@@ -40,21 +44,6 @@ public class EquationSimplificator {
         else
         {
             return false;
-        }
-    }
-
-
-    public static boolean matchWith(Exp cible, Exp modele, boolean invertNodes)
-    {
-        if (!invertNodes)
-        {
-            return matchWith(cible, modele);
-        }
-        else 
-        {
-            // On doit lancer la fonction matchWith sur tous les cas d'inversion
-            // de l'arbre cible. Si au moins un seul marche, on retourne vrai.
-        
         }
     }
 

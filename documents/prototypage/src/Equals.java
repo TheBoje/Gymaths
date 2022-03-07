@@ -1,19 +1,35 @@
-public class Equals extends Exp {
-	int value;
+public class Equals extends Operator {
+	private static final Exp equals_cl = new Equals(new Operator(new Ignored(), new Ignored()), new Ignored());
 
 	public Equals(Exp expLeft, Exp expRight) {
 		super(expLeft, expRight);
 	}
 
 	@Override
-	public float evaluate() {
-		throw new UnsupportedOperationException();
+	public Exp copy() {
+		return new Equals(this.expLeft.copy(), this.expRight.copy());
 	}
 
 	@Override
-	public String print()
+	public double evaluate() throws Exception {
+		if (this.expLeft instanceof Variable)
+		{
+			return this.expRight.evaluate();
+		} 
+		else if (this.expRight instanceof Variable)
+		{
+			return this.expLeft.evaluate();
+		}
+		else
+		{
+			throw new UnbalancedEqualException();
+		}
+	}
+
+	@Override
+	public String toString()
 	{
-		return String.format("(%s = %s)", this.expLeft.print(), this.expRight.print());
+		return String.format("%s = %s", this.expLeft.toString(), this.expRight.toString());
 	}
 
 	@Override
@@ -22,9 +38,26 @@ public class Equals extends Exp {
 		return String.format("%s=%s", this.expLeft.toLatex(), this.expRight.toLatex());
 	}
 
+	
+
+	// TODO This
 	@Override
-	public void simplify() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException();
+	public Exp simplify() {
+		if (EquationSimplificator.matchWith(this, equals_cl))
+		{
+			this.clRotateRight();
+			return new Equals(this.expLeft.simplify(), this.expRight.simplify());
+		}
+		else
+		{
+			return new Equals(this.expLeft.simplify(), this.expRight.simplify());
+		}
+
 	}
+
+	@Override
+	public String toLatexTree() {
+		return String.format("[.= %s %s ]", this.expLeft.toLatexTree(), this.expRight.toLatexTree());
+	}
+
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/manual"
+    app:startDestination="@id/nav_graph_manual_page1">
+
+    <fragment
+        android:id="@+id/nav_graph_manual_page1"
+        android:name="com.example.gymaths.manuel.FragmentManualPage1"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/manual_fragment_page1">
+
+       <action
+            android:id="@+id/page1Topage2"
+            app:destination="@id/nav_graph_manual_page2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_graph_manual_page2"
+        android:name="com.example.gymaths.manuel.FragmentManualPage2"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/manual_fragment_page2">
+
+        <action
+             android:id="@+id/page2Topage3"
+             app:destination="@id/nav_graph_manual_page3" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_graph_manual_page3"
+        android:name="com.example.gymaths.manuel.FragmentManualPage3"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/manual_fragment_page3">
+    </fragment>
+
+</navigation>

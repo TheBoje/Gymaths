@@ -8,35 +8,36 @@
 
     <fragment
         android:id="@+id/Fragment5"
-        android:name="com.example.gymaths.exercices.Fragment5"
+        android:name="com.example.gymaths.exercices.FragmentQuestion"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/exercices_fragment5">
+        tools:layout="@layout/exercices_fragment_question">
 
         <action
-            android:id="@+id/Fragment5To8"
-            app:destination="@id/Fragment8" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/Fragment8"
-        android:name="com.example.gymaths.exercices.Fragment8"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/exercices_fragment8">
-
-        <action
-            android:id="@+id/Fragment8To11"
+            android:id="@+id/Fragment5To11"
             app:destination="@id/Fragment11" />
     </fragment>
 
     <fragment
-        android:id="@+id/Fragment11"
-        android:name="com.example.gymaths.exercices.Fragment11"
+        android:id="@+id/Fragment8"
+        android:name="com.example.gymaths.exercices.FragmentBilan"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/exercices_fragment11">
+        tools:layout="@layout/exercices_fragment_bilan">
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/Fragment11"
+        android:name="com.example.gymaths.exercices.FragmentReponse"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/exercices_fragment_reponse">
 
         <action
             android:id="@+id/Fragment11To5"
             app:destination="@id/Fragment5" />
+        <action
+            android:id="@+id/Fragment11To8"
+            app:destination="@id/Fragment8" />
     </fragment>
 
 </navigation>

@@ -1,4 +1,4 @@
-public class Variable extends Exp
+public class Variable extends Leaf
 {
 	private final String name;
 
@@ -13,18 +13,24 @@ public class Variable extends Exp
 	}
 
 	@Override
-	public float evaluate() throws VariableEvaluationException
+	public Exp copy() {
+		return new Variable(new String(this.getName()));
+	}
+
+	@Override
+	public double evaluate() throws VariableEvaluationException
 	{
 		throw new VariableEvaluationException();
 	}
 
+	// TODO This
 	@Override
-	public void simplify() {
-		throw new UnsupportedOperationException();
+	public Exp simplify() {
+		return this;
 	}
 
 	@Override
-	public String print()
+	public String toString()
 	{
 		return this.name;
 	}
@@ -34,4 +40,9 @@ public class Variable extends Exp
 	{
 		return this.name;
 	}
+
+	@Override
+	public String toLatexTree() {
+		return String.format("%s", this.name);
+	} 
 }
